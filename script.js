@@ -60,17 +60,45 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // --- Substack RSS Feed (Writing page) ---
+async function fetchFeed(substackUrl) {
+    // Try multiple CORS proxies in order of reliability
+    const proxies = [
+        (url) => `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`,
+        (url) => `https://corsproxy.io/?${encodeURIComponent(url)}`,
+        (url) => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`,
+    ];
+
+    for (const makeUrl of proxies) {
+        try {
+            const proxyUrl = makeUrl(substackUrl);
+            const response = await fetch(proxyUrl);
+            if (!response.ok) continue;
+
+            const data = await response.json().catch(() => null);
+            // allorigins returns { contents: "..." }, others return raw text
+            const xmlText = data?.contents || await response.text();
+
+            if (xmlText && xmlText.includes('<item>')) return xmlText;
+        } catch (e) {
+            continue;
+        }
+    }
+
+    // Last resort: try raw fetch (works if Substack adds CORS headers in future)
+    try {
+        const response = await fetch(substackUrl);
+        if (response.ok) return await response.text();
+    } catch (e) {}
+
+    throw new Error('All feed proxies failed');
+}
+
 async function loadSubstackArticles() {
     const grid = document.getElementById('articles-grid');
     if (!grid) return;
 
-    const FEED_URL = 'https://api.allorigins.win/raw?url=' + encodeURIComponent('https://jyothiwrites.substack.com/feed');
-
     try {
-        const response = await fetch(FEED_URL);
-        if (!response.ok) throw new Error('Feed fetch failed');
-
-        const xmlText = await response.text();
+        const xmlText = await fetchFeed('https://jyothiwrites.substack.com/feed');
         const parser = new DOMParser();
         const xml = parser.parseFromString(xmlText, 'text/xml');
         const items = xml.querySelectorAll('item');
