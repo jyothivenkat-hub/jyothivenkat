@@ -164,65 +164,21 @@ I publish weekly on research, AI, and product leadership:
 
 ## 2. Dynamic Articles Setup (RSS Integration)
 
-Your feed URLs:
+**Status: IMPLEMENTED** — the Writing page now dynamically pulls articles from Substack RSS.
+
+### How It Works
+- `script.js` fetches the Substack RSS feed via a CORS proxy (`api.allorigins.win`)
+- Parses the XML and renders article cards dynamically into the `.articles-grid` container
+- Each card shows: source badge, title, description excerpt (truncated to 160 chars), and formatted date
+- Cards link directly to the Substack article (opens in new tab)
+- New articles appear automatically when published on Substack — no manual updates needed
+
+### Feed URL
 - **Substack:** `https://jyothiwrites.substack.com/feed`
-- **Medium:** `https://medium.com/feed/@YOUR_MEDIUM_HANDLE` (replace with your actual handle)
 
-### Option A: Zapier Automation (Recommended)
-
-This creates native Squarespace blog posts automatically when you publish on Substack or Medium.
-
-**Setup Substack → Squarespace Zap:**
-
-1. Go to [zapier.com](https://zapier.com) and create a free account
-2. Click **Create Zap**
-3. **Trigger:**
-   - Search for "RSS by Zapier"
-   - Choose trigger: **New Item in Feed**
-   - Feed URL: `https://jyothiwrites.substack.com/feed`
-   - Set to check every 15 minutes
-4. **Action:**
-   - Search for "Squarespace"
-   - Choose action: **Create Blog Post**
-   - Connect your Squarespace account (you'll authorize via OAuth)
-   - Map fields:
-     - **Title** → RSS Item Title
-     - **Body** → RSS Item Description (or Content)
-     - **Status** → Published (or Draft if you want to review first)
-     - **Source URL** → RSS Item Link (add as a "Read on Substack" link)
-   - Add a tag: "Substack"
-5. **Test** the Zap, then turn it on
-
-**Repeat for Medium:**
-- Same steps, but use your Medium RSS feed URL
-- Add tag: "Medium"
-
-**Result:** New posts appear on your Writing page automatically with native Squarespace styling. Tags let visitors filter by source.
-
-### Option B: Embedded RSS Widget (Simpler, Less Control)
-
-If you want zero maintenance and don't mind less design control:
-
-1. Go to [rss.app](https://rss.app) and create a free account
-2. Add your Substack feed: `https://jyothiwrites.substack.com/feed`
-3. Customize the widget appearance (choose minimal/clean style, match your site colors)
-4. Copy the embed code
-5. In Squarespace: go to your **Writing/Articles** page
-6. Add a **Code Block** (under "More" in the block picker)
-7. Paste the embed code
-8. Repeat for your Medium feed (or combine both feeds into one widget on rss.app)
-
-### Squarespace Page Setup for Articles:
-
-1. Rename the existing "Articles" page to **"Writing"** (optional, but cleaner)
-   - Go to **Pages** → hover over "Articles" → click the gear icon → rename
-2. If using Zapier (Option A):
-   - Your articles will appear in the existing Blog collection
-   - Squarespace auto-generates the article grid/list
-   - Style the blog layout: **Design → Blog → choose Grid layout**
-3. If using RSS widget (Option B):
-   - Change the page from Blog type to a regular **Page**
-   - Add the Code Blocks with your RSS widgets
+### Error Handling
+- Loading state shown while fetching
+- If fetch fails, a fallback message appears with a direct link to Substack
 
 ---
 
