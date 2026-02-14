@@ -159,8 +159,8 @@ function parseArticle(item) {
 
 function renderGroupedArticles(container, articles) {
     const categories = [
-        { key: 'ai', label: 'AI & The Researcher-Maker', description: 'Building, shipping, and rethinking what researchers can do with AI.' },
         { key: 'leadership', label: 'Leadership & The CEO Office', description: 'Lessons from leading at the executive level.' },
+        { key: 'ai', label: 'AI & The Researcher-Maker', description: 'Building, shipping, and rethinking what researchers can do with AI.' },
         { key: 'research', label: 'Research & Product Strategy', description: 'Frameworks, metrics, and making research count.' },
     ];
 
