@@ -272,6 +272,14 @@ body {
     line-height: 1.5;
 }
 
+.headshot-img {
+    width: 350px;
+    height: 420px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: var(--radius-lg);
+}
+
 /* --- Buttons --- */
 .btn {
     display: inline-flex;
@@ -1094,7 +1102,8 @@ body {
         order: -1;
     }
 
-    .headshot-placeholder {
+    .headshot-placeholder,
+    .headshot-img {
         width: 100%;
         height: 300px;
     }
