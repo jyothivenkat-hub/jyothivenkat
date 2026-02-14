@@ -93,9 +93,110 @@ async function fetchFeed(substackUrl) {
     throw new Error('All feed proxies failed');
 }
 
+// Categorize an article by keyword matching on title + description
+function categorizeArticle(title, description) {
+    const text = (title + ' ' + description).toLowerCase();
+
+    // AI & Building keywords
+    const aiKeywords = ['ai ', 'ai-', 'claude', 'agent', 'llm', 'builder', 'maker', 'prototype', 'build', 'ship', 'game', 'cursor', 'gemini', 'slop', 'cowork', '0→1', '0->1'];
+    // Leadership keywords
+    const leadershipKeywords = ['ceo', 'leadership', 'leader', 'ruthless', 'lessons', 'trust', 'high stakes', 'executive', 'c-suite'];
+    // Research & Strategy keywords
+    const researchKeywords = ['research', 'ux', 'metric', 'accuracy', 'calibration', 'bias', 'training', 'blind spot', 'methodology', 'framework'];
+
+    const aiScore = aiKeywords.filter(k => text.includes(k)).length;
+    const leadershipScore = leadershipKeywords.filter(k => text.includes(k)).length;
+    const researchScore = researchKeywords.filter(k => text.includes(k)).length;
+
+    // Pick the highest scoring category
+    if (aiScore >= leadershipScore && aiScore >= researchScore && aiScore > 0) return 'ai';
+    if (leadershipScore >= researchScore && leadershipScore > 0) return 'leadership';
+    if (researchScore > 0) return 'research';
+    return 'ai'; // default bucket
+}
+
+function createArticleCard(title, link, description, formattedDate) {
+    const card = document.createElement('a');
+    card.href = link;
+    card.target = '_blank';
+    card.rel = 'noopener noreferrer';
+    card.className = 'article-card';
+    card.innerHTML = `
+        <span class="article-source">Substack</span>
+        <h3>${title}</h3>
+        <p>${description}</p>
+        <span class="article-date">${formattedDate}</span>
+    `;
+    return card;
+}
+
+function parseArticle(item) {
+    const title = item.querySelector('title')?.textContent || '';
+    const link = item.querySelector('link')?.textContent || '#';
+    const rawDesc = item.querySelector('description')?.textContent || '';
+    const pubDate = item.querySelector('pubDate')?.textContent || '';
+
+    // Strip HTML tags and truncate description
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = rawDesc;
+    let description = tempDiv.textContent.trim();
+    if (description.length > 160) {
+        description = description.substring(0, 157) + '...';
+    }
+
+    // Format date
+    const date = new Date(pubDate);
+    const formattedDate = date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+
+    const category = categorizeArticle(title, description);
+
+    return { title, link, description, formattedDate, category };
+}
+
+function renderGroupedArticles(container, articles) {
+    const categories = [
+        { key: 'ai', label: 'AI & The Researcher-Maker', description: 'Building, shipping, and rethinking what researchers can do with AI.' },
+        { key: 'leadership', label: 'Leadership & The CEO Office', description: 'Lessons from leading at the executive level.' },
+        { key: 'research', label: 'Research & Product Strategy', description: 'Frameworks, metrics, and making research count.' },
+    ];
+
+    container.innerHTML = '';
+
+    categories.forEach(cat => {
+        const catArticles = articles.filter(a => a.category === cat.key);
+        if (catArticles.length === 0) return;
+
+        const group = document.createElement('div');
+        group.className = 'articles-group';
+        group.innerHTML = `
+            <div class="articles-group-header">
+                <h2 class="articles-group-title">${cat.label}</h2>
+                <p class="articles-group-desc">${cat.description}</p>
+            </div>
+        `;
+
+        const grid = document.createElement('div');
+        grid.className = 'articles-grid';
+
+        catArticles.forEach(article => {
+            grid.appendChild(createArticleCard(article.title, article.link, article.description, article.formattedDate));
+        });
+
+        group.appendChild(grid);
+        container.appendChild(group);
+    });
+
+    // Re-run scroll animations on all new cards
+    animateOnScroll(container.querySelectorAll('.article-card'));
+}
+
 async function loadSubstackArticles() {
-    const grid = document.getElementById('articles-grid');
-    if (!grid) return;
+    const container = document.getElementById('articles-container');
+    if (!container) return;
 
     try {
         const xmlText = await fetchFeed('https://jyothiwrites.substack.com/feed');
@@ -105,51 +206,12 @@ async function loadSubstackArticles() {
 
         if (items.length === 0) throw new Error('No articles found');
 
-        grid.innerHTML = '';
-
-        items.forEach(item => {
-            const title = item.querySelector('title')?.textContent || '';
-            const link = item.querySelector('link')?.textContent || '#';
-            const rawDesc = item.querySelector('description')?.textContent || '';
-            const pubDate = item.querySelector('pubDate')?.textContent || '';
-
-            // Strip HTML tags and truncate description
-            const tempDiv = document.createElement('div');
-            tempDiv.innerHTML = rawDesc;
-            let description = tempDiv.textContent.trim();
-            if (description.length > 160) {
-                description = description.substring(0, 157) + '...';
-            }
-
-            // Format date
-            const date = new Date(pubDate);
-            const formattedDate = date.toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            });
-
-            const card = document.createElement('a');
-            card.href = link;
-            card.target = '_blank';
-            card.rel = 'noopener noreferrer';
-            card.className = 'article-card';
-            card.innerHTML = `
-                <span class="article-source">Substack</span>
-                <h3>${title}</h3>
-                <p>${description}</p>
-                <span class="article-date">${formattedDate}</span>
-            `;
-
-            grid.appendChild(card);
-        });
-
-        // Re-run scroll animations on the new cards
-        animateOnScroll(grid.querySelectorAll('.article-card'));
+        const articles = Array.from(items).map(parseArticle);
+        renderGroupedArticles(container, articles);
 
     } catch (error) {
         console.error('RSS feed error:', error);
-        grid.innerHTML = `
+        container.innerHTML = `
             <div class="articles-error">
                 <p>Unable to load articles right now.</p>
                 <a href="https://jyothiwrites.substack.com" target="_blank" class="btn btn-primary">Read on Substack</a>

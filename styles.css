@@ -830,6 +830,32 @@ body {
     background: var(--bg);
 }
 
+.articles-group {
+    margin-bottom: 56px;
+}
+
+.articles-group:last-child {
+    margin-bottom: 0;
+}
+
+.articles-group-header {
+    margin-bottom: 24px;
+}
+
+.articles-group-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+}
+
+.articles-group-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
 .articles-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
