@@ -115,19 +115,17 @@ function categorizeArticle(title, description) {
     return 'ai'; // default bucket
 }
 
-function createArticleCard(title, link, description, formattedDate) {
-    const card = document.createElement('a');
-    card.href = link;
-    card.target = '_blank';
-    card.rel = 'noopener noreferrer';
-    card.className = 'article-card';
-    card.innerHTML = `
-        <span class="article-source">Substack</span>
-        <h3>${title}</h3>
-        <p>${description}</p>
-        <span class="article-date">${formattedDate}</span>
+function createArticleLink(title, link, formattedDate) {
+    const item = document.createElement('a');
+    item.href = link;
+    item.target = '_blank';
+    item.rel = 'noopener noreferrer';
+    item.className = 'article-link';
+    item.innerHTML = `
+        <span class="article-link-title">${title}</span>
+        <span class="article-link-date">${formattedDate}</span>
     `;
-    return card;
+    return item;
 }
 
 function parseArticle(item) {
@@ -159,9 +157,9 @@ function parseArticle(item) {
 
 function renderGroupedArticles(container, articles) {
     const categories = [
-        { key: 'leadership', label: 'Leadership & The CEO Office', description: 'Lessons from leading at the executive level.' },
-        { key: 'ai', label: 'AI & The Researcher-Maker', description: 'Building, shipping, and rethinking what researchers can do with AI.' },
-        { key: 'research', label: 'Research & Product Strategy', description: 'Frameworks, metrics, and making research count.' },
+        { key: 'leadership', label: 'Leadership & The CEO Office' },
+        { key: 'ai', label: 'AI & The Researcher-Maker' },
+        { key: 'research', label: 'Research & Product Strategy' },
     ];
 
     container.innerHTML = '';
@@ -170,28 +168,27 @@ function renderGroupedArticles(container, articles) {
         const catArticles = articles.filter(a => a.category === cat.key);
         if (catArticles.length === 0) return;
 
-        const group = document.createElement('div');
-        group.className = 'articles-group';
-        group.innerHTML = `
-            <div class="articles-group-header">
-                <h2 class="articles-group-title">${cat.label}</h2>
-                <p class="articles-group-desc">${cat.description}</p>
-            </div>
-        `;
+        const column = document.createElement('div');
+        column.className = 'articles-column';
 
-        const grid = document.createElement('div');
-        grid.className = 'articles-grid';
+        const header = document.createElement('h2');
+        header.className = 'articles-column-title';
+        header.textContent = cat.label;
+        column.appendChild(header);
+
+        const list = document.createElement('div');
+        list.className = 'articles-list';
 
         catArticles.forEach(article => {
-            grid.appendChild(createArticleCard(article.title, article.link, article.description, article.formattedDate));
+            list.appendChild(createArticleLink(article.title, article.link, article.formattedDate));
         });
 
-        group.appendChild(grid);
-        container.appendChild(group);
+        column.appendChild(list);
+        container.appendChild(column);
     });
 
-    // Re-run scroll animations on all new cards
-    animateOnScroll(container.querySelectorAll('.article-card'));
+    // Animate columns
+    animateOnScroll(container.querySelectorAll('.articles-column'));
 }
 
 async function loadSubstackArticles() {
