@@ -191,6 +191,24 @@ function renderGroupedArticles(container, articles) {
     animateOnScroll(container.querySelectorAll('.articles-column'));
 }
 
+// Medium articles (added manually since Medium RSS requires auth)
+const mediumArticles = [
+    {
+        title: 'Why Most UX Research Fails to Influence the C-Suite',
+        link: 'https://medium.com/@JyothiVenkat23/why-most-ux-research-fails-to-influence-the-c-suite-89294926fa34',
+        description: '',
+        formattedDate: 'Medium',
+        category: 'leadership'
+    },
+    {
+        title: 'Framework: How to Choose a UX Research Methodology',
+        link: 'https://medium.com/@JyothiVenkat23/framework-how-to-choose-a-ux-research-methodology-2a3c94669285',
+        description: '',
+        formattedDate: 'Medium',
+        category: 'research'
+    },
+];
+
 async function loadSubstackArticles() {
     const container = document.getElementById('articles-container');
     if (!container) return;
@@ -204,7 +222,9 @@ async function loadSubstackArticles() {
         if (items.length === 0) throw new Error('No articles found');
 
         const articles = Array.from(items).map(parseArticle);
-        renderGroupedArticles(container, articles);
+        // Merge Medium articles into the categorized list
+        const allArticles = [...articles, ...mediumArticles];
+        renderGroupedArticles(container, allArticles);
 
     } catch (error) {
         console.error('RSS feed error:', error);
