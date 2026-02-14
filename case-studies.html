@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies — Jyothi Venkat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">JV</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">About</a>
+                <a href="writing.html" class="nav-link">Writing</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active">Work <span class="dropdown-arrow">&#9662;</span></a>
+                    <div class="dropdown-menu">
+                        <a href="projects.html">AI Projects</a>
+                        <a href="case-studies.html" class="dropdown-active">Case Studies</a>
+                    </div>
+                </div>
+                <a href="https://www.linkedin.com/in/jyothivenkat/" target="_blank" class="nav-link">Connect</a>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="index.html" class="mobile-link">About</a>
+        <a href="writing.html" class="mobile-link">Writing</a>
+        <a href="projects.html" class="mobile-link">AI Projects</a>
+        <a href="case-studies.html" class="mobile-link active">Case Studies</a>
+        <a href="https://www.linkedin.com/in/jyothivenkat/" target="_blank" class="mobile-link">Connect</a>
+    </div>
+
+    <!-- Password Gate -->
+    <section class="gate" id="passwordGate">
+        <div class="gate-inner">
+            <div class="gate-icon">
+                <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <h1 class="gate-title">Case Studies</h1>
+            <p class="gate-desc">Detailed research case studies from my work at OKX, Twitter, Stash, and more. These include methodologies, research findings, and business impact.</p>
+            <p class="gate-desc">Enter the password to view, or <a href="https://www.linkedin.com/in/jyothivenkat/" target="_blank" class="gate-link">connect on LinkedIn</a> to request access.</p>
+            <div class="gate-form">
+                <input type="password" class="gate-input" id="passwordInput" placeholder="Enter password" autocomplete="off">
+                <button class="btn btn-primary gate-btn" id="passwordSubmit">View Case Studies</button>
+            </div>
+            <p class="gate-hint" id="passwordError"></p>
+        </div>
+    </section>
+
+    <!-- Protected Content (hidden by default) -->
+    <section class="page-header" id="protectedContent" style="display: none;">
+        <div class="container">
+            <h1>Case Studies</h1>
+            <p>Selected research and strategy work from OKX, Twitter, Stash, and more.</p>
+        </div>
+    </section>
+
+    <section class="projects-section" id="protectedProjects" style="display: none;">
+        <div class="container">
+
+            <div class="project-card">
+                <h2 class="project-title">AI Safety Research Framework</h2>
+                <p class="project-company">OKX</p>
+                <p class="project-desc">Designed and led the research program evaluating AI safety and ethical concerns across crypto trading products. Built a framework that informed product policy changes for a platform serving millions of users globally.</p>
+                <div class="project-meta">
+                    <div class="project-meta-item">
+                        <span class="project-meta-label">Role</span>
+                        <span class="project-meta-value">Head of Research</span>
+                    </div>
+                    <div class="project-meta-item">
+                        <span class="project-meta-label">Scope</span>
+                        <span class="project-meta-value">APAC, US, Europe</span>
+                    </div>
+                </div>
+                <div class="cs-methods">
+                    <span class="method-tag">Expert Interviews</span>
+                    <span class="method-tag">Competitive Analysis</span>
+                    <span class="method-tag">User Testing</span>
+                    <span class="method-tag">Mixed Methods</span>
+                </div>
+                <a href="#" class="project-link">View Full Case Study <span class="project-link-arrow">&rarr;</span></a>
+            </div>
+
+            <div class="project-card">
+                <h2 class="project-title">Advertiser Experience Redesign</h2>
+                <p class="project-company">Twitter</p>
+                <p class="project-desc">Led the end-to-end research effort to reimagine how advertisers interact with the ad platform, from onboarding to campaign management. Research directly informed the redesign that drove measurable revenue growth.</p>
+                <div class="project-meta">
+                    <div class="project-meta-item">
+                        <span class="project-meta-label">Role</span>
+                        <span class="project-meta-value">Research & Strategy Lead</span>
+                    </div>
+                </div>
+                <div class="cs-methods">
+                    <span class="method-tag">User Interviews</span>
+                    <span class="method-tag">Journey Mapping</span>
+                    <span class="method-tag">A/B Testing</span>
+                    <span class="method-tag">Quantitative Surveys</span>
+                </div>
+                <a href="#" class="project-link">View Full Case Study <span class="project-link-arrow">&rarr;</span></a>
+            </div>
+
+            <div class="project-card">
+                <h2 class="project-title">Research-Led Market Expansion</h2>
+                <p class="project-company">Stash</p>
+                <p class="project-desc">Drove the research strategy that identified and validated new market segments, enabling the business to scale during a critical growth period. Research-led insights directly informed go-to-market decisions.</p>
+                <div class="project-meta">
+                    <div class="project-meta-item">
+                        <span class="project-meta-label">Role</span>
+                        <span class="project-meta-value">Research & Strategy Lead</span>
+                    </div>
+                </div>
+                <div class="cs-methods">
+                    <span class="method-tag">Customer Segmentation</span>
+                    <span class="method-tag">Market Analysis</span>
+                    <span class="method-tag">Product Validation</span>
+                </div>
+                <a href="#" class="project-link">View Full Case Study <span class="project-link-arrow">&rarr;</span></a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="protectedFooter" style="display: none;">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <span class="footer-logo">JV</span>
+                    <p class="footer-copy">&copy; 2026 Jyothi Venkat. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/jyothivenkat/" target="_blank">LinkedIn</a>
+                    <a href="https://jyothiwrites.substack.com" target="_blank">Substack</a>
+                    <a href="#" target="_blank">Medium</a>
+                    <a href="#" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        // Simple password gate demo
+        // In production, this would be handled by Squarespace's built-in password protection
+        const DEMO_PASSWORD = 'demo';
+
+        const gate = document.getElementById('passwordGate');
+        const input = document.getElementById('passwordInput');
+        const submit = document.getElementById('passwordSubmit');
+        const error = document.getElementById('passwordError');
+        const protectedSections = document.querySelectorAll('[id^="protected"]');
+
+        function unlock() {
+            const pw = input.value.trim();
+            if (pw === DEMO_PASSWORD) {
+                gate.style.display = 'none';
+                protectedSections.forEach(el => el.style.display = '');
+                document.body.style.overflow = '';
+            } else {
+                error.textContent = 'Incorrect password. Connect on LinkedIn to request access.';
+                input.classList.add('gate-input-error');
+                setTimeout(() => {
+                    input.classList.remove('gate-input-error');
+                    error.textContent = '';
+                }, 3000);
+            }
+        }
+
+        submit.addEventListener('click', unlock);
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') unlock();
+        });
+    </script>
+
+    <style>
+        /* --- Password Gate --- */
+        .gate {
+            min-height: calc(100vh - 64px);
+            margin-top: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg);
+            padding: 48px 24px;
+        }
+
+        .gate-inner {
+            text-align: center;
+            max-width: 480px;
+        }
+
+        .gate-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(27, 54, 93, 0.06);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            color: var(--accent);
+        }
+
+        .gate-title {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 16px;
+        }
+
+        .gate-desc {
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .gate-link {
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .gate-link:hover {
+            text-decoration: underline;
+        }
+
+        .gate-form {
+            display: flex;
+            gap: 8px;
+            margin-top: 28px;
+        }
+
+        .gate-input {
+            flex: 1;
+            padding: 14px 18px;
+            font-family: inherit;
+            font-size: 1rem;
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            outline: none;
+            transition: border-color var(--transition);
+            background: var(--bg-white);
+        }
+
+        .gate-input:focus {
+            border-color: var(--accent);
+        }
+
+        .gate-input-error {
+            border-color: #ef4444 !important;
+        }
+
+        .gate-btn {
+            flex-shrink: 0;
+        }
+
+        .gate-hint {
+            font-size: 0.82rem;
+            color: #ef4444;
+            margin-top: 12px;
+            min-height: 20px;
+        }
+
+        .cs-methods {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 24px;
+        }
+
+        .method-tag {
+            display: inline-flex;
+            padding: 4px 12px;
+            background: var(--bg);
+            border-radius: 100px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 768px) {
+            .gate-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</body>
+</html>
