@@ -331,6 +331,207 @@ body {
     color: var(--accent);
 }
 
+/* --- Shared Project Styles (used on both homepage carousel and projects page) --- */
+.project-badge {
+    display: inline-flex;
+    padding: 3px 10px;
+    background: rgba(27, 54, 93, 0.08);
+    border-radius: 100px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.stack-tag {
+    display: inline-flex;
+    padding: 3px 10px;
+    background: var(--bg);
+    border-radius: 100px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+/* --- Project Thumbnails (shared across pages) --- */
+.thumb-starcatch {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #f5c542;
+}
+
+.thumb-astro {
+    background: linear-gradient(135deg, #2d1b69 0%, #4a1a8a 50%, #6b21a8 100%);
+    color: #e9d5ff;
+}
+
+.thumb-agent {
+    background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+    color: #a7f3d0;
+}
+
+.thumb-portfolio {
+    background: linear-gradient(135deg, #1B365D 0%, #2A4F7F 50%, #3b6cb5 100%);
+    color: #bfdbfe;
+}
+
+/* --- Work Showcase Carousel --- */
+.work-showcase {
+    padding: 48px 0 64px;
+    background: var(--bg);
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-out;
+    will-change: transform;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 0;
+}
+
+.carousel-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 280px;
+}
+
+.carousel-visual svg {
+    width: 56px;
+    height: 56px;
+    opacity: 0.8;
+}
+
+.carousel-visual-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.7;
+}
+
+.carousel-info {
+    padding: 40px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.carousel-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 12px 0 8px;
+}
+
+.carousel-desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-light);
+    margin-bottom: 16px;
+    max-width: 500px;
+}
+
+.carousel-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+/* Arrow buttons */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(4px);
+    color: var(--text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition);
+    z-index: 2;
+    opacity: 0;
+}
+
+.carousel:hover .carousel-arrow {
+    opacity: 1;
+}
+
+.carousel-arrow:hover {
+    background: var(--bg-white);
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow: var(--shadow-md);
+}
+
+.carousel-prev {
+    left: 12px;
+}
+
+.carousel-next {
+    right: 12px;
+}
+
+/* Controls row (dots + CTA) */
+.carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+
+.carousel-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    background: transparent;
+    cursor: pointer;
+    transition: all var(--transition);
+    padding: 0;
+}
+
+.carousel-dot.active {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.carousel-dot:hover {
+    border-color: var(--accent);
+}
+
+.carousel-cta {
+    font-size: 0.9rem;
+}
+
 /* --- Company Strip --- */
 .companies {
     padding: 48px 0;
@@ -1316,6 +1517,14 @@ body {
         grid-template-columns: 1fr;
         gap: 32px;
     }
+
+    .carousel-slide {
+        grid-template-columns: 240px 1fr;
+    }
+
+    .carousel-info {
+        padding: 32px;
+    }
 }
 
 /* --- Mobile --- */
@@ -1358,6 +1567,38 @@ body {
     .hero-ctas .btn {
         text-align: center;
         justify-content: center;
+    }
+
+    .work-showcase {
+        padding: 32px 0 48px;
+    }
+
+    .carousel-slide {
+        grid-template-columns: 1fr;
+    }
+
+    .carousel-visual {
+        min-height: 160px;
+    }
+
+    .carousel-info {
+        padding: 24px;
+    }
+
+    .carousel-title {
+        font-size: 1.2rem;
+    }
+
+    .carousel-arrow {
+        width: 36px;
+        height: 36px;
+        opacity: 1;
+    }
+
+    .carousel-controls {
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
     }
 
     .stats-grid {
