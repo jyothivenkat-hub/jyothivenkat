@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Swatches — Pick Your Accent</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #e8e8f0;
+            padding: 48px 24px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #a8a8b8;
+            margin-bottom: 48px;
+            font-size: 0.95rem;
+        }
+        .swatches {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .swatch-card {
+            background: #121212;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 32px;
+            transition: all 0.2s;
+        }
+        .swatch-card:hover {
+            transform: translateY(-3px);
+        }
+        .swatch-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .swatch-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .swatch-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        .swatch-hex {
+            font-size: 0.8rem;
+            color: #6a6a80;
+            font-family: monospace;
+        }
+        .swatch-demo {
+            margin-top: 16px;
+        }
+        .demo-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+        .demo-underline {
+            width: 50px;
+            height: 3px;
+            border-radius: 2px;
+            margin-bottom: 12px;
+        }
+        .demo-text {
+            font-size: 0.9rem;
+            color: #a8a8b8;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        .demo-links {
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 4px 20px;
+            width: fit-content;
+            margin-bottom: 20px;
+        }
+        .demo-link {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .demo-link-primary {
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+        .demo-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #0a0a0a;
+            text-decoration: none;
+        }
+        .demo-btn-outline {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 2px solid;
+            background: transparent;
+            margin-left: 8px;
+            text-decoration: none;
+        }
+        .demo-stat {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-top: 16px;
+        }
+        .demo-label {
+            font-size: 0.8rem;
+            color: #6a6a80;
+        }
+        .swatch-vibe {
+            margin-top: 12px;
+            font-size: 0.82rem;
+            color: #6a6a80;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Pick Your Accent Color</h1>
+<p class="subtitle">Each swatch shows how the color looks as text, buttons, links, and stats on your dark theme.</p>
+
+<div class="swatches">
+
+    <!-- Current: Neon Green -->
+    <div class="swatch-card" style="border-color: rgba(0, 232, 123, 0.2);">
+        <div class="swatch-header">
+            <div class="swatch-circle" style="background: #00e87b; box-shadow: 0 0 20px rgba(0, 232, 123, 0.3);"></div>
+            <div>
+                <div class="swatch-name" style="color: #00e87b;">Neon Green (Current)</div>
+                <div class="swatch-hex">#00e87b</div>
+            </div>
+        </div>
+        <div class="swatch-demo">
+            <div class="demo-title" style="color: #e8e8f0;">Jyothi Venkat</div>
+            <div class="demo-underline" style="background: linear-gradient(to right, #00e87b, transparent);"></div>
+            <p class="demo-text">Research Executive, AI Strategist, and builder.</p>
+            <div class="demo-links">
+                <span class="demo-link demo-link-primary" style="color: #00e87b;">Work &rarr;</span>
+                <span class="demo-link" style="color: #a8a8b8;">Articles &rarr;</span>
+                <span class="demo-link" style="color: #a8a8b8;">My Story &rarr;</span>
+                <span class="demo-link" style="color: #a8a8b8;">Connect &rarr;</span>
+            </div>
+            <span class="demo-btn" style="background: #00e87b;">Send Message</span>
+            <span class="demo-btn-outline" style="border-color: #00e87b; color: #00e87b;">Learn More</span>
+            <div class="demo-stat" style="color: #00e87b;">$4B+</div>
+            <div class="demo-label">Product Direction Influenced</div>
+        </div>
+        <p class="swatch-vibe">Vibe: Hacker, builder, AI-native</p>
+    </div>
+
+    <!-- Electric Blue -->
+    <div class="swatch-card">
+        <div class="swatch-header">
+            <div class="swatch-circle" style="background: #0088ff; box-shadow: 0 0 20px rgba(0, 136, 255, 0.3);"></div>
+            <div>
+                <div class="swatch-name" style="color: #0088ff;">Electric Blue</div>
+                <div class="swatch-hex">#0088ff</div>
+            </div>
+        </div>
+        <div class="swatch-demo">
+            <div class="demo-title" style="color: #e8e8f0;">Jyothi Venkat</div>
+            <div class="demo-underline" style="background: linear-gradient(to right, #0088ff, transparent);"></div>
+            <p class="demo-text">Research Executive, AI Strategist, and builder.</p>
+            <div class="demo-links">
+                <span class="demo-link demo-link-primary" style="color: #0088ff;">Work &rarr;</span>
+                <span class="demo-link" style="color: #a8a8b8;">Articles &rarr;</span>
+                <span class="demo-link" style="color: #a8a8b8;">My Story &rarr;</span>
+                <span class="demo-link" style="color: #a8a8b8;">Connect &rarr;</span>
+            </div>
+            <span class="demo-btn" style="background: #0088ff;">Send Message</span>
+            <span class="demo-btn-outline" style="border-color: #0088ff; color: #0088ff;">Learn More</span>
+            <div class="demo-stat" style="color: #0088ff;">$4B+</div>
+            <div class="demo-label">Product Direction Influenced</div>
+        </div>
+        <p class="swatch-vibe">Vibe: Clean, trustworthy, Linear/Vercel</p>
+    </div>
+
+    <!-- Neon Cyan -->
+    <div class="swatch-card">
+        <div class="swatch-header">
+            <div class="swatch-circle" style="background: #00e5ff; box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);"></div>
+            <div>
+                <div class="swatch-name" style="color: #00e5ff;">Neon Cyan</div>
+                <div class="swatch-hex">#00e5ff</div>
+            </div>
+        </div>
+        <div class="swatch-demo">
+            <div class="demo-title" style="color: #e8e8f0;">Jyothi Venkat</div>
+            <div class="demo-underline" style="background: linear-gradient(to right, #00e5ff, transparent);"></div>
+            <p class="demo-text">Research Executive, AI Strategist, and builder.</p>
+            <div class="demo-links">
+                <span class="demo-link demo-link-primary" style="color: #00e5ff;">Work &rarr;</span>
+                <span class="demo-link" style="color: #a8a8b8;">Articles &rarr;</span>
+                <span class="demo-link" style="color: #a8a8b8;">My Story &rarr;</span>
+                <span class="demo-link" style="color: #a8a8b8;">Connect &rarr;</span>
+            </div>
+            <span class="demo-btn" style="background: #00e5ff;">Send Message</span>
+            <span class="demo-btn-outline" style="border-color: #00e5ff; color: #00e5ff;">Learn More</span>
+            <div class="demo-stat" style="color: #00e5ff;">$4B+</div>
+            <div class="demo-label">Product Direction Influenced</div>
+        </div>
+        <p class="swatch-vibe">Vibe: Futuristic, sci-fi, AI/tech</p>
+    </div>
+
+    <!-- Hot Orange -->
+    <div class="swatch-card">
+        <div class="swatch-header">
+            <div class="swatch-circle" style="background: #ff6b2b; box-shadow: 0 0 20px rgba(255, 107, 43, 0.3);"></div>
+            <div>
+                <div class="swatch-name" style="color: #ff6b2b;">Hot Orange</div>
+                <div class="swatch-hex">#ff6b2b</div>
+            </div>
+        </div>
+        <div class="swatch-demo">
+            <div class="demo-title" style="color: #e8e8f0;">Jyothi Venkat</div>
+            <div class="demo-underline" style="background: linear-gradient(to right, #ff6b2b, transparent);"></div>
+            <p class="demo-text">Research Executive, AI Strategist, and builder.</p>
+            <div class="demo-links">
+                <span class="demo-link demo-link-primary" style="color: #ff6b2b;">Work &rarr;</span>
+                <span class="demo-link" style="color: #a8a8b8;">Articles &rarr;</span>
+                <span class="demo-link" style="color: #a8a8b8;">My Story &rarr;</span>
+                <span class="demo-link" style="color: #a8a8b8;">Connect &rarr;</span>
+            </div>
+            <span class="demo-btn" style="background: #ff6b2b;">Send Message</span>
+            <span class="demo-btn-outline" style="border-color: #ff6b2b; color: #ff6b2b;">Learn More</span>
+            <div class="demo-stat" style="color: #ff6b2b;">$4B+</div>
+            <div class="demo-label">Product Direction Influenced</div>
+        </div>
+        <p class="swatch-vibe">Vibe: Bold, energetic, distinctive</p>
+    </div>
+
+    <!-- Warm Amber -->
+    <div class="swatch-card">
+        <div class="swatch-header">
+            <div class="swatch-circle" style="background: #ffb020; box-shadow: 0 0 20px rgba(255, 176, 32, 0.3);"></div>
+            <div>
+                <div class="swatch-name" style="color: #ffb020;">Warm Amber</div>
+                <div class="swatch-hex">#ffb020</div>
+            </div>
+        </div>
+        <div class="swatch-demo">
+            <div class="demo-title" style="color: #e8e8f0;">Jyothi Venkat</div>
+            <div class="demo-underline" style="background: linear-gradient(to right, #ffb020, transparent);"></div>
+            <p class="demo-text">Research Executive, AI Strategist, and builder.</p>
+            <div class="demo-links">
+                <span class="demo-link demo-link-primary" style="color: #ffb020;">Work &rarr;</span>
+                <span class="demo-link" style="color: #a8a8b8;">Articles &rarr;</span>
+                <span class="demo-link" style="color: #a8a8b8;">My Story &rarr;</span>
+                <span class="demo-link" style="color: #a8a8b8;">Connect &rarr;</span>
+            </div>
+            <span class="demo-btn" style="background: #ffb020;">Send Message</span>
+            <span class="demo-btn-outline" style="border-color: #ffb020; color: #ffb020;">Learn More</span>
+            <div class="demo-stat" style="color: #ffb020;">$4B+</div>
+            <div class="demo-label">Product Direction Influenced</div>
+        </div>
+        <p class="swatch-vibe">Vibe: Premium, confident, Bloomberg Terminal</p>
+    </div>
+
+    <!-- Electric Violet -->
+    <div class="swatch-card">
+        <div class="swatch-header">
+            <div class="swatch-circle" style="background: #8b5cf6; box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);"></div>
+            <div>
+                <div class="swatch-name" style="color: #8b5cf6;">Electric Violet</div>
+                <div class="swatch-hex">#8b5cf6</div>
+            </div>
+        </div>
+        <div class="swatch-demo">
+            <div class="demo-title" style="color: #e8e8f0;">Jyothi Venkat</div>
+            <div class="demo-underline" style="background: linear-gradient(to right, #8b5cf6, transparent);"></div>
+            <p class="demo-text">Research Executive, AI Strategist, and builder.</p>
+            <div class="demo-links">
+                <span class="demo-link demo-link-primary" style="color: #8b5cf6;">Work &rarr;</span>
+                <span class="demo-link" style="color: #a8a8b8;">Articles &rarr;</span>
+                <span class="demo-link" style="color: #a8a8b8;">My Story &rarr;</span>
+                <span class="demo-link" style="color: #a8a8b8;">Connect &rarr;</span>
+            </div>
+            <span class="demo-btn" style="background: #8b5cf6;">Send Message</span>
+            <span class="demo-btn-outline" style="border-color: #8b5cf6; color: #8b5cf6;">Learn More</span>
+            <div class="demo-stat" style="color: #8b5cf6;">$4B+</div>
+            <div class="demo-label">Product Direction Influenced</div>
+        </div>
+        <p class="swatch-vibe">Vibe: Creative, AI/ML, modern startup</p>
+    </div>
+
+    <!-- Coral Pink -->
+    <div class="swatch-card">
+        <div class="swatch-header">
+            <div class="swatch-circle" style="background: #ff5277; box-shadow: 0 0 20px rgba(255, 82, 119, 0.3);"></div>
+            <div>
+                <div class="swatch-name" style="color: #ff5277;">Coral Pink</div>
+                <div class="swatch-hex">#ff5277</div>
+            </div>
+        </div>
+        <div class="swatch-demo">
+            <div class="demo-title" style="color: #e8e8f0;">Jyothi Venkat</div>
+            <div class="demo-underline" style="background: linear-gradient(to right, #ff5277, transparent);"></div>
+            <p class="demo-text">Research Executive, AI Strategist, and builder.</p>
+            <div class="demo-links">
+                <span class="demo-link demo-link-primary" style="color: #ff5277;">Work &rarr;</span>
+                <span class="demo-link" style="color: #a8a8b8;">Articles &rarr;</span>
+                <span class="demo-link" style="color: #a8a8b8;">My Story &rarr;</span>
+                <span class="demo-link" style="color: #a8a8b8;">Connect &rarr;</span>
+            </div>
+            <span class="demo-btn" style="background: #ff5277;">Send Message</span>
+            <span class="demo-btn-outline" style="border-color: #ff5277; color: #ff5277;">Learn More</span>
+            <div class="demo-stat" style="color: #ff5277;">$4B+</div>
+            <div class="demo-label">Product Direction Influenced</div>
+        </div>
+        <p class="swatch-vibe">Vibe: Bold, memorable, unconventional</p>
+    </div>
+
+</div>
+
+</body>
+</html>
