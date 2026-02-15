@@ -454,13 +454,13 @@ body {
 }
 
 .thumb-astro {
-    background: linear-gradient(135deg, #2d1b69 0%, #4a1a8a 50%, #6b21a8 100%);
-    color: #e9d5ff;
+    background: linear-gradient(135deg, #3d1800 0%, #6b2e00 50%, #994400 100%);
+    color: #FFB380;
 }
 
 .thumb-agent {
-    background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
-    color: #a7f3d0;
+    background: linear-gradient(135deg, #0a1a3a 0%, #0d2a5c 50%, #103a7e 100%);
+    color: #80b8ff;
 }
 
 .thumb-portfolio {
