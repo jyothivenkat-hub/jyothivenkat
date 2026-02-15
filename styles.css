@@ -1314,6 +1314,179 @@ body {
     margin-bottom: 20px;
 }
 
+/* --- Featured Article (Magazine Hero) --- */
+.articles-featured {
+    padding: 0 0 48px;
+    background: var(--bg);
+}
+
+.featured-article {
+    display: block;
+    padding: 48px;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: white;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.featured-article:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.featured-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 5px 12px;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.featured-title {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.featured-excerpt {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.85;
+    max-width: 600px;
+    margin-bottom: 24px;
+}
+
+.featured-cta {
+    font-size: 0.88rem;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    padding-bottom: 2px;
+    transition: border-color var(--transition);
+}
+
+.featured-article:hover .featured-cta {
+    border-color: white;
+}
+
+/* --- Editor's Picks (3-Card Grid) --- */
+.articles-picks {
+    padding: 0 0 64px;
+    background: var(--bg);
+}
+
+.picks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.pick-card {
+    display: flex;
+    flex-direction: column;
+    padding: 28px;
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: inherit;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.pick-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.pick-badge {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+    width: fit-content;
+    color: white;
+}
+
+.pick-badge-leadership {
+    background: var(--accent);
+}
+
+.pick-badge-research {
+    background: #6B4C9A;
+}
+
+.pick-badge-ai {
+    background: #1A7A4C;
+}
+
+.pick-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--text);
+    margin-bottom: 10px;
+}
+
+.pick-excerpt {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    line-height: 1.5;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex: 1;
+}
+
+.pick-source {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* --- Newsletter Subscribe Banner --- */
+.articles-subscribe {
+    padding: 0 0 64px;
+    background: var(--bg);
+}
+
+.subscribe-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 32px 40px;
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+}
+
+.subscribe-banner h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+.subscribe-banner p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
 /* ============================================
    Projects Page
    ============================================ */
@@ -1631,6 +1804,30 @@ body {
     .articles-columns {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+
+    .featured-article {
+        padding: 32px 24px;
+    }
+
+    .featured-title {
+        font-size: 1.5rem;
+    }
+
+    .featured-excerpt {
+        font-size: 0.9rem;
+    }
+
+    .picks-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .subscribe-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px;
+        gap: 16px;
     }
 
     .expertise-clusters {
