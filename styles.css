@@ -418,14 +418,15 @@ body {
 
 .btn-outline {
     background: transparent;
-    color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.3);
+    color: var(--accent);
+    border-color: var(--accent);
 }
 
 .btn-outline:hover {
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--accent);
     color: #ffffff;
-    border-color: #ffffff;
+    border-color: var(--accent);
+    box-shadow: var(--glow-accent);
 }
 
 /* --- Shared Project Styles (used on both homepage carousel and projects page) --- */
@@ -1641,7 +1642,7 @@ body {
     gap: 6px;
     font-size: 0.9rem;
     font-weight: 600;
-    color: #ffffff;
+    color: var(--accent);
     text-decoration: none;
     transition: gap var(--transition), color var(--transition);
 }
