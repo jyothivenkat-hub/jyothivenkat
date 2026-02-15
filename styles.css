@@ -439,6 +439,10 @@ body {
     background: var(--bg-white);
 }
 
+.story-personal {
+    background: var(--bg);
+}
+
 .story-label {
     font-size: 0.75rem;
     font-weight: 700;
@@ -482,6 +486,18 @@ body {
 .story-card:hover {
     border-color: var(--border);
     box-shadow: var(--shadow);
+}
+
+.story-card-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(27, 54, 93, 0.06);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    margin-bottom: 14px;
 }
 
 .story-card-title {
@@ -889,6 +905,14 @@ body {
     color: var(--text);
     line-height: 1.4;
     transition: color var(--transition);
+}
+
+.article-link-desc {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    margin-top: 4px;
 }
 
 .article-link-date {
