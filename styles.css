@@ -218,31 +218,31 @@ body {
 
 /* --- Hero Section --- */
 .hero {
-    padding: 140px 0 72px;
+    padding: 96px 0 32px;
     background: var(--bg-white);
 }
 
 .hero-grid {
     display: grid;
-    grid-template-columns: 1fr 350px;
-    gap: 60px;
+    grid-template-columns: 1fr 200px;
+    gap: 40px;
     align-items: center;
 }
 
 .hero-name {
-    font-size: 3.2rem;
+    font-size: 2.2rem;
     font-weight: 800;
     letter-spacing: -0.03em;
     line-height: 1.1;
     color: var(--text);
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .hero-tagline {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 500;
     color: var(--text-light);
-    margin-bottom: 32px;
+    margin-bottom: 20px;
     letter-spacing: -0.01em;
     line-height: 1.6;
 }
@@ -261,8 +261,8 @@ body {
 }
 
 .headshot-placeholder {
-    width: 350px;
-    height: 420px;
+    width: 200px;
+    height: 240px;
     background: linear-gradient(135deg, var(--border) 0%, var(--border-light) 100%);
     border-radius: var(--radius-lg);
     display: flex;
@@ -275,8 +275,8 @@ body {
 }
 
 .headshot-img {
-    width: 350px;
-    height: 420px;
+    width: 200px;
+    height: 240px;
     object-fit: cover;
     object-position: center top;
     border-radius: var(--radius-lg);
@@ -377,7 +377,7 @@ body {
 
 /* --- Work Showcase Carousel --- */
 .work-showcase {
-    padding: 48px 0 64px;
+    padding: 32px 0 48px;
     background: var(--bg);
 }
 
@@ -1479,14 +1479,14 @@ body {
 /* --- Tablet --- */
 @media (max-width: 1024px) {
     .hero-grid {
-        grid-template-columns: 1fr 280px;
-        gap: 40px;
+        grid-template-columns: 1fr 180px;
+        gap: 32px;
     }
 
     .headshot-placeholder,
     .headshot-img {
-        width: 280px;
-        height: 340px;
+        width: 180px;
+        height: 220px;
     }
 
     .stats-grid {
@@ -1538,39 +1538,40 @@ body {
     }
 
     .hero {
-        padding: 110px 0 48px;
+        padding: 80px 0 24px;
     }
 
     .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
+        grid-template-columns: 1fr 120px;
+        gap: 20px;
     }
 
     .hero-image {
-        order: -1;
+        order: 0;
     }
 
     .headshot-placeholder,
     .headshot-img {
-        width: 100%;
-        height: 300px;
+        width: 120px;
+        height: 150px;
     }
 
     .hero-name {
-        font-size: 2.2rem;
+        font-size: 1.6rem;
     }
 
-    .hero-ctas {
-        flex-direction: column;
+    .hero-tagline {
+        font-size: 0.95rem;
+        margin-bottom: 16px;
     }
 
     .hero-ctas .btn {
-        text-align: center;
-        justify-content: center;
+        font-size: 0.85rem;
+        padding: 10px 20px;
     }
 
     .work-showcase {
-        padding: 32px 0 48px;
+        padding: 24px 0 40px;
     }
 
     .carousel-slide {
@@ -1686,10 +1687,20 @@ body {
     }
 
     .hero-name {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
     }
 
     .hero-tagline {
-        font-size: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .headshot-placeholder,
+    .headshot-img {
+        width: 100px;
+        height: 120px;
+    }
+
+    .hero-grid {
+        gap: 16px;
     }
 }
