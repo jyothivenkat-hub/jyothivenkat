@@ -1357,6 +1357,10 @@ body {
     border-bottom: 2px solid var(--accent);
 }
 
+.col-leadership { border-color: var(--accent); }
+.col-ai { border-color: var(--green-light); }
+.col-research { border-color: var(--orange); }
+
 .articles-list {
     display: flex;
     flex-direction: column;
