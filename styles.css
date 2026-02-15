@@ -1,8 +1,8 @@
 /* ============================================
    jyothivenkat.com Redesign Prototype
-   Visual Direction: Dark & Electric Blue
+   Visual Direction: Dark & Substack Orange + Blue Links
    Fonts: DM Serif Display (headlines) + Inter (body)
-   Colors: Electric Blue accent on dark
+   Colors: Substack Orange accent, blue links, warm dark backgrounds
    ============================================ */
 
 /* --- Reset & Base --- */
@@ -13,27 +13,29 @@
 }
 
 :root {
-    --bg: #0a0a0a;
-    --bg-white: #121212;
-    --bg-elevated: #1a1a1a;
+    --bg: #121212;
+    --bg-white: #1B1B1B;
+    --bg-elevated: #222222;
     --text: #e8e8f0;
     --text-light: #a8a8b8;
     --text-muted: #6a6a80;
-    --accent: #0088FF;
-    --accent-light: #33A0FF;
-    --accent-darker: #0066CC;
-    --accent-warm: #0088FF;
+    --accent: #FF6719;
+    --accent-light: #FF8844;
+    --accent-darker: #E55A10;
+    --accent-warm: #FF6719;
     --link: #E0E8F0;
     --link-light: #FFFFFF;
-    --border: #2a2a2a;
-    --border-light: #1e1e1e;
+    --link-blue: #1A8CFF;
+    --link-blue-light: #33A0FF;
+    --border: #2E2E2E;
+    --border-light: #252525;
     --radius: 8px;
     --radius-lg: 12px;
     --shadow: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
     --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
     --shadow-lg: 0 10px 30px rgba(0,0,0,0.5);
-    --glow-accent: 0 0 20px rgba(0, 136, 255, 0.15);
-    --glow-cyan: 0 0 20px rgba(0, 229, 255, 0.15);
+    --glow-accent: 0 0 20px rgba(255, 103, 25, 0.15);
+    --glow-cyan: 0 0 20px rgba(255, 103, 25, 0.10);
     --transition: 0.2s ease;
 }
 
@@ -256,9 +258,9 @@ body {
 .hero {
     padding: 96px 0 32px;
     background:
-        radial-gradient(ellipse at 10% 80%, rgba(0, 136, 255, 0.06) 0%, transparent 50%),
-        radial-gradient(ellipse at 90% 20%, rgba(0, 136, 255, 0.04) 0%, transparent 50%),
-        radial-gradient(ellipse at 50% 50%, rgba(0, 136, 255, 0.02) 0%, transparent 60%),
+        radial-gradient(ellipse at 10% 80%, rgba(255, 103, 25, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 20%, rgba(255, 103, 25, 0.04) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(255, 103, 25, 0.02) 0%, transparent 60%),
         var(--bg-white);
 }
 
@@ -369,7 +371,7 @@ body {
     object-fit: cover;
     object-position: center top;
     border-radius: var(--radius-lg);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 136, 255, 0.08);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 103, 25, 0.08);
 }
 
 /* --- Buttons --- */
@@ -427,7 +429,7 @@ body {
 .project-badge {
     display: inline-flex;
     padding: 3px 10px;
-    background: rgba(0, 136, 255, 0.1);
+    background: rgba(255, 103, 25, 0.1);
     border-radius: 100px;
     font-size: 0.7rem;
     font-weight: 700;
@@ -700,7 +702,7 @@ body {
 
 .stat-card:hover {
     box-shadow: var(--shadow-md), var(--glow-accent);
-    border-color: rgba(0, 136, 255, 0.2);
+    border-color: rgba(255, 103, 25, 0.2);
 }
 
 .stat-number {
@@ -791,14 +793,14 @@ body {
 }
 
 .story-card:hover {
-    border-color: rgba(0, 136, 255, 0.2);
+    border-color: rgba(255, 103, 25, 0.2);
     box-shadow: var(--shadow), var(--glow-accent);
 }
 
 .story-card-icon {
     width: 40px;
     height: 40px;
-    background: rgba(0, 136, 255, 0.08);
+    background: rgba(255, 103, 25, 0.08);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -867,7 +869,7 @@ body {
     width: 40px;
     height: 40px;
     min-width: 40px;
-    background: rgba(0, 136, 255, 0.08);
+    background: rgba(255, 103, 25, 0.08);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1071,7 +1073,7 @@ body {
 }
 
 .tl-article-card:hover .tl-article-title {
-    color: var(--link);
+    color: var(--link-blue);
 }
 
 .tl-article-title {
@@ -1189,7 +1191,7 @@ body {
 .timeline-impacts li {
     display: inline-flex;
     padding: 4px 14px;
-    background: rgba(0, 136, 255, 0.08);
+    background: rgba(255, 103, 25, 0.08);
     border-radius: 100px;
     font-size: 0.82rem;
     font-weight: 500;
@@ -1297,7 +1299,7 @@ body {
 }
 
 .footer-links a:hover {
-    color: var(--link);
+    color: var(--link-blue);
 }
 
 /* ============================================
@@ -1371,7 +1373,7 @@ body {
 }
 
 .article-link:hover .article-link-title {
-    color: var(--link);
+    color: var(--link-blue);
 }
 
 .article-link-title {
@@ -1466,11 +1468,11 @@ body {
 }
 
 .pick-badge-research {
-    background: #00E5FF;
+    background: #FF8844;
 }
 
 .pick-badge-ai {
-    background: #0088FF;
+    background: #FF6719;
 }
 
 .pick-title {
@@ -1632,7 +1634,7 @@ body {
     gap: 6px;
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--link);
+    color: var(--link-blue);
     text-decoration: none;
     transition: gap var(--transition);
 }
