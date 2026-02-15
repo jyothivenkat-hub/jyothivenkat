@@ -68,7 +68,7 @@ const nav = document.querySelector('.nav');
 if (nav) {
     window.addEventListener('scroll', () => {
         if (window.scrollY > 10) {
-            nav.style.boxShadow = '0 1px 8px rgba(0,0,0,0.06)';
+            nav.style.boxShadow = '0 1px 8px rgba(0,0,0,0.3)';
         } else {
             nav.style.boxShadow = 'none';
         }
