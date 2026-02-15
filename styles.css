@@ -18,8 +18,9 @@
     --text: #1A1A1A;
     --text-light: #4A4A4A;
     --text-muted: #6B6B6B;
-    --accent: #1B365D;
+    --accent: #0F2642;
     --accent-light: #2A4F7F;
+    --accent-darker: #0A1A30;
     --accent-warm: #D4A574;
     --border: #E5E5E5;
     --border-light: #F0F0F0;
@@ -215,9 +216,17 @@ body {
     color: var(--accent);
 }
 
+.mobile-menu .btn-cta {
+    margin-top: 8px;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    display: inline-flex;
+}
+
 /* --- Hero Section --- */
 .hero {
-    padding: 120px 0 60px;
+    padding: 140px 0 72px;
     background: var(--bg-white);
 }
 
@@ -329,6 +338,31 @@ body {
     color: var(--accent);
 }
 
+/* --- CTA Button (Calendly / Book a Call) --- */
+.btn-cta {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    padding: 10px 22px;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    transition: all var(--transition);
+    white-space: nowrap;
+}
+
+.btn-cta:hover {
+    background: var(--accent-light);
+    border-color: var(--accent-light);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+}
+
+.nav-cta {
+    margin-left: 8px;
+}
+
 /* --- Company Strip --- */
 .companies {
     padding: 48px 0;
@@ -374,7 +408,7 @@ body {
 
 /* --- Stats / By the Numbers --- */
 .stats {
-    padding: 80px 0;
+    padding: 96px 0;
     background: var(--bg);
 }
 
@@ -397,7 +431,7 @@ body {
     border: 1px solid var(--border-light);
     border-radius: var(--radius-lg);
     padding: 32px 24px;
-    text-align: center;
+    text-align: left;
     transition: all var(--transition);
 }
 
@@ -422,9 +456,19 @@ body {
     line-height: 1.4;
 }
 
+.stat-context {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--text-light);
+    line-height: 1.5;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border-light);
+}
+
 /* --- Story Sections (My Story / How I Lead / Where I'm Going) --- */
 .story-section {
-    padding: 80px 0;
+    padding: 96px 0;
 }
 
 .story-mystory {
@@ -491,7 +535,7 @@ body {
 .story-card-icon {
     width: 40px;
     height: 40px;
-    background: rgba(27, 54, 93, 0.06);
+    background: rgba(15, 38, 66, 0.06);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -623,7 +667,7 @@ body {
 
 /* --- Expertise Tags --- */
 .expertise {
-    padding: 80px 0;
+    padding: 96px 0;
     background: var(--bg);
 }
 
@@ -648,7 +692,117 @@ body {
 .tag:hover {
     border-color: var(--accent);
     color: var(--accent);
-    background: rgba(27, 54, 93, 0.04);
+    background: rgba(15, 38, 66, 0.04);
+}
+
+/* --- Expertise Clusters --- */
+.expertise-clusters {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.expertise-cluster {
+    min-width: 0;
+}
+
+.expertise-cluster-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+}
+
+.expertise-cluster-desc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+
+.expertise-cluster .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* --- Thought Leadership Preview (Home Page) --- */
+.thought-leadership {
+    padding: 96px 0;
+    background: var(--bg-white);
+}
+
+.thought-leadership-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 48px;
+    margin-top: 32px;
+}
+
+.tl-articles {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.tl-article-card {
+    display: block;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-light);
+    text-decoration: none;
+    color: inherit;
+    transition: all var(--transition);
+}
+
+.tl-article-card:first-child {
+    padding-top: 0;
+}
+
+.tl-article-card:hover {
+    padding-left: 8px;
+}
+
+.tl-article-card:hover .tl-article-title {
+    color: var(--accent);
+}
+
+.tl-article-title {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+    transition: color var(--transition);
+}
+
+.tl-article-meta {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.tl-subscribe {
+    background: var(--bg);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    align-self: start;
+}
+
+.tl-subscribe h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+.tl-subscribe p {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
 /* --- Experience Timeline --- */
@@ -727,11 +881,19 @@ body {
 .timeline-impacts li {
     display: inline-flex;
     padding: 4px 14px;
-    background: rgba(27, 54, 93, 0.06);
+    background: rgba(15, 38, 66, 0.06);
     border-radius: 100px;
     font-size: 0.82rem;
     font-weight: 500;
     color: var(--accent);
+}
+
+.timeline-inflection {
+    font-size: 0.82rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--accent);
+    margin-bottom: 6px;
 }
 
 /* --- Writing CTA --- */
@@ -1135,6 +1297,16 @@ body {
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;
     }
+
+    .expertise-clusters {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+
+    .thought-leadership-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
 }
 
 /* --- Mobile --- */
@@ -1148,7 +1320,7 @@ body {
     }
 
     .hero {
-        padding: 100px 0 48px;
+        padding: 110px 0 48px;
     }
 
     .hero-grid {
@@ -1208,6 +1380,16 @@ body {
     .articles-columns {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+
+    .expertise-clusters {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .thought-leadership-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
     }
 
     .footer-content {
