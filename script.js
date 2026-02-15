@@ -55,7 +55,7 @@ function animateOnScroll(elements) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.stat-card, .article-card, .project-card, .timeline-item, .expertise-cluster, .tl-article-card');
+    const animateElements = document.querySelectorAll('.stat-card, .article-card, .project-card, .timeline-item, .expertise-cluster, .tl-article-card, .narrative-block');
     animateOnScroll(animateElements);
 });
 
