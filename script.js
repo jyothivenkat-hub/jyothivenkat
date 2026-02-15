@@ -11,18 +11,18 @@ const editorPicks = [
         source: "Substack"
     },
     {
-        title: "Why Most UX Research Fails to Influence the C-Suite",
-        excerpt: "What executives actually want from research teams — and what keeps most researchers from delivering it.",
-        url: "https://medium.com/@JyothiVenkat23/why-most-ux-research-fails-to-influence-the-c-suite-89294926fa34",
-        badge: "research",
-        source: "Medium"
-    },
-    {
         title: "Build an AI News Agent in 3 Steps",
         excerpt: "Automating morning research for $0 with Python and Claude. The same blueprint works for competitive intel and market monitoring.",
         url: "https://jyothiwrites.substack.com/p/build-an-ai-news-agent-in-3-steps",
         badge: "ai",
         source: "Substack"
+    },
+    {
+        title: "Why Most UX Research Fails to Influence the C-Suite",
+        excerpt: "What executives actually want from research teams — and what keeps most researchers from delivering it.",
+        url: "https://medium.com/@JyothiVenkat23/why-most-ux-research-fails-to-influence-the-c-suite-89294926fa34",
+        badge: "research",
+        source: "Medium"
     }
 ];
 
