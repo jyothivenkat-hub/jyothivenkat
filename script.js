@@ -1,3 +1,49 @@
+// ============================================
+// Editor's Picks — Update this array to change featured articles
+// Badge options: "leadership", "research", "ai"
+// ============================================
+const editorPicks = [
+    {
+        title: "The CEO's Office: 8 Ruthless Lessons on High Stakes Leadership",
+        excerpt: "What I learned operating from the CEO office at a global crypto exchange — and why most leaders never get this close to the fire.",
+        url: "https://jyothiwrites.substack.com/p/the-ceos-office-8-ruthless-lessons",
+        badge: "leadership",
+        source: "Substack"
+    },
+    {
+        title: "Why Most UX Research Fails to Influence the C-Suite",
+        excerpt: "What executives actually want from research teams — and what keeps most researchers from delivering it.",
+        url: "https://medium.com/@JyothiVenkat23/why-most-ux-research-fails-to-influence-the-c-suite-89294926fa34",
+        badge: "research",
+        source: "Medium"
+    },
+    {
+        title: "Build an AI News Agent in 3 Steps",
+        excerpt: "Automating morning research for $0 with Python and Claude. The same blueprint works for competitive intel and market monitoring.",
+        url: "https://jyothiwrites.substack.com/p/build-an-ai-news-agent-in-3-steps",
+        badge: "ai",
+        source: "Substack"
+    }
+];
+
+const badgeLabels = { leadership: "Leadership", research: "Research", ai: "AI" };
+
+function renderEditorPicks() {
+    const container = document.getElementById('picks-container');
+    if (!container) return;
+
+    container.innerHTML = editorPicks.map(pick => `
+        <a href="${pick.url}" target="_blank" rel="noopener noreferrer" class="pick-card">
+            <span class="pick-badge pick-badge-${pick.badge}">${badgeLabels[pick.badge] || pick.badge}</span>
+            <h3 class="pick-title">${pick.title}</h3>
+            <p class="pick-excerpt">${pick.excerpt}</p>
+            <span class="pick-source">${pick.source}</span>
+        </a>
+    `).join('');
+}
+
+document.addEventListener('DOMContentLoaded', renderEditorPicks);
+
 // Mobile menu toggle
 const mobileToggle = document.querySelector('.nav-mobile-toggle');
 const mobileMenu = document.querySelector('.mobile-menu');
