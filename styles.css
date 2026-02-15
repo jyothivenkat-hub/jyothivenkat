@@ -1349,7 +1349,7 @@ body {
     font-family: 'Inter', sans-serif;
     font-size: 0.85rem;
     font-weight: 700;
-    color: var(--link);
+    color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     padding-bottom: 16px;
@@ -1376,7 +1376,7 @@ body {
 }
 
 .article-link:hover .article-link-title {
-    color: var(--link);
+    color: var(--accent-light);
 }
 
 .article-link-title {
@@ -1449,8 +1449,8 @@ body {
 
 .pick-card:hover {
     transform: translateY(-3px);
-    box-shadow: var(--shadow-md), 0 0 20px rgba(224, 232, 240, 0.15);
-    border-color: rgba(224, 232, 240, 0.2);
+    box-shadow: var(--shadow-md), 0 0 20px rgba(0, 136, 255, 0.12);
+    border-color: rgba(0, 136, 255, 0.25);
 }
 
 .pick-badge {
