@@ -401,26 +401,27 @@ body {
 
 .btn-secondary {
     background: var(--bg-white);
-    color: var(--link);
-    border-color: var(--link);
+    color: var(--accent);
+    border-color: var(--accent);
 }
 
 .btn-secondary:hover {
-    background: var(--link);
+    background: var(--accent);
     color: #ffffff;
-    box-shadow: 0 0 20px rgba(224, 232, 240, 0.15);
+    box-shadow: 0 0 20px rgba(0, 136, 255, 0.2);
 }
 
 .btn-outline {
     background: transparent;
-    color: var(--text-light);
-    border-color: var(--border);
+    color: var(--accent);
+    border-color: var(--accent);
 }
 
 .btn-outline:hover {
-    border-color: var(--link);
-    color: var(--link);
-    box-shadow: 0 0 20px rgba(224, 232, 240, 0.15);
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(0, 136, 255, 0.2);
 }
 
 /* --- Shared Project Styles (used on both homepage carousel and projects page) --- */
@@ -1242,14 +1243,14 @@ body {
 
 .writing-cta .btn-secondary {
     background: transparent;
-    color: var(--text-light);
-    border-color: var(--border);
+    color: var(--accent);
+    border-color: var(--accent);
 }
 
 .writing-cta .btn-secondary:hover {
-    background: rgba(224, 232, 240, 0.06);
-    border-color: var(--link);
-    color: var(--link);
+    background: var(--accent);
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 136, 255, 0.2);
 }
 
 /* --- Footer --- */
@@ -1632,12 +1633,13 @@ body {
     gap: 6px;
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--link);
+    color: var(--accent);
     text-decoration: none;
     transition: gap var(--transition);
 }
 
 .project-link:hover {
+    color: var(--accent-light);
     gap: 10px;
 }
 
