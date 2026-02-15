@@ -216,14 +216,6 @@ body {
     color: var(--accent);
 }
 
-.mobile-menu .btn-cta {
-    margin-top: 8px;
-    text-align: center;
-    justify-content: center;
-    text-decoration: none;
-    display: inline-flex;
-}
-
 /* --- Hero Section --- */
 .hero {
     padding: 140px 0 72px;
@@ -336,31 +328,6 @@ body {
 .btn-outline:hover {
     border-color: var(--accent);
     color: var(--accent);
-}
-
-/* --- CTA Button (Calendly / Book a Call) --- */
-.btn-cta {
-    background: var(--accent);
-    color: white;
-    border-color: var(--accent);
-    font-weight: 700;
-    letter-spacing: 0.01em;
-    padding: 10px 22px;
-    font-size: 0.85rem;
-    border-radius: 6px;
-    transition: all var(--transition);
-    white-space: nowrap;
-}
-
-.btn-cta:hover {
-    background: var(--accent-light);
-    border-color: var(--accent-light);
-    box-shadow: var(--shadow-md);
-    transform: translateY(-1px);
-}
-
-.nav-cta {
-    margin-left: 8px;
 }
 
 /* --- Company Strip --- */
