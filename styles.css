@@ -2,7 +2,7 @@
    jyothivenkat.com Redesign Prototype
    Visual Direction: Dark & Neon
    Font: Inter
-   Colors: Warm white on dark
+   Colors: Pure white on dark
    ============================================ */
 
 /* --- Reset & Base --- */
@@ -19,10 +19,10 @@
     --text: #e8e8f0;
     --text-light: #a8a8b8;
     --text-muted: #6a6a80;
-    --accent: #f0ece2;
-    --accent-light: #f5f2ea;
-    --accent-darker: #d4d0c6;
-    --accent-warm: #f0ece2;
+    --accent: #ffffff;
+    --accent-light: #ffffff;
+    --accent-darker: #d4d4d4;
+    --accent-warm: #ffffff;
     --border: #2a2a2a;
     --border-light: #1e1e1e;
     --radius: 8px;
@@ -30,8 +30,8 @@
     --shadow: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
     --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
     --shadow-lg: 0 10px 30px rgba(0,0,0,0.5);
-    --glow-accent: 0 0 20px rgba(240, 236, 226, 0.12);
-    --glow-cyan: 0 0 20px rgba(240, 236, 226, 0.12);
+    --glow-accent: 0 0 20px rgba(255, 255, 255, 0.1);
+    --glow-cyan: 0 0 20px rgba(255, 255, 255, 0.1);
     --transition: 0.2s ease;
 }
 
@@ -253,9 +253,9 @@ body {
 .hero {
     padding: 96px 0 32px;
     background:
-        radial-gradient(ellipse at 10% 80%, rgba(240, 236, 226, 0.06) 0%, transparent 50%),
-        radial-gradient(ellipse at 90% 20%, rgba(240, 236, 226, 0.04) 0%, transparent 50%),
-        radial-gradient(ellipse at 50% 50%, rgba(240, 236, 226, 0.02) 0%, transparent 60%),
+        radial-gradient(ellipse at 10% 80%, rgba(255, 255, 255, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 20%, rgba(255, 255, 255, 0.04) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 60%),
         var(--bg-white);
 }
 
@@ -365,7 +365,7 @@ body {
     object-fit: cover;
     object-position: center top;
     border-radius: var(--radius-lg);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(240, 236, 226, 0.08);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 255, 255, 0.08);
 }
 
 /* --- Buttons --- */
@@ -423,7 +423,7 @@ body {
 .project-badge {
     display: inline-flex;
     padding: 3px 10px;
-    background: rgba(240, 236, 226, 0.1);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 100px;
     font-size: 0.7rem;
     font-weight: 700;
@@ -694,7 +694,7 @@ body {
 
 .stat-card:hover {
     box-shadow: var(--shadow-md), var(--glow-accent);
-    border-color: rgba(240, 236, 226, 0.2);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .stat-number {
@@ -785,14 +785,14 @@ body {
 }
 
 .story-card:hover {
-    border-color: rgba(240, 236, 226, 0.2);
+    border-color: rgba(255, 255, 255, 0.2);
     box-shadow: var(--shadow), var(--glow-accent);
 }
 
 .story-card-icon {
     width: 40px;
     height: 40px;
-    background: rgba(240, 236, 226, 0.08);
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -860,7 +860,7 @@ body {
     width: 40px;
     height: 40px;
     min-width: 40px;
-    background: rgba(240, 236, 226, 0.08);
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -990,7 +990,7 @@ body {
 .tag:hover {
     border-color: var(--accent);
     color: var(--accent);
-    background: rgba(240, 236, 226, 0.06);
+    background: rgba(255, 255, 255, 0.06);
 }
 
 /* --- Expertise Clusters --- */
@@ -1179,7 +1179,7 @@ body {
 .timeline-impacts li {
     display: inline-flex;
     padding: 4px 14px;
-    background: rgba(240, 236, 226, 0.08);
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 100px;
     font-size: 0.82rem;
     font-weight: 500;
@@ -1197,7 +1197,7 @@ body {
 /* --- Writing CTA --- */
 .writing-cta {
     padding: 80px 0;
-    background: linear-gradient(135deg, #12110e, #100f0c);
+    background: linear-gradient(135deg, #101010, #0e0e0e);
     border-top: 2px solid var(--accent);
     color: var(--text);
     text-align: center;
@@ -1237,7 +1237,7 @@ body {
 }
 
 .writing-cta .btn-secondary:hover {
-    background: rgba(240, 236, 226, 0.06);
+    background: rgba(255, 255, 255, 0.06);
     border-color: var(--accent);
     color: var(--accent);
 }
@@ -1432,7 +1432,7 @@ body {
 .pick-card:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-md), var(--glow-accent);
-    border-color: rgba(240, 236, 226, 0.2);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .pick-badge {
@@ -1457,7 +1457,7 @@ body {
 }
 
 .pick-badge-ai {
-    background: #f0ece2;
+    background: #ffffff;
 }
 
 .pick-title {
