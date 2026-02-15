@@ -1,8 +1,8 @@
 /* ============================================
    jyothivenkat.com Redesign Prototype
-   Visual Direction: Dark & Bloomberg Gold
-   Font: Inter
-   Colors: Amber/Gold accent on dark
+   Visual Direction: Dark & Electric Blue
+   Fonts: DM Serif Display (headlines) + Inter (body)
+   Colors: Electric Blue accent on dark
    ============================================ */
 
 /* --- Reset & Base --- */
@@ -19,12 +19,12 @@
     --text: #e8e8f0;
     --text-light: #a8a8b8;
     --text-muted: #6a6a80;
-    --accent: #FFA028;
-    --accent-light: #FFB040;
-    --accent-darker: #E08A00;
-    --accent-warm: #FFA028;
-    --link: #7B68EE;
-    --link-light: #9B8AFE;
+    --accent: #0088FF;
+    --accent-light: #33A0FF;
+    --accent-darker: #0066CC;
+    --accent-warm: #0088FF;
+    --link: #E0E8F0;
+    --link-light: #FFFFFF;
     --border: #2a2a2a;
     --border-light: #1e1e1e;
     --radius: 8px;
@@ -32,8 +32,8 @@
     --shadow: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
     --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
     --shadow-lg: 0 10px 30px rgba(0,0,0,0.5);
-    --glow-accent: 0 0 20px rgba(255, 160, 40, 0.15);
-    --glow-cyan: 0 0 20px rgba(255, 160, 40, 0.15);
+    --glow-accent: 0 0 20px rgba(0, 136, 255, 0.15);
+    --glow-cyan: 0 0 20px rgba(0, 229, 255, 0.15);
     --transition: 0.2s ease;
 }
 
@@ -79,11 +79,12 @@ body {
 }
 
 .nav-logo {
+    font-family: 'DM Serif Display', serif;
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 400;
     color: var(--text);
     text-decoration: none;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
 }
 
 .nav-links {
@@ -255,9 +256,9 @@ body {
 .hero {
     padding: 96px 0 32px;
     background:
-        radial-gradient(ellipse at 10% 80%, rgba(255, 160, 40, 0.06) 0%, transparent 50%),
-        radial-gradient(ellipse at 90% 20%, rgba(255, 160, 40, 0.04) 0%, transparent 50%),
-        radial-gradient(ellipse at 50% 50%, rgba(255, 160, 40, 0.02) 0%, transparent 60%),
+        radial-gradient(ellipse at 10% 80%, rgba(0, 136, 255, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 20%, rgba(0, 136, 255, 0.04) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(0, 136, 255, 0.02) 0%, transparent 60%),
         var(--bg-white);
 }
 
@@ -269,9 +270,10 @@ body {
 }
 
 .hero-name {
-    font-size: 2.2rem;
-    font-weight: 800;
-    letter-spacing: -0.03em;
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
     line-height: 1.1;
     color: var(--text);
     margin-bottom: 10px;
@@ -367,7 +369,7 @@ body {
     object-fit: cover;
     object-position: center top;
     border-radius: var(--radius-lg);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 160, 40, 0.08);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 136, 255, 0.08);
 }
 
 /* --- Buttons --- */
@@ -387,7 +389,7 @@ body {
 
 .btn-primary {
     background: var(--accent);
-    color: #0a0a0a;
+    color: #ffffff;
     border-color: var(--accent);
 }
 
@@ -406,7 +408,7 @@ body {
 .btn-secondary:hover {
     background: var(--link);
     color: #ffffff;
-    box-shadow: 0 0 20px rgba(123, 104, 238, 0.15);
+    box-shadow: 0 0 20px rgba(224, 232, 240, 0.15);
 }
 
 .btn-outline {
@@ -418,14 +420,14 @@ body {
 .btn-outline:hover {
     border-color: var(--link);
     color: var(--link);
-    box-shadow: 0 0 20px rgba(123, 104, 238, 0.15);
+    box-shadow: 0 0 20px rgba(224, 232, 240, 0.15);
 }
 
 /* --- Shared Project Styles (used on both homepage carousel and projects page) --- */
 .project-badge {
     display: inline-flex;
     padding: 3px 10px;
-    background: rgba(255, 160, 40, 0.1);
+    background: rgba(0, 136, 255, 0.1);
     border-radius: 100px;
     font-size: 0.7rem;
     font-weight: 700;
@@ -523,9 +525,10 @@ body {
 }
 
 .carousel-title {
+    font-family: 'DM Serif Display', serif;
     font-size: 1.4rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
+    font-weight: 400;
+    letter-spacing: -0.01em;
     color: var(--text);
     margin: 12px 0 8px;
 }
@@ -672,9 +675,10 @@ body {
 }
 
 .section-title {
+    font-family: 'DM Serif Display', serif;
     font-size: 1.6rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
+    font-weight: 400;
+    letter-spacing: -0.01em;
     color: var(--text);
     margin-bottom: 40px;
 }
@@ -696,7 +700,7 @@ body {
 
 .stat-card:hover {
     box-shadow: var(--shadow-md), var(--glow-accent);
-    border-color: rgba(255, 160, 40, 0.2);
+    border-color: rgba(0, 136, 255, 0.2);
 }
 
 .stat-number {
@@ -787,14 +791,14 @@ body {
 }
 
 .story-card:hover {
-    border-color: rgba(255, 160, 40, 0.2);
+    border-color: rgba(0, 136, 255, 0.2);
     box-shadow: var(--shadow), var(--glow-accent);
 }
 
 .story-card-icon {
     width: 40px;
     height: 40px;
-    background: rgba(255, 160, 40, 0.08);
+    background: rgba(0, 136, 255, 0.08);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -804,8 +808,9 @@ body {
 }
 
 .story-card-title {
+    font-family: 'DM Serif Display', serif;
     font-size: 1.1rem;
-    font-weight: 700;
+    font-weight: 400;
     color: var(--accent);
     margin-bottom: 12px;
 }
@@ -862,7 +867,7 @@ body {
     width: 40px;
     height: 40px;
     min-width: 40px;
-    background: rgba(255, 160, 40, 0.08);
+    background: rgba(0, 136, 255, 0.08);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -945,8 +950,9 @@ body {
 }
 
 .philosophy-word {
+    font-family: 'DM Serif Display', serif;
     font-size: 1.25rem;
-    font-weight: 700;
+    font-weight: 400;
     color: var(--accent);
     margin-bottom: 12px;
 }
@@ -992,7 +998,7 @@ body {
 .tag:hover {
     border-color: var(--link);
     color: var(--link);
-    background: rgba(123, 104, 238, 0.06);
+    background: rgba(224, 232, 240, 0.06);
 }
 
 /* --- Expertise Clusters --- */
@@ -1007,11 +1013,12 @@ body {
 }
 
 .expertise-cluster-title {
+    font-family: 'DM Serif Display', serif;
     font-size: 0.95rem;
-    font-weight: 700;
+    font-weight: 400;
     color: var(--accent);
     margin-bottom: 6px;
-    letter-spacing: -0.01em;
+    letter-spacing: 0;
 }
 
 .expertise-cluster-desc {
@@ -1140,10 +1147,11 @@ body {
 }
 
 .timeline-company {
+    font-family: 'DM Serif Display', serif;
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: 400;
     color: var(--text);
-    letter-spacing: -0.01em;
+    letter-spacing: 0;
 }
 
 .timeline-role {
@@ -1181,7 +1189,7 @@ body {
 .timeline-impacts li {
     display: inline-flex;
     padding: 4px 14px;
-    background: rgba(255, 160, 40, 0.08);
+    background: rgba(0, 136, 255, 0.08);
     border-radius: 100px;
     font-size: 0.82rem;
     font-weight: 500;
@@ -1199,7 +1207,7 @@ body {
 /* --- Writing CTA --- */
 .writing-cta {
     padding: 80px 0;
-    background: linear-gradient(135deg, #141008, #100e08);
+    background: linear-gradient(135deg, #081420, #060e18);
     border-top: 2px solid var(--accent);
     color: var(--text);
     text-align: center;
@@ -1223,7 +1231,7 @@ body {
 
 .writing-cta .btn-primary {
     background: var(--accent);
-    color: #0a0a0a;
+    color: #ffffff;
     border-color: var(--accent);
 }
 
@@ -1239,7 +1247,7 @@ body {
 }
 
 .writing-cta .btn-secondary:hover {
-    background: rgba(123, 104, 238, 0.06);
+    background: rgba(224, 232, 240, 0.06);
     border-color: var(--link);
     color: var(--link);
 }
@@ -1264,8 +1272,9 @@ body {
 }
 
 .footer-logo {
+    font-family: 'DM Serif Display', serif;
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: 400;
     color: var(--accent);
 }
 
@@ -1301,9 +1310,10 @@ body {
 }
 
 .page-header h1 {
+    font-family: 'DM Serif Display', serif;
     font-size: 2.4rem;
-    font-weight: 800;
-    letter-spacing: -0.03em;
+    font-weight: 400;
+    letter-spacing: -0.02em;
     color: var(--text);
     margin-bottom: 12px;
 }
@@ -1331,8 +1341,9 @@ body {
 }
 
 .articles-column-title {
+    font-family: 'DM Serif Display', serif;
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 400;
     color: var(--accent);
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -1433,8 +1444,8 @@ body {
 
 .pick-card:hover {
     transform: translateY(-3px);
-    box-shadow: var(--shadow-md), 0 0 20px rgba(123, 104, 238, 0.15);
-    border-color: rgba(123, 104, 238, 0.2);
+    box-shadow: var(--shadow-md), 0 0 20px rgba(224, 232, 240, 0.15);
+    border-color: rgba(224, 232, 240, 0.2);
 }
 
 .pick-badge {
@@ -1455,16 +1466,17 @@ body {
 }
 
 .pick-badge-research {
-    background: #8b6cba;
+    background: #00E5FF;
 }
 
 .pick-badge-ai {
-    background: #FFA028;
+    background: #0088FF;
 }
 
 .pick-title {
+    font-family: 'DM Serif Display', serif;
     font-size: 1.1rem;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 1.35;
     color: var(--text);
     margin-bottom: 10px;
@@ -1547,9 +1559,10 @@ body {
 }
 
 .project-title {
+    font-family: 'DM Serif Display', serif;
     font-size: 1.3rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
+    font-weight: 400;
+    letter-spacing: -0.01em;
     color: var(--text);
     margin-bottom: 4px;
 }
