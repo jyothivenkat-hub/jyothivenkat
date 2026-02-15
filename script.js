@@ -228,12 +228,9 @@ async function loadSubstackArticles() {
 
     } catch (error) {
         console.error('RSS feed error:', error);
-        container.innerHTML = `
-            <div class="articles-error">
-                <p>Unable to load articles right now.</p>
-                <a href="https://jyothiwrites.substack.com" target="_blank" class="btn btn-primary">Read on Substack</a>
-            </div>
-        `;
+        // Keep the static fallback HTML that's already in the page
+        // Just animate the existing columns
+        animateOnScroll(container.querySelectorAll('.articles-column'));
     }
 }
 

@@ -16,8 +16,8 @@
     --bg: #FAFAFA;
     --bg-white: #FFFFFF;
     --text: #1A1A1A;
-    --text-light: #5A5A5A;
-    --text-muted: #8A8A8A;
+    --text-light: #4A4A4A;
+    --text-muted: #6B6B6B;
     --accent: #1B365D;
     --accent-light: #2A4F7F;
     --accent-warm: #D4A574;
@@ -1080,6 +1080,40 @@ body {
    Responsive
    ============================================ */
 
+/* --- Tablet --- */
+@media (max-width: 1024px) {
+    .hero-grid {
+        grid-template-columns: 1fr 280px;
+        gap: 40px;
+    }
+
+    .headshot-placeholder,
+    .headshot-img {
+        width: 280px;
+        height: 340px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+
+    .story-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .articles-columns {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+
+    .philosophy-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+/* --- Mobile --- */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
