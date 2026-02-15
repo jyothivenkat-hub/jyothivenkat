@@ -1314,67 +1314,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* --- Featured Article (Magazine Hero) --- */
-.articles-featured {
-    padding: 0 0 48px;
-    background: var(--bg);
-}
-
-.featured-article {
-    display: block;
-    padding: 48px;
-    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
-    border-radius: var(--radius-lg);
-    text-decoration: none;
-    color: white;
-    transition: transform var(--transition), box-shadow var(--transition);
-}
-
-.featured-article:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-lg);
-}
-
-.featured-badge {
-    display: inline-block;
-    font-size: 0.72rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 5px 12px;
-    background: rgba(255, 255, 255, 0.18);
-    border-radius: 20px;
-    margin-bottom: 20px;
-}
-
-.featured-title {
-    font-size: 2rem;
-    font-weight: 800;
-    line-height: 1.25;
-    margin-bottom: 16px;
-    letter-spacing: -0.02em;
-}
-
-.featured-excerpt {
-    font-size: 1rem;
-    line-height: 1.6;
-    opacity: 0.85;
-    max-width: 600px;
-    margin-bottom: 24px;
-}
-
-.featured-cta {
-    font-size: 0.88rem;
-    font-weight: 600;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-    padding-bottom: 2px;
-    transition: border-color var(--transition);
-}
-
-.featured-article:hover .featured-cta {
-    border-color: white;
-}
-
 /* --- Editor's Picks (3-Card Grid) --- */
 .articles-picks {
     padding: 0 0 64px;
@@ -1804,18 +1743,6 @@ body {
     .articles-columns {
         grid-template-columns: 1fr;
         gap: 40px;
-    }
-
-    .featured-article {
-        padding: 32px 24px;
-    }
-
-    .featured-title {
-        font-size: 1.5rem;
-    }
-
-    .featured-excerpt {
-        font-size: 0.9rem;
     }
 
     .picks-grid {
