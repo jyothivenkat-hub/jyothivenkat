@@ -101,7 +101,7 @@ function animateOnScroll(elements) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.stat-card, .article-card, .project-card, .timeline-item, .expertise-cluster, .tl-article-card, .narrative-block');
+    const animateElements = document.querySelectorAll('.stat-card, .article-card, .project-card, .timeline-item, .expertise-cluster, .tl-article-card, .narrative-block, .journey-chapter, .expertise-visual-card, .value-item');
     animateOnScroll(animateElements);
 });
 
