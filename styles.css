@@ -302,9 +302,10 @@ body {
 }
 
 .hero-links {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 6px 24px;
+    width: fit-content;
 }
 
 .hero-link {
