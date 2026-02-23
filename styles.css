@@ -468,6 +468,11 @@ body {
     color: #a7f3d0;
 }
 
+.thumb-airesearch {
+    background: linear-gradient(135deg, #1a1040 0%, #2d1b69 50%, #4c2d91 100%);
+    color: #d8b4fe;
+}
+
 .thumb-portfolio {
     background: linear-gradient(135deg, #1B365D 0%, #2A4F7F 50%, #3b6cb5 100%);
     color: #bfdbfe;
