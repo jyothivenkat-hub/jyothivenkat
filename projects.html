@@ -3,563 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View My Work — Jyothi Venkat</title>
-    <meta name="description" content="AI projects, agents, and experiments by Jyothi Venkat. From insight to shipped product — games, automation agents, and developer tools.">
+    <title>Selected Work — Jyothi Venkat</title>
+    <meta name="description" content="A portfolio of products, apps, and architectural frameworks by Jyothi Venkat that turn human insight into functional intelligence.">
     <link rel="canonical" href="https://jyothivenkat.com/projects.html">
-    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jyothivenkat.com/projects.html">
-    <meta property="og:title" content="View My Work — Jyothi Venkat">
-    <meta property="og:description" content="AI products, agents, and experiments. From insight to shipped product.">
-    <meta property="og:image" content="https://jyothivenkat.com/headshot.jpg">
-    <!-- Twitter Card -->
+    <meta property="og:title" content="Selected Work — Jyothi Venkat">
+    <meta property="og:description" content="Products, apps, and architectural frameworks that turn human insight into functional intelligence.">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="View My Work — Jyothi Venkat">
-    <meta name="twitter:description" content="AI products, agents, and experiments. From insight to shipped product.">
-    <meta name="twitter:image" content="https://jyothivenkat.com/headshot.jpg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="twitter:title" content="Selected Work — Jyothi Venkat">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">JV</a>
+            <a href="index.html" class="nav-logo">Jyothi Venkat</a>
             <div class="nav-links">
-                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html" class="nav-link">Story</a>
                 <a href="projects.html" class="nav-link active">Work</a>
-                <a href="writing.html" class="nav-link">Articles</a>
-                <a href="about.html" class="nav-link">My Story</a>
-                <a href="connect.html" class="nav-link">Connect</a>
+                <a href="writing.html" class="nav-link">Writing</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
-            <button class="nav-mobile-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu" aria-controls="mobile-menu">
+                <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu">
-        <a href="index.html" class="mobile-link">Home</a>
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html" class="mobile-link">Story</a>
         <a href="projects.html" class="mobile-link active">Work</a>
-        <a href="writing.html" class="mobile-link">Articles</a>
-        <a href="about.html" class="mobile-link">My Story</a>
-        <a href="connect.html" class="mobile-link">Connect</a>
+        <a href="writing.html" class="mobile-link">Writing</a>
+        <a href="#contact" class="mobile-link">Contact</a>
     </div>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>View My Work</h1>
-            <p>AI products, agents, and experiments. I believe researchers should evolve from documentarians to makers, shipping prototypes, automating workflows, and turning insights into products.</p>
-            <div class="scroll-indicator">
-                <span>Scroll</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    <main id="main-content" style="padding-top: 8rem;">
+
+        <!-- Hero -->
+        <section class="container-full section-spacing">
+            <div style="max-width: 56rem;">
+                <h1 class="editorial-title" style="margin-bottom: 3rem;">Selected <br>Work.</h1>
+                <p class="editorial-body">A portfolio of products, apps, and architectural frameworks that turn human insight into functional intelligence.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects by Category — 3 Column Layout -->
-    <section class="projects-section">
-        <div class="container">
-            <div class="projects-columns">
-
-                <!-- Column: Products & Apps -->
-                <div class="projects-column">
-                    <h2 class="projects-column-title">Products & Apps</h2>
-                    <div class="projects-list">
-
-                        <div class="project-card">
-                            <div class="project-thumbnail thumb-starcatch">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                                <span class="thumb-label">Starcatch</span>
-                            </div>
-                            <div class="project-card-header">
-                                <div class="project-badge">0 &rarr; 1</div>
-                                <span class="project-status status-live">Live</span>
-                            </div>
-                            <h3 class="project-title">Starcatch Game</h3>
-                            <p class="project-desc">Built a catching stars game from scratch using AI — proving researchers can ship end-to-end products in hours, not months.</p>
-                            <div class="project-stack">
-                                <span class="stack-tag">AI/ML</span>
-                                <span class="stack-tag">Game Design</span>
-                            </div>
-                            <div class="project-actions">
-                                <a href="https://starcatch-game.vercel.app" target="_blank" class="project-link">Try It <span class="project-link-arrow">&rarr;</span></a>
-                                <a href="https://github.com/jyothivenkat-hub/Starcatch_Game" target="_blank" class="project-link project-link-secondary">GitHub <span class="project-link-arrow">&rarr;</span></a>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div class="project-thumbnail thumb-astro">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-                                <span class="thumb-label">MissAstroGlow</span>
-                            </div>
-                            <div class="project-card-header">
-                                <div class="project-badge">App</div>
-                                <span class="project-status status-live">Live</span>
-                            </div>
-                            <h3 class="project-title">MissAstroGlow</h3>
-                            <p class="project-desc">Vedic Astrology and Tarot Reading web app with AI chatbot — exploring conversational UX in consumer products.</p>
-                            <div class="project-stack">
-                                <span class="stack-tag">AI Chatbot</span>
-                                <span class="stack-tag">Conversational UI</span>
-                            </div>
-                            <div class="project-actions">
-                                <a href="https://missastroglow.com" target="_blank" class="project-link">Visit Site <span class="project-link-arrow">&rarr;</span></a>
-                                <a href="https://github.com/jyothivenkat-hub/missastroglow-app" target="_blank" class="project-link project-link-secondary">GitHub <span class="project-link-arrow">&rarr;</span></a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Column: Agents & Automation -->
-                <div class="projects-column">
-                    <h2 class="projects-column-title">Agents & Automation</h2>
-                    <div class="projects-list">
-
-                        <div class="project-card">
-                            <div class="project-thumbnail thumb-agent">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                                <span class="thumb-label">AI News Agent</span>
-                            </div>
-                            <div class="project-card-header">
-                                <div class="project-badge">Agent</div>
-                                <span class="project-status status-live">Live</span>
-                            </div>
-                            <h3 class="project-title">AI News Agent</h3>
-                            <p class="project-desc">Replaced 1+ hour of daily manual research with an automated digest. Same blueprint works for competitive intel, hiring signals, and market monitoring.</p>
-                            <div class="project-stack">
-                                <span class="stack-tag">Python</span>
-                                <span class="stack-tag">Claude API</span>
-                                <span class="stack-tag">Automation</span>
-                            </div>
-                            <div class="project-actions">
-                                <a href="https://jyothiwrites.substack.com/p/build-an-ai-news-agent-in-3-steps" target="_blank" class="project-link">Build Log <span class="project-link-arrow">&rarr;</span></a>
-                                <a href="https://github.com/jyothivenkat-hub/ai-news-agent" target="_blank" class="project-link project-link-secondary">GitHub <span class="project-link-arrow">&rarr;</span></a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Column: Developer Tools & Web -->
-                <div class="projects-column">
-                    <h2 class="projects-column-title">Developer Tools & Web</h2>
-                    <div class="projects-list">
-
-                        <div class="project-card">
-                            <div class="project-thumbnail thumb-airesearch">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
-                                <span class="thumb-label">AI Research</span>
-                            </div>
-                            <div class="project-card-header">
-                                <div class="project-badge">Tool</div>
-                                <span class="project-status status-live">Live</span>
-                            </div>
-                            <h3 class="project-title">The AI-Native Research Architecture</h3>
-                            <p class="project-desc">A first-principles architecture for AI-native research teams. Built on one rule — humans own meaning, AI handles volume. Move from random acts of AI to a scalable system with model selection, depth checks, and evaluation loops that improve with every cycle.</p>
-                            <div class="project-stack">
-                                <span class="stack-tag">AI/ML</span>
-                                <span class="stack-tag">UX Research</span>
-                                <span class="stack-tag">Vercel</span>
-                            </div>
-                            <div class="project-actions">
-                                <a href="https://jv-airesearch.vercel.app/" target="_blank" class="project-link">Try It <span class="project-link-arrow">&rarr;</span></a>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div class="project-thumbnail thumb-portfolio">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                                <span class="thumb-label">jyothivenkat.com</span>
-                            </div>
-                            <div class="project-card-header">
-                                <div class="project-badge">Web</div>
-                                <span class="project-status status-live">Live</span>
-                            </div>
-                            <h3 class="project-title">jyothivenkat.com</h3>
-                            <p class="project-desc">This portfolio — designed and built with AI assistance in days, not weeks. Auto-deploys from GitHub via Vercel.</p>
-                            <div class="project-stack">
-                                <span class="stack-tag">Web Design</span>
-                                <span class="stack-tag">Vercel</span>
-                                <span class="stack-tag">AI-Assisted</span>
-                            </div>
-                            <div class="project-actions">
-                                <a href="https://jyothivenkat.vercel.app" target="_blank" class="project-link">View Site <span class="project-link-arrow">&rarr;</span></a>
-                                <a href="https://github.com/jyothivenkat-hub/jyothivenkat" target="_blank" class="project-link project-link-secondary">GitHub <span class="project-link-arrow">&rarr;</span></a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
+        <!-- Category Filters + Project Grid -->
+        <section class="container-full" style="padding-bottom: 8rem;">
+            <div id="work-filters" style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 6rem;">
+                <!-- Populated by JS -->
             </div>
-        </div>
-    </section>
-
-    <!-- Case Studies CTA -->
-    <section class="casestudies-cta">
-        <div class="container">
-            <div class="casestudies-cta-inner">
-                <div class="casestudies-cta-icon">
-                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                </div>
-                <div>
-                    <h3>Professional Case Studies</h3>
-                    <p>Detailed research case studies from OKX, Twitter, Stash, and more are available by request. These include methodologies, findings, and business impact.</p>
-                </div>
-                <a href="case-studies.html" class="btn btn-secondary">Request Access &rarr;</a>
+            <div id="work-grid" class="work-grid">
+                <!-- Populated by JS -->
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Thesis Callout -->
+        <section class="container-full section-spacing">
+            <div class="editorial-card" style="padding: 4rem;">
+                <div class="editorial-gradient"></div>
+                <div class="thesis-cta-layout" style="position: relative; z-index: 1;">
+                    <div style="max-width: 40rem;">
+                        <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 2rem; line-height: 1.15;">The Researcher-Maker <br>Thesis</h2>
+                        <p class="editorial-body" style="font-style: italic;">"The future belongs to those who can both see the pattern and build the loom. We are moving past the era of 'reporting' into the era of 'prototyping' insights."</p>
+                    </div>
+                    <a href="https://jyothiwrites.substack.com/p/the-researcher-maker-build-0-1-products" target="_blank" rel="noopener" class="btn-editorial">
+                        Read the Full Thesis
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-left">
-                    <span class="footer-logo">JV</span>
-                    <p class="footer-copy">&copy; 2026 Jyothi Venkat. All rights reserved.</p>
+        <div class="container-full">
+            <div class="footer-grid">
+                <div>
+                    <h2>Let's connect.</h2>
+                    <p class="bio">I work across AI, product, and research leadership. Open to roles, strategic engagements, advisory, and interesting conversations.</p>
                 </div>
-                <div class="footer-links">
-                    <a href="https://www.linkedin.com/in/jyothivenkat/" target="_blank">LinkedIn</a>
-                    <a href="https://jyothiwrites.substack.com" target="_blank">Substack</a>
-                    <a href="https://medium.com/@JyothiVenkat23" target="_blank">Medium</a>
-                    <a href="https://github.com/jyothivenkat-hub" target="_blank">GitHub</a>
+                <div class="footer-right">
+                    <div id="contact" class="footer-contact">
+                        <div class="mono-label">Let's connect</div>
+                        <div class="footer-social" style="margin-top: 1.5rem;">
+                            <a href="https://www.linkedin.com/in/jyothivenkat/" class="mono-link" target="_blank" rel="noopener">LinkedIn</a>
+                            <a href="https://x.com/jyothiwrites" class="mono-link" target="_blank" rel="noopener">X</a>
+                            <a href="https://jyothiwrites.substack.com" class="mono-link" target="_blank" rel="noopener">Substack</a>
+                            <a href="https://jyothiwrites.medium.com" class="mono-link" target="_blank" rel="noopener">Medium</a>
+                            <a href="https://github.com/jyothivenkat" class="mono-link" target="_blank" rel="noopener">GitHub</a>
+                        </div>
+                    </div>
+                    <p class="footer-copyright">&copy; 2026 Jyothi Venkat. All rights reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
-
-    <style>
-        /* --- Work Philosophy Bar --- */
-        .work-philosophy {
-            padding: 0;
-            background: var(--bg);
-        }
-
-        .philosophy-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 32px;
-            background: rgba(0, 136, 255, 0.03);
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-lg);
-            padding: 24px 32px;
-            margin-bottom: 48px;
-        }
-
-        .philosophy-label {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--accent);
-            display: block;
-            margin-bottom: 2px;
-        }
-
-        .philosophy-text p {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin: 0;
-            line-height: 1.5;
-        }
-
-        .philosophy-chips {
-            display: flex;
-            gap: 10px;
-            flex-shrink: 0;
-        }
-
-        .philosophy-chip {
-            display: inline-flex;
-            align-items: center;
-            padding: 6px 16px;
-            background: var(--accent);
-            color: #0a0a0a;
-            font-size: 0.78rem;
-            font-weight: 600;
-            border-radius: 100px;
-            letter-spacing: -0.01em;
-        }
-
-        @media (max-width: 768px) {
-            .philosophy-inner {
-                flex-direction: column;
-                text-align: center;
-                gap: 16px;
-                padding: 20px 24px;
-            }
-
-            .philosophy-chips {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-        }
-
-        /* --- 3-Column Projects Layout --- */
-        .projects-columns {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-            align-items: start;
-        }
-
-        .projects-column {
-            min-width: 0;
-        }
-
-        .projects-column-title {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--link);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            padding-bottom: 14px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--accent);
-        }
-
-        .projects-list {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        /* --- Project Thumbnails --- */
-        .project-thumbnail {
-            width: 100%;
-            height: 120px;
-            border-radius: var(--radius) var(--radius) 0 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin: -24px -24px 16px -24px;
-            width: calc(100% + 48px);
-        }
-
-        .project-thumbnail svg {
-            width: 36px;
-            height: 36px;
-            opacity: 0.7;
-        }
-
-        .thumb-label {
-            font-size: 0.7rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            opacity: 0.6;
-        }
-
-        /* Thumbnail gradients now in shared styles.css */
-
-        /* --- Project Cards (compact) --- */
-        .project-card {
-            background: var(--bg-white);
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-lg);
-            padding: 24px;
-            transition: all var(--transition);
-            margin-bottom: 0;
-        }
-
-        .project-card:hover {
-            box-shadow: var(--shadow-md);
-            border-color: var(--border);
-        }
-
-        .project-card-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 12px;
-        }
-
-        /* .project-badge now in shared styles.css */
-
-        .project-status {
-            font-size: 0.7rem;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .project-status::before {
-            content: '';
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-        }
-
-        .status-live {
-            color: #16a34a;
-        }
-
-        .status-live::before {
-            background: #16a34a;
-        }
-
-        .status-building {
-            color: var(--accent-warm);
-        }
-
-        .status-building::before {
-            background: var(--accent-warm);
-        }
-
-        .project-title {
-            font-size: 1.05rem;
-            margin-bottom: 6px;
-        }
-
-        .project-desc {
-            font-size: 0.88rem;
-            line-height: 1.6;
-            margin-bottom: 14px;
-        }
-
-        .project-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 5px;
-            margin-bottom: 16px;
-        }
-
-        /* .stack-tag now in shared styles.css */
-
-        .project-actions {
-            display: flex;
-            gap: 16px;
-        }
-
-        .project-link-secondary {
-            color: var(--text-muted) !important;
-        }
-
-        .project-link-secondary:hover {
-            color: #ffffff !important;
-        }
-
-        .dropdown-active {
-            color: var(--link) !important;
-            font-weight: 600;
-        }
-
-        /* --- GitHub CTA --- */
-        .github-cta {
-            padding: 60px 0;
-            background: var(--bg);
-        }
-
-        .github-cta-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: var(--bg-white);
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-lg);
-            padding: 36px 40px;
-        }
-
-        .github-cta-content .section-title {
-            margin-bottom: 4px;
-        }
-
-        .github-cta-content p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-
-        /* --- Case Studies CTA --- */
-        .casestudies-cta {
-            padding: 0 0 80px;
-            background: var(--bg);
-        }
-
-        .casestudies-cta-inner {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-            background: var(--bg-white);
-            border: 1px solid var(--border);
-            border-left: 4px solid var(--accent);
-            border-radius: var(--radius-lg);
-            padding: 32px 36px;
-        }
-
-        .casestudies-cta-icon {
-            flex-shrink: 0;
-            width: 48px;
-            height: 48px;
-            background: rgba(0, 136, 255, 0.08);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent);
-        }
-
-        .casestudies-cta-inner h3 {
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 4px;
-        }
-
-        .casestudies-cta-inner p {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            line-height: 1.5;
-        }
-
-        .casestudies-cta-inner .btn {
-            flex-shrink: 0;
-            margin-left: auto;
-        }
-
-        @media (max-width: 768px) {
-            .projects-columns {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .github-cta-content {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-                padding: 28px 24px;
-            }
-
-            .casestudies-cta-inner {
-                flex-direction: column;
-                text-align: center;
-                gap: 16px;
-                padding: 28px 24px;
-            }
-
-            .casestudies-cta-inner .btn {
-                margin-left: 0;
-            }
-
-            .project-actions {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-    </style>
 </body>
 </html>

@@ -1,392 +1,329 @@
 // ============================================
-// Editor's Picks — Update this array to change featured articles
-// Badge options: "leadership", "research", "ai"
+// jyothivenkat.com — Script
 // ============================================
-const editorPicks = [
+
+// --- Data ---
+
+const projects = [
+    {
+        title: 'AI-Native Research Architecture',
+        category: 'Infrastructure',
+        description: 'A first-principles architecture for AI-native research teams that turns human meaning into scalable systems.',
+        featured: true,
+        url: 'https://jv-airesearch.vercel.app/',
+        image: 'https://picsum.photos/seed/ai-arch/1200/800',
+    },
+    {
+        title: 'The Researcher-Maker Thesis',
+        category: 'Thought Leadership',
+        description: 'A new paradigm where researchers don\'t just report — they build the solutions they discover.',
+        featured: false,
+        url: 'https://jyothiwrites.substack.com/p/the-researcher-maker-build-0-1-products',
+        image: 'https://picsum.photos/seed/thesis/800/600',
+    },
+    {
+        title: 'AI News Agent',
+        category: 'Agents',
+        description: 'A build log of an autonomous agent that synthesizes global news into strategic briefs.',
+        featured: false,
+        url: 'https://jyothiwrites.substack.com/p/build-an-ai-news-agent-in-3-steps',
+        image: 'https://picsum.photos/seed/agent/800/600',
+    },
+    {
+        title: 'IdeaForge',
+        category: 'Product',
+        description: 'From insights to ideas: A proprietary system for validated product innovation. Inspired by Andrej Karpathy\'s work.',
+        featured: false,
+        url: 'https://llm-knowledge-base-nine.vercel.app/',
+        image: 'https://picsum.photos/seed/forge/800/600',
+    },
+    {
+        title: 'Missastroglow',
+        category: 'Apps',
+        description: 'AI Astro App. Still in the works.',
+        featured: false,
+        url: '',
+        image: 'https://picsum.photos/seed/astro/800/600',
+    },
+    {
+        title: 'Nature Walk App',
+        category: 'Apps',
+        description: 'A UX study in presence and environmental awareness.',
+        featured: false,
+        url: 'https://maps-3-d-exploration.vercel.app/',
+        image: 'https://picsum.photos/seed/nature/800/600',
+    },
+    {
+        title: 'Starcatch Game',
+        category: 'Games',
+        description: 'A fast prototype that turns AI-assisted development into a playable 0 to 1 game experience.',
+        featured: false,
+        url: 'https://starcatch-game.vercel.app/',
+        image: 'https://picsum.photos/seed/starcatch/800/600',
+    },
+];
+
+const articles = [
     {
         title: "The CEO's Office: 8 Ruthless Lessons on High Stakes Leadership",
-        excerpt: "What I learned operating from the CEO office at a global crypto exchange — and why most leaders never get this close to the fire.",
+        date: "2026-03-15",
+        description: "What I learned operating from the CEO office at a global crypto exchange — and why most leaders never get this close to the fire.",
         url: "https://jyothiwrites.substack.com/p/the-ceos-office-8-ruthless-lessons",
-        badge: "leadership",
-        source: "Substack"
+        category: "Leadership & The CEO Office",
+        thumbnail: "https://picsum.photos/seed/ceo-office/800/600",
+    },
+    {
+        title: "The Researcher-Maker: Build 0→1 Products with AI",
+        date: "2026-03-10",
+        description: "Why the next generation of researchers must learn to ship code, not just decks.",
+        url: "https://jyothiwrites.substack.com/p/the-researcher-maker-build-0-1-products",
+        category: "AI & The Researcher-Maker",
+        thumbnail: "https://picsum.photos/seed/maker/800/600",
     },
     {
         title: "Build an AI News Agent in 3 Steps",
-        excerpt: "Automating morning research for $0 with Python and Claude. The same blueprint works for competitive intel and market monitoring.",
+        date: "2026-02-28",
+        description: "Automating morning research for $0 with Python and Claude. A technical build log.",
         url: "https://jyothiwrites.substack.com/p/build-an-ai-news-agent-in-3-steps",
-        badge: "ai",
-        source: "Substack"
+        category: "AI & The Researcher-Maker",
+        thumbnail: "https://picsum.photos/seed/news-agent/800/600",
     },
     {
         title: "Why Most UX Research Fails to Influence the C-Suite",
-        excerpt: "What executives actually want from research teams — and what keeps most researchers from delivering it.",
+        date: "2026-02-15",
+        description: "What executives actually want from research teams — and what keeps most researchers from delivering it.",
         url: "https://medium.com/@JyothiVenkat23/why-most-ux-research-fails-to-influence-the-c-suite-89294926fa34",
-        badge: "research",
-        source: "Medium"
-    }
+        category: "Leadership & The CEO Office",
+        thumbnail: "https://picsum.photos/seed/csuite/800/600",
+    },
+    {
+        title: "Why 'Research Slop' is a Distraction",
+        date: "2026-02-01",
+        description: "Stop policing AI output. Start delivering functional artifacts that drive decisions.",
+        url: "https://jyothiwrites.substack.com/p/why-research-slop-is-a-distraction",
+        category: "Research & Product Strategy",
+        thumbnail: "https://picsum.photos/seed/slop/800/600",
+    },
+    {
+        title: "Is Claude Cowork a 10x Multiplier or Just Expensive?",
+        date: "2026-01-20",
+        description: "Stress-testing AI productivity tools for real ROI in research workflows.",
+        url: "https://jyothiwrites.substack.com/p/is-claude-cowork-a-10x-multiplier",
+        category: "AI & The Researcher-Maker",
+        thumbnail: "https://picsum.photos/seed/claude-cowork/800/600",
+    },
+    {
+        title: "Framework: How to Choose a UX Research Methodology",
+        date: "2026-01-05",
+        description: "A decision framework for qual, quant, and mixed-methods research.",
+        url: "https://medium.com/@JyothiVenkat23/framework-how-to-choose-a-ux-research-methodology-b42f7194e94a",
+        category: "Research & Product Strategy",
+        thumbnail: "https://picsum.photos/seed/framework/800/600",
+    },
 ];
 
-const badgeLabels = { leadership: "Leadership", research: "Research", ai: "AI" };
+const editorPicks = articles.slice(0, 3);
 
-function renderEditorPicks() {
-    const container = document.getElementById('picks-container');
-    if (!container) return;
-
-    container.innerHTML = editorPicks.map(pick => `
-        <a href="${pick.url}" target="_blank" rel="noopener noreferrer" class="pick-card">
-            <span class="pick-badge pick-badge-${pick.badge}">${badgeLabels[pick.badge] || pick.badge}</span>
-            <h3 class="pick-title">${pick.title}</h3>
-            <p class="pick-excerpt">${pick.excerpt}</p>
-            <span class="pick-source">${pick.source}</span>
-        </a>
-    `).join('');
-}
-
-document.addEventListener('DOMContentLoaded', renderEditorPicks);
-
-// Mobile menu toggle
-const mobileToggle = document.querySelector('.nav-mobile-toggle');
-const mobileMenu = document.querySelector('.mobile-menu');
-
-if (mobileToggle && mobileMenu) {
-    mobileToggle.addEventListener('click', () => {
-        mobileMenu.classList.toggle('open');
-        mobileToggle.classList.toggle('active');
-    });
-
-    // Close mobile menu when a link is clicked
-    document.querySelectorAll('.mobile-link').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.remove('open');
-            mobileToggle.classList.remove('active');
-        });
-    });
-}
-
-// Navbar background on scroll
-const nav = document.querySelector('.nav');
-if (nav) {
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 10) {
-            nav.style.boxShadow = '0 1px 8px rgba(0,0,0,0.3)';
-        } else {
-            nav.style.boxShadow = 'none';
-        }
-    });
-}
-
-// Simple scroll animation for stat cards
-const observerOptions = {
-    threshold: 0.2,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Animate elements on scroll
-function animateOnScroll(elements) {
-    elements.forEach((el, index) => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
-        observer.observe(el);
-    });
-}
+// --- Mobile Menu ---
 
 document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.stat-card, .article-card, .project-card, .timeline-item, .expertise-cluster, .tl-article-card, .narrative-block, .journey-chapter, .expertise-visual-card, .value-item');
-    animateOnScroll(animateElements);
-});
+    const toggle = document.querySelector('.nav-mobile-toggle');
+    const menu = document.getElementById('mobile-menu');
 
-// --- Substack RSS Feed (Writing page) ---
-async function fetchFeed(substackUrl) {
-    // Try multiple CORS proxies in order of reliability
-    const proxies = [
-        (url) => `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`,
-        (url) => `https://corsproxy.io/?${encodeURIComponent(url)}`,
-        (url) => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`,
-    ];
-
-    for (const makeUrl of proxies) {
-        try {
-            const proxyUrl = makeUrl(substackUrl);
-            const response = await fetch(proxyUrl);
-            if (!response.ok) continue;
-
-            const data = await response.json().catch(() => null);
-            // allorigins returns { contents: "..." }, others return raw text
-            const xmlText = data?.contents || await response.text();
-
-            if (xmlText && xmlText.includes('<item>')) return xmlText;
-        } catch (e) {
-            continue;
-        }
-    }
-
-    // Last resort: try raw fetch (works if Substack adds CORS headers in future)
-    try {
-        const response = await fetch(substackUrl);
-        if (response.ok) return await response.text();
-    } catch (e) {}
-
-    throw new Error('All feed proxies failed');
-}
-
-// Categorize an article by keyword matching on title + description
-function categorizeArticle(title, description) {
-    const text = (title + ' ' + description).toLowerCase();
-
-    // AI & Building keywords
-    const aiKeywords = ['ai ', 'ai-', 'claude', 'agent', 'llm', 'builder', 'maker', 'prototype', 'build', 'ship', 'game', 'cursor', 'gemini', 'slop', 'cowork', '0→1', '0->1'];
-    // Leadership keywords
-    const leadershipKeywords = ['ceo', 'leadership', 'leader', 'ruthless', 'lessons', 'trust', 'high stakes', 'executive', 'c-suite'];
-    // Research & Strategy keywords
-    const researchKeywords = ['research', 'ux', 'metric', 'accuracy', 'calibration', 'bias', 'training', 'blind spot', 'methodology', 'framework'];
-
-    const aiScore = aiKeywords.filter(k => text.includes(k)).length;
-    const leadershipScore = leadershipKeywords.filter(k => text.includes(k)).length;
-    const researchScore = researchKeywords.filter(k => text.includes(k)).length;
-
-    // Pick the highest scoring category
-    if (aiScore >= leadershipScore && aiScore >= researchScore && aiScore > 0) return 'ai';
-    if (leadershipScore >= researchScore && leadershipScore > 0) return 'leadership';
-    if (researchScore > 0) return 'research';
-    return 'ai'; // default bucket
-}
-
-function createArticleLink(title, link, formattedDate) {
-    const item = document.createElement('a');
-    item.href = link;
-    item.target = '_blank';
-    item.rel = 'noopener noreferrer';
-    item.className = 'article-link';
-    item.innerHTML = `
-        <span class="article-link-title">${title}</span>
-        <span class="article-link-date">${formattedDate}</span>
-    `;
-    return item;
-}
-
-function parseArticle(item) {
-    const title = item.querySelector('title')?.textContent || '';
-    const link = item.querySelector('link')?.textContent || '#';
-    const rawDesc = item.querySelector('description')?.textContent || '';
-    const pubDate = item.querySelector('pubDate')?.textContent || '';
-
-    // Strip HTML tags and truncate description
-    const tempDiv = document.createElement('div');
-    tempDiv.innerHTML = rawDesc;
-    let description = tempDiv.textContent.trim();
-    if (description.length > 160) {
-        description = description.substring(0, 157) + '...';
-    }
-
-    // Format date
-    const date = new Date(pubDate);
-    const formattedDate = date.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-    });
-
-    const category = categorizeArticle(title, description);
-
-    return { title, link, description, formattedDate, category };
-}
-
-function renderGroupedArticles(container, articles) {
-    const categories = [
-        { key: 'leadership', label: 'Leadership & The CEO Office' },
-        { key: 'ai', label: 'AI & The Researcher-Maker' },
-        { key: 'research', label: 'Research & Product Strategy' },
-    ];
-
-    container.innerHTML = '';
-
-    categories.forEach(cat => {
-        const catArticles = articles.filter(a => a.category === cat.key);
-        if (catArticles.length === 0) return;
-
-        const column = document.createElement('div');
-        column.className = 'articles-column';
-
-        const header = document.createElement('h2');
-        header.className = 'articles-column-title';
-        header.textContent = cat.label;
-        column.appendChild(header);
-
-        const list = document.createElement('div');
-        list.className = 'articles-list';
-
-        catArticles.forEach(article => {
-            list.appendChild(createArticleLink(article.title, article.link, article.formattedDate));
+    if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            toggle.setAttribute('aria-expanded', menu.classList.contains('active'));
         });
 
-        column.appendChild(list);
-        container.appendChild(column);
-    });
-
-    // Animate columns
-    animateOnScroll(container.querySelectorAll('.articles-column'));
-}
-
-// Medium articles (added manually since Medium RSS requires auth)
-const mediumArticles = [
-    {
-        title: 'Why Most UX Research Fails to Influence the C-Suite',
-        link: 'https://medium.com/@JyothiVenkat23/why-most-ux-research-fails-to-influence-the-c-suite-89294926fa34',
-        description: '',
-        formattedDate: 'Medium',
-        category: 'leadership'
-    },
-    {
-        title: 'Framework: How to Choose a UX Research Methodology',
-        link: 'https://medium.com/@JyothiVenkat23/framework-how-to-choose-a-ux-research-methodology-2a3c94669285',
-        description: '',
-        formattedDate: 'Medium',
-        category: 'research'
-    },
-];
-
-async function loadSubstackArticles() {
-    const container = document.getElementById('articles-container');
-    if (!container) return;
-
-    try {
-        const xmlText = await fetchFeed('https://jyothiwrites.substack.com/feed');
-        const parser = new DOMParser();
-        const xml = parser.parseFromString(xmlText, 'text/xml');
-        const items = xml.querySelectorAll('item');
-
-        if (items.length === 0) throw new Error('No articles found');
-
-        const articles = Array.from(items).map(parseArticle);
-        // Merge Medium articles into the categorized list
-        const allArticles = [...articles, ...mediumArticles];
-        renderGroupedArticles(container, allArticles);
-
-    } catch (error) {
-        console.error('RSS feed error:', error);
-        // Keep the static fallback HTML that's already in the page
-        // Just animate the existing columns
-        animateOnScroll(container.querySelectorAll('.articles-column'));
-    }
-}
-
-// Load articles if on Writing page
-document.addEventListener('DOMContentLoaded', loadSubstackArticles);
-
-// --- Work Showcase Carousel ---
-function initCarousel() {
-    const track = document.querySelector('.carousel-track');
-    const slides = document.querySelectorAll('.carousel-slide');
-    const dots = document.querySelectorAll('.carousel-dot');
-    const prevBtn = document.querySelector('.carousel-prev');
-    const nextBtn = document.querySelector('.carousel-next');
-
-    if (!track || slides.length === 0) return;
-
-    let currentIndex = 0;
-    let autoplayInterval = null;
-    const AUTOPLAY_DELAY = 4000;
-    const SLIDE_COUNT = slides.length;
-
-    function goToSlide(index) {
-        currentIndex = ((index % SLIDE_COUNT) + SLIDE_COUNT) % SLIDE_COUNT;
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-        dots.forEach(dot => dot.classList.remove('active'));
-        if (dots[currentIndex]) {
-            dots[currentIndex].classList.add('active');
-        }
-    }
-
-    function nextSlide() {
-        goToSlide(currentIndex + 1);
-    }
-
-    function prevSlide() {
-        goToSlide(currentIndex - 1);
-    }
-
-    function startAutoplay() {
-        stopAutoplay();
-        autoplayInterval = setInterval(nextSlide, AUTOPLAY_DELAY);
-    }
-
-    function stopAutoplay() {
-        if (autoplayInterval) {
-            clearInterval(autoplayInterval);
-            autoplayInterval = null;
-        }
-    }
-
-    // Arrow navigation
-    if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); startAutoplay(); });
-    if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); startAutoplay(); });
-
-    // Dot navigation
-    dots.forEach(dot => {
-        dot.addEventListener('click', () => {
-            const index = parseInt(dot.dataset.index, 10);
-            goToSlide(index);
-            startAutoplay();
+        menu.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => menu.classList.remove('active'));
         });
-    });
-
-    // Pause on hover (desktop)
-    const carousel = document.querySelector('.carousel');
-    if (carousel) {
-        carousel.addEventListener('mouseenter', stopAutoplay);
-        carousel.addEventListener('mouseleave', startAutoplay);
     }
 
-    // Touch/swipe support for mobile
-    let touchStartX = 0;
-    let touchEndX = 0;
-    const SWIPE_THRESHOLD = 50;
-
-    if (carousel) {
-        carousel.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-            stopAutoplay();
-        }, { passive: true });
-
-        carousel.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            const diff = touchStartX - touchEndX;
-            if (Math.abs(diff) > SWIPE_THRESHOLD) {
-                if (diff > 0) {
-                    nextSlide();
-                } else {
-                    prevSlide();
-                }
-            }
-            startAutoplay();
-        }, { passive: true });
-    }
-
-    // Only autoplay when carousel is visible (performance)
-    const carouselObserver = new IntersectionObserver((entries) => {
+    // --- Scroll Animations ---
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                startAutoplay();
-            } else {
-                stopAutoplay();
+                entry.target.classList.add('visible');
             }
         });
-    }, { threshold: 0.3 });
+    }, { threshold: 0.1 });
 
-    if (carousel) {
-        carouselObserver.observe(carousel);
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // --- Page-specific init ---
+    initWorkPage();
+    initWritingPage();
+});
+
+// --- Work Page ---
+
+function initWorkPage() {
+    const filtersContainer = document.getElementById('work-filters');
+    const gridContainer = document.getElementById('work-grid');
+    if (!filtersContainer || !gridContainer) return;
+
+    const categories = ['All', ...new Set(projects.map(p => p.category))];
+    let activeCategory = 'All';
+
+    function renderFilters() {
+        filtersContainer.innerHTML = '';
+        categories.forEach(cat => {
+            const btn = document.createElement('button');
+            btn.className = `pill-btn${cat === activeCategory ? ' active' : ''}`;
+            btn.textContent = cat;
+            btn.addEventListener('click', () => {
+                activeCategory = cat;
+                renderFilters();
+                renderProjects();
+            });
+            filtersContainer.appendChild(btn);
+        });
     }
+
+    function renderProjects() {
+        const filtered = activeCategory === 'All'
+            ? projects
+            : projects.filter(p => p.category === activeCategory);
+
+        gridContainer.innerHTML = '';
+
+        filtered.forEach((project, i) => {
+            const isFeatured = project.featured && activeCategory === 'All';
+            const isLive = Boolean(project.url);
+            const card = document.createElement(isLive ? 'a' : 'article');
+            if (isLive) {
+                card.href = project.url;
+                card.target = project.url.startsWith('http') ? '_blank' : '';
+                card.rel = 'noopener';
+            }
+            card.className = `project-card${isFeatured ? ' featured' : ''}`;
+            if (!isLive) {
+                card.classList.add('project-card-disabled');
+            }
+            card.style.animationDelay = `${i * 0.05}s`;
+
+            card.innerHTML = `
+                <div class="project-image">
+                    <img src="${project.image}" alt="${project.title}" referrerpolicy="no-referrer" loading="lazy">
+                    <div class="hover-overlay">
+                        <div class="hover-circle">
+                            ${isLive
+                                ? '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>'
+                                : '<span class="project-status-label">In Progress</span>'}
+                        </div>
+                    </div>
+                </div>
+                <div class="project-meta">
+                    <div class="category">${project.category}</div>
+                    <h3>${project.title}</h3>
+                    <p>${project.description}</p>
+                </div>
+            `;
+
+            gridContainer.appendChild(card);
+        });
+    }
+
+    renderFilters();
+    renderProjects();
 }
 
-document.addEventListener('DOMContentLoaded', initCarousel);
+// --- Writing Page ---
+
+function initWritingPage() {
+    const picksContainer = document.getElementById('picks-container');
+    const filtersContainer = document.getElementById('writing-filters');
+    const listContainer = document.getElementById('articles-list');
+    const searchInput = document.getElementById('article-search');
+
+    if (!filtersContainer || !listContainer) return;
+
+    const categoryNames = ['All', 'Leadership & The CEO Office', 'AI & The Researcher-Maker', 'Research & Product Strategy'];
+    let activeCategory = 'All';
+    let searchQuery = '';
+
+    // Editor's Picks
+    if (picksContainer) {
+        editorPicks.forEach(art => {
+            const card = document.createElement('a');
+            card.href = art.url;
+            card.target = '_blank';
+            card.rel = 'noopener';
+            card.className = 'pick-card';
+            card.innerHTML = `
+                <div class="image-wrapper">
+                    <img src="${art.thumbnail}" alt="${art.title}" referrerpolicy="no-referrer" loading="lazy">
+                </div>
+                <div class="category">${art.category}</div>
+                <h3>${art.title}</h3>
+                <p>${art.description}</p>
+            `;
+            picksContainer.appendChild(card);
+        });
+    }
+
+    function renderFilters() {
+        filtersContainer.innerHTML = '';
+        categoryNames.forEach(cat => {
+            const btn = document.createElement('button');
+            btn.className = `pill-btn${cat === activeCategory ? ' active' : ''}`;
+            btn.textContent = cat;
+            btn.addEventListener('click', () => {
+                activeCategory = cat;
+                renderFilters();
+                renderArticles();
+            });
+            filtersContainer.appendChild(btn);
+        });
+    }
+
+    function renderArticles() {
+        let filtered = activeCategory === 'All'
+            ? articles
+            : articles.filter(a => a.category === activeCategory);
+
+        if (searchQuery) {
+            const q = searchQuery.toLowerCase();
+            filtered = filtered.filter(a =>
+                a.title.toLowerCase().includes(q) || a.description.toLowerCase().includes(q)
+            );
+        }
+
+        listContainer.innerHTML = '';
+
+        filtered.forEach(art => {
+            const date = new Date(art.date);
+            const formatted = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+            const row = document.createElement('a');
+            row.href = art.url;
+            row.target = '_blank';
+            row.rel = 'noopener';
+            row.className = 'article-row';
+            row.innerHTML = `
+                <div class="date">${formatted}</div>
+                <div>
+                    <h3>${art.title}</h3>
+                    <div class="description">${art.description}</div>
+                </div>
+                <div class="read-link">
+                    <span>Read Article <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></span>
+                </div>
+            `;
+            listContainer.appendChild(row);
+        });
+    }
+
+    // Search
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            renderArticles();
+        });
+    }
+
+    renderFilters();
+    renderArticles();
+}

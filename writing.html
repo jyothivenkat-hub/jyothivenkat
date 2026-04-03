@@ -3,173 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Articles — Jyothi Venkat</title>
-    <meta name="description" content="Articles by Jyothi Venkat on research leadership, AI, and product strategy. Published weekly on Substack and Medium.">
+    <title>Thought Leadership — Jyothi Venkat</title>
+    <meta name="description" content="Thoughts on the synthesis of human insight and machine agency by Jyothi Venkat. Research leadership, AI strategy, and building products that ship.">
     <link rel="canonical" href="https://jyothivenkat.com/writing.html">
-    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jyothivenkat.com/writing.html">
-    <meta property="og:title" content="Articles — Jyothi Venkat">
-    <meta property="og:description" content="Weekly explorations of research leadership, AI, and product strategy by Jyothi Venkat.">
-    <meta property="og:image" content="https://jyothivenkat.com/headshot.jpg">
-    <!-- Twitter Card -->
+    <meta property="og:title" content="Thought Leadership — Jyothi Venkat">
+    <meta property="og:description" content="Research leadership, AI strategy, and building products that ship.">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Articles — Jyothi Venkat">
-    <meta name="twitter:description" content="Weekly explorations of research leadership, AI, and product strategy.">
-    <meta name="twitter:image" content="https://jyothivenkat.com/headshot.jpg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="twitter:title" content="Thought Leadership — Jyothi Venkat">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">JV</a>
+            <a href="index.html" class="nav-logo">Jyothi Venkat</a>
             <div class="nav-links">
-                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html" class="nav-link">Story</a>
                 <a href="projects.html" class="nav-link">Work</a>
-                <a href="writing.html" class="nav-link active">Articles</a>
-                <a href="about.html" class="nav-link">My Story</a>
-                <a href="connect.html" class="nav-link">Connect</a>
+                <a href="writing.html" class="nav-link active">Writing</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
-            <button class="nav-mobile-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu" aria-controls="mobile-menu">
+                <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu">
-        <a href="index.html" class="mobile-link">Home</a>
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html" class="mobile-link">Story</a>
         <a href="projects.html" class="mobile-link">Work</a>
-        <a href="writing.html" class="mobile-link active">Articles</a>
-        <a href="about.html" class="mobile-link">My Story</a>
-        <a href="connect.html" class="mobile-link">Connect</a>
+        <a href="writing.html" class="mobile-link active">Writing</a>
+        <a href="#contact" class="mobile-link">Contact</a>
     </div>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>Read My Articles</h1>
-            <p>Weekly explorations of research leadership, AI, and product strategy. Published on Substack and Medium.</p>
-            <div class="scroll-indicator">
-                <span>Scroll</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    <main id="main-content" style="padding-top: 8rem;">
+
+        <!-- Hero -->
+        <section class="container-full section-spacing">
+            <div style="display: flex; flex-direction: column; gap: 3rem;">
+                <div style="max-width: 56rem;">
+                    <h1 class="editorial-title" style="margin-bottom: 2.5rem;">Thought <br>Leadership.</h1>
+                    <p class="editorial-body">Perspectives on human insight, machine intelligence, and building what's next.</p>
+                </div>
+                <div class="search-container" style="align-self: flex-start;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" id="article-search" class="search-input" placeholder="Search articles...">
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Editor's Picks (rendered dynamically from editorPicks config in script.js) -->
-    <section class="articles-picks">
-        <div class="container">
-            <h2 class="section-title">Editor's Picks</h2>
-            <div class="picks-grid" id="picks-container"></div>
-        </div>
-    </section>
-
-    <!-- Newsletter Subscribe -->
-    <section class="articles-subscribe">
-        <div class="container">
-            <div class="subscribe-banner">
-                <div>
-                    <h3>Weekly Newsletter</h3>
-                    <p>Research leadership, AI strategy, and building products that ship. Delivered every week.</p>
-                </div>
-                <a href="https://jyothiwrites.substack.com" target="_blank" class="btn btn-primary">Subscribe on Substack</a>
+        <!-- Editor's Picks -->
+        <section class="container-full" style="margin-bottom: 12rem;">
+            <div class="mono-label" style="margin-bottom: 4rem;">Editor's Picks</div>
+            <div id="picks-container" class="picks-grid">
+                <!-- Populated by JS -->
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Browse by Topic — All Articles -->
-    <section class="articles-section">
-        <div class="container">
-            <h2 class="section-title">Browse by Topic</h2>
-            <div class="articles-columns" id="articles-container">
-                <!-- Static fallback (visible immediately, replaced by dynamic RSS when loaded) -->
-                <div class="articles-column">
-                    <h2 class="articles-column-title col-leadership">Leadership & The CEO Office</h2>
-                    <div class="articles-list">
-                        <a href="https://medium.com/@JyothiVenkat23/why-most-ux-research-fails-to-influence-the-c-suite-89294926fa34" target="_blank" rel="noopener noreferrer" class="article-link">
-                            <span class="article-link-title">Why Most UX Research Fails to Influence the C-Suite</span>
-                            <span class="article-link-desc">What executives actually want from research teams.</span>
-                            <span class="article-link-date">Medium</span>
-                        </a>
-                        <a href="https://jyothiwrites.substack.com/p/the-ceos-office-8-ruthless-lessons" target="_blank" rel="noopener noreferrer" class="article-link">
-                            <span class="article-link-title">The CEO's Office: 8 Ruthless Lessons on High Stakes Leadership</span>
-                            <span class="article-link-desc">Principles distilled from a decade operating at the executive level.</span>
-                            <span class="article-link-date">Substack</span>
-                        </a>
-                    </div>
+        <!-- Browse by Topic -->
+        <section class="border-section section-spacing">
+            <div class="container-full">
+                <div id="writing-filters" style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 6rem;">
+                    <!-- Populated by JS -->
                 </div>
-                <div class="articles-column">
-                    <h2 class="articles-column-title col-ai">AI & The Researcher-Maker</h2>
-                    <div class="articles-list">
-                        <a href="https://jyothiwrites.substack.com/p/build-an-ai-news-agent-in-3-steps" target="_blank" rel="noopener noreferrer" class="article-link">
-                            <span class="article-link-title">Build an AI News Agent in 3 Steps</span>
-                            <span class="article-link-desc">Automating morning research for $0 with Python and Claude.</span>
-                            <span class="article-link-date">Substack</span>
-                        </a>
-                        <a href="https://jyothiwrites.substack.com/p/the-researcher-maker-build-0-1-products" target="_blank" rel="noopener noreferrer" class="article-link">
-                            <span class="article-link-title">The Researcher-Maker: Build 0→1 Products with AI</span>
-                            <span class="article-link-desc">Why the next edge for researchers is learning to build.</span>
-                            <span class="article-link-date">Substack</span>
-                        </a>
-                        <a href="https://jyothiwrites.substack.com/p/is-claude-cowork-a-10x-multiplier" target="_blank" rel="noopener noreferrer" class="article-link">
-                            <span class="article-link-title">Is Claude Cowork a 10x Multiplier or Just Expensive?</span>
-                            <span class="article-link-desc">Stress-testing AI productivity tools for real ROI.</span>
-                            <span class="article-link-date">Substack</span>
-                        </a>
-                    </div>
+                <div id="articles-list" style="display: flex; flex-direction: column; gap: 6rem;">
+                    <!-- Populated by JS -->
                 </div>
-                <div class="articles-column">
-                    <h2 class="articles-column-title col-research">Research & Product Strategy</h2>
-                    <div class="articles-list">
-                        <a href="https://medium.com/@JyothiVenkat23/framework-how-to-choose-a-ux-research-methodology-2a3c94669285" target="_blank" rel="noopener noreferrer" class="article-link">
-                            <span class="article-link-title">Framework: How to Choose a UX Research Methodology</span>
-                            <span class="article-link-desc">A decision framework for qual, quant, and mixed-methods.</span>
-                            <span class="article-link-date">Medium</span>
-                        </a>
-                        <a href="https://jyothiwrites.substack.com/p/why-research-slop-is-a-distraction" target="_blank" rel="noopener noreferrer" class="article-link">
-                            <span class="article-link-title">Why "Research Slop" is a Distraction</span>
-                            <span class="article-link-desc">Stop policing AI output. Start delivering functional artifacts.</span>
-                            <span class="article-link-date">Substack</span>
-                        </a>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="container-full section-spacing">
+            <div class="editorial-card" style="padding: 4rem; text-align: center;">
+                <div class="editorial-gradient"></div>
+                <div style="position: relative; z-index: 1;">
+                    <svg style="width: 5rem; height: 5rem; margin: 0 auto 3rem; color: var(--color-indigo); opacity: 0.6;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 2rem; line-height: 1.15;">The Synthesis</h2>
+                    <p class="editorial-body" style="max-width: 40rem; margin: 0 auto 4rem;">Thoughts on the synthesis of human insight and machine agency. Delivered straight to your inbox.</p>
+                    <div class="newsletter-actions">
+                        <a href="https://jyothiwrites.substack.com" class="btn-subscribe" target="_blank" rel="noopener noreferrer">Subscribe on Substack</a>
+                        <a href="https://medium.com/@JyothiVenkat23" class="btn-subscribe btn-subscribe-secondary" target="_blank" rel="noopener noreferrer">Follow on Medium</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Subscribe CTA -->
-    <section class="writing-cta">
-        <div class="container">
-            <h2 class="section-title">Stay Updated</h2>
-            <p class="writing-cta-text">Get weekly insights on research, AI, and product leadership delivered to your inbox.</p>
-            <div class="writing-cta-links">
-                <a href="https://jyothiwrites.substack.com" target="_blank" class="btn btn-primary">Subscribe on Substack</a>
-                <a href="https://medium.com/@JyothiVenkat23" class="btn btn-secondary" target="_blank">Follow on Medium</a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-left">
-                    <span class="footer-logo">JV</span>
-                    <p class="footer-copy">&copy; 2026 Jyothi Venkat. All rights reserved.</p>
+        <div class="container-full">
+            <div class="footer-grid">
+                <div>
+                    <h2>Let's connect.</h2>
+                    <p class="bio">I work across AI, product, and research leadership. Open to roles, strategic engagements, advisory, and interesting conversations.</p>
                 </div>
-                <div class="footer-links">
-                    <a href="https://www.linkedin.com/in/jyothivenkat/" target="_blank">LinkedIn</a>
-                    <a href="https://jyothiwrites.substack.com" target="_blank">Substack</a>
-                    <a href="https://medium.com/@JyothiVenkat23" target="_blank">Medium</a>
-                    <a href="https://github.com/jyothivenkat-hub" target="_blank">GitHub</a>
+                <div class="footer-right">
+                    <div id="contact" class="footer-contact">
+                        <div class="mono-label">Let's connect</div>
+                        <div class="footer-social" style="margin-top: 1.5rem;">
+                            <a href="https://www.linkedin.com/in/jyothivenkat/" class="mono-link" target="_blank" rel="noopener">LinkedIn</a>
+                            <a href="https://x.com/jyothiwrites" class="mono-link" target="_blank" rel="noopener">X</a>
+                            <a href="https://jyothiwrites.substack.com" class="mono-link" target="_blank" rel="noopener">Substack</a>
+                            <a href="https://jyothiwrites.medium.com" class="mono-link" target="_blank" rel="noopener">Medium</a>
+                            <a href="https://github.com/jyothivenkat" class="mono-link" target="_blank" rel="noopener">GitHub</a>
+                        </div>
+                    </div>
+                    <p class="footer-copyright">&copy; 2026 Jyothi Venkat. All rights reserved.</p>
                 </div>
             </div>
         </div>

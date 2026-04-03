@@ -2,22 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://jyothivenkat.com/</loc>
+    <lastmod>2026-04-03</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://jyothivenkat.com/projects.html</loc>
+    <lastmod>2026-04-03</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jyothivenkat.com/writing.html</loc>
+    <lastmod>2026-04-03</lastmod>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jyothivenkat.com/about.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jyothivenkat.com/case-studies.html</loc>
-    <priority>0.6</priority>
   </url>
 </urlset>
