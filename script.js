@@ -70,7 +70,7 @@ const projects = [
     {
         title: 'Job Monitor',
         category: 'Agents',
-        description: 'Scrapes 25+ company career pages, classifies fit with Claude, and sends a personalized daily job digest.',
+        description: 'Scrapes 25+ company career pages, classifies fit with AI, and sends a personalized daily job digest and dashboard that preps you for the interview at each stage.',
         featured: false,
         repoUrl: 'https://github.com/jyothivenkat-hub/job-monitor',
         image: 'https://picsum.photos/seed/job-monitor/800/600',
