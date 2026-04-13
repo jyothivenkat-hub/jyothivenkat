@@ -584,6 +584,10 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.3s;
     font-style: normal;
 }
+.project-title-link {
+    color: inherit;
+    text-decoration: none;
+}
 .project-card:hover .project-meta h3 { font-style: italic; color: var(--color-indigo); }
 .project-meta p {
     margin-top: 1rem;

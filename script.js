@@ -442,7 +442,9 @@ function initWorkPage() {
             </a>
             <div class="project-meta">
                 <div class="category">${project.category}</div>
-                <h3>${project.title}</h3>
+                <h3>${hasPrimaryUrl
+                    ? `<a href="${primaryUrl}" target="_blank" rel="noopener noreferrer" class="project-title-link">${project.title}</a>`
+                    : project.title}</h3>
                 <p>${project.description}</p>
                 ${linkItems ? `<div class="project-links">${linkItems}</div>` : ''}
             </div>
