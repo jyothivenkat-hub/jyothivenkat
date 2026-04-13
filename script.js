@@ -179,7 +179,6 @@ const fallbackArticles = [
 
 const SUBSTACK_FEED_URL = 'https://jyothiwrites.substack.com/feed';
 const SUBSTACK_FEED_SOURCES = [
-    '/api/substack-feed',
     `https://api.allorigins.win/raw?url=${encodeURIComponent(SUBSTACK_FEED_URL)}`,
     `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(SUBSTACK_FEED_URL)}`,
 ];
@@ -350,7 +349,7 @@ async function fetchLatestSubstackArticles() {
                 continue;
             }
 
-            if (source === '/api/substack-feed' || source.includes('rss2json.com')) {
+            if (source.includes('rss2json.com')) {
                 const payload = await response.json();
                 const parsed = parseSubstackFeedJson(payload);
                 if (parsed.length) return parsed;
