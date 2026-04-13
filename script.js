@@ -112,9 +112,17 @@ const projects = [
 
 const fallbackArticles = [
     {
+        title: "AI in Practice: Weekly #9 the Week AI Got Scary, Political, and Expensive",
+        date: "2026-04-13",
+        description: "4 stories analyzed for UX Research, Design, Product, and Engineering. Week of April 5 to April 11, 2026.",
+        url: "https://jyothiwrites.substack.com/p/ai-in-practice-weekly-9-the-week",
+        category: "AI Tool Reviews",
+        thumbnail: "https://substack-post-media.s3.amazonaws.com/public/images/3efde394-780c-4d4c-88d1-c70236b042cc_2816x1536.png",
+    },
+    {
         title: "LLMs Are Not Brains, and Here Is What Is Actually Missing for AGI",
         date: "2026-04-08",
-        description: "A long-form essay on what large language models can do, what they cannot, and the concrete capabilities still missing for AGI.",
+        description: "Today I am writing something that has been bothering me for months.",
         url: "https://jyothiwrites.substack.com/p/llms-are-not-brains-and-here-is-what",
         category: "AI Systems & AGI",
         thumbnail: "https://substackcdn.com/image/fetch/$s_!N5-H!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb95aa379-5e24-4388-bfe0-d9e74d8959ef_2816x1536.png",
@@ -122,7 +130,7 @@ const fallbackArticles = [
     {
         title: "I Built a System That Turns Research Into a Living Wiki, Knowledge Graph, and Product Ideas",
         date: "2026-04-05",
-        description: "A practical walkthrough for turning research into a reusable knowledge base, graph, and idea engine in five steps.",
+        description: "Here is how to do it in 5 steps with an example.",
         url: "https://jyothiwrites.substack.com/p/i-built-a-system-that-turns-research",
         category: "Research Systems",
         thumbnail: "https://substackcdn.com/image/fetch/$s_!1rrB!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7edd8004-5eef-4a01-97a1-c2b858eaefed_2772x1546.png",
@@ -130,7 +138,7 @@ const fallbackArticles = [
     {
         title: "OpenClaw: I Set Up a 24/7 AI Assistant on a Mac Mini: Here is How in 5 Steps",
         date: "2026-03-29",
-        description: "A hands-on setup guide for running a persistent AI assistant on local hardware and turning it into an always-on operator.",
+        description: "AI in Practice: Weekly #8. March 23 to 29, 2026.",
         url: "https://jyothiwrites.substack.com/p/openclaw-i-set-up-a-247-ai-assistant",
         category: "AI Build Guides",
         thumbnail: "https://substackcdn.com/image/fetch/$s_!dubF!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb68c035e-af4f-4d68-8b05-64feb07fc878_2778x1536.png",
@@ -138,7 +146,7 @@ const fallbackArticles = [
     {
         title: "Stop Arguing About AI and Give It 60 Minutes of Your Craft",
         date: "2026-03-25",
-        description: "A blunt argument for moving past AI discourse and using focused practice time to see where the tools actually help.",
+        description: "Lenny's job market report came out this week.",
         url: "https://jyothiwrites.substack.com/p/stop-arguing-about-ai-and-give-it",
         category: "AI Commentary",
         thumbnail: "https://substack-post-media.s3.amazonaws.com/public/images/548f0ca1-f376-43a4-8d0b-272f74323b23_2760x1504.png",
@@ -146,7 +154,7 @@ const fallbackArticles = [
     {
         title: "AI in Practice: The Review Mar 14 - 20th 2026",
         date: "2026-03-22",
-        description: "A weekly review of AI tools and workflows tested for UX research, design, product, and engineering work.",
+        description: "3 AI tools tested and reviewed for UX Research, Design, Product, and Engineering.",
         url: "https://jyothiwrites.substack.com/p/ai-in-practice-the-review-mar-14",
         category: "AI Tool Reviews",
         thumbnail: "https://substack-post-media.s3.amazonaws.com/public/images/fed725c2-e915-4a4e-a549-53e83506d5df_2816x1536.png",
@@ -154,7 +162,7 @@ const fallbackArticles = [
     {
         title: "The 7 Levels of AI Augmented Research",
         date: "2026-03-17",
-        description: "A framework for understanding where research teams are today and what it takes to evolve toward AI-augmented practice.",
+        description: "A framework for where you are and where you are going.",
         url: "https://jyothiwrites.substack.com/p/the-7-levels-of-ai-augmented-research",
         category: "Research Systems",
         thumbnail: "https://substackcdn.com/image/fetch/$s_!lFjO!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F516a8f9c-f008-49b2-be8c-b4a4f530e304_2816x1536.png",
@@ -162,7 +170,7 @@ const fallbackArticles = [
     {
         title: "Karpathy's autoresearch: Set Up in 3 Steps",
         date: "2026-03-14",
-        description: "What autoresearch is, how it works, and how to get it running quickly with practical use cases to try.",
+        description: "What it is, how it works, how to set it up, and use cases to try.",
         url: "https://jyothiwrites.substack.com/p/karpathys-autoresearch-set-up-in",
         category: "AI Build Guides",
         thumbnail: "https://substack-post-media.s3.amazonaws.com/public/images/5f6b3008-1842-4a86-8a6a-cecef286b096_2752x1536.png",
@@ -170,10 +178,18 @@ const fallbackArticles = [
     {
         title: "I Built a Jaw Dropping 360° Nature App with Google AI Studio + Claude + Codex (Steal My 5-Step Blueprint)",
         date: "2026-03-12",
-        description: "A build breakdown of the 360° nature app, including workflow, tools, and the five-step blueprint behind it.",
+        description: "Last weekend, I decided to break free from the usual bland AI generated websites.",
         url: "https://jyothiwrites.substack.com/p/i-built-a-jaw-dropping-360-nature",
         category: "AI Build Guides",
         thumbnail: "https://substack-post-media.s3.amazonaws.com/public/images/b80af2d2-38af-4688-b708-5709b4bef315_2516x1537.png",
+    },
+    {
+        title: "AI in Practice: The Saturday Review Mar 2-6th 2026",
+        date: "2026-03-07",
+        description: "Curated AI tools I tested and implications for product teams.",
+        url: "https://jyothiwrites.substack.com/p/ai-in-practice-the-saturday-review-940",
+        category: "AI Tool Reviews",
+        thumbnail: "https://substack-post-media.s3.amazonaws.com/public/images/af85b7dd-e70a-4e5d-b131-2a26187dad09_1360x752.png",
     },
 ];
 
