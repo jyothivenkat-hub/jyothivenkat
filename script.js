@@ -31,6 +31,7 @@ const projects = [
         category: 'Agents',
         description: 'A daily digest agent for tracking and synthesizing signal.',
         featured: false,
+        spotlight: true,
         repoUrl: 'https://github.com/jyothivenkat-hub/ai-news-agent',
         articleUrl: 'https://jyothiwrites.substack.com/p/build-an-ai-news-agent-in-3-steps',
         image: 'https://picsum.photos/seed/agent/800/600',
@@ -40,6 +41,7 @@ const projects = [
         category: 'Infrastructure',
         description: 'A living wiki with search, Q&A, and knowledge capture.',
         featured: false,
+        spotlight: true,
         liveUrl: 'https://llm-knowledge-base-nine.vercel.app/',
         repoUrl: 'https://github.com/jyothivenkat-hub/llm-knowledge-base',
         articleUrl: 'https://jyothiwrites.substack.com/p/i-built-a-system-that-turns-research',
@@ -377,6 +379,9 @@ document.addEventListener('DOMContentLoaded', () => {
 // --- Work Page ---
 
 function initWorkPage() {
+    const featuredContainer = document.getElementById('featured-project');
+    const spotlightContainer = document.getElementById('spotlight-grid');
+    const moreWorkSection = document.getElementById('more-work');
     const filtersContainer = document.getElementById('work-filters');
     const gridContainer = document.getElementById('work-grid');
     if (!filtersContainer || !gridContainer) return;
@@ -447,10 +452,39 @@ function initWorkPage() {
             ? projects
             : projects.filter(p => p.category === activeCategory);
 
+        const featuredProject = activeCategory === 'All'
+            ? filtered.find(project => project.featured)
+            : null;
+        const spotlightProjects = activeCategory === 'All'
+            ? filtered.filter(project => project.spotlight).slice(0, 2)
+            : [];
+        const showcaseProjects = new Set([featuredProject, ...spotlightProjects].filter(Boolean));
+        const remainingProjects = activeCategory === 'All'
+            ? filtered.filter(project => !showcaseProjects.has(project))
+            : filtered;
+
+        if (featuredContainer && spotlightContainer && moreWorkSection) {
+            if (activeCategory === 'All' && featuredProject) {
+                featuredContainer.innerHTML = '';
+                featuredContainer.appendChild(createProjectCard(featuredProject, 0, true));
+                spotlightContainer.innerHTML = '';
+                spotlightProjects.forEach((project, i) => {
+                    spotlightContainer.appendChild(createProjectCard(project, i, false));
+                });
+                featuredContainer.parentElement.hidden = false;
+                moreWorkSection.classList.remove('work-index-tight');
+            } else {
+                featuredContainer.innerHTML = '';
+                spotlightContainer.innerHTML = '';
+                featuredContainer.parentElement.hidden = true;
+                moreWorkSection.classList.add('work-index-tight');
+            }
+        }
+
         gridContainer.innerHTML = '';
 
-        filtered.forEach((project, i) => {
-            const isFeatured = project.featured && activeCategory === 'All';
+        remainingProjects.forEach((project, i) => {
+            const isFeatured = activeCategory !== 'All' && project.featured;
             gridContainer.appendChild(createProjectCard(project, i, isFeatured));
         });
     }
