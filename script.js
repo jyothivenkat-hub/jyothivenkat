@@ -24,18 +24,26 @@ const projects = [
     {
         title: 'AI News Agent',
         category: 'Agents',
-        description: 'A build log of an autonomous agent that synthesizes global news into strategic briefs.',
+        description: 'AI News Daily Digest Agent that pulls from free sources and compiles a formatted daily brief.',
         featured: false,
-        url: 'https://jyothiwrites.substack.com/p/build-an-ai-news-agent-in-3-steps',
-        image: 'https://picsum.photos/seed/agent/800/600',
+        url: 'https://github.com/jyothivenkat-hub/ai-news-agent',
+        image: 'https://opengraph.githubassets.com/1/jyothivenkat-hub/ai-news-agent',
     },
     {
-        title: 'IdeaForge',
-        category: 'Product',
-        description: 'From insights to ideas: A proprietary system for validated product innovation. Inspired by Andrej Karpathy\'s work.',
+        title: 'LLM to Wiki',
+        category: 'Infrastructure',
+        description: 'An LLM-compiled knowledge base wiki with Q&A, search, and Obsidian integration.',
         featured: false,
         url: 'https://llm-knowledge-base-nine.vercel.app/',
-        image: 'https://picsum.photos/seed/forge/800/600',
+        image: 'https://opengraph.githubassets.com/1/jyothivenkat-hub/llm-knowledge-base',
+    },
+    {
+        title: 'Autoresearch',
+        category: 'Agents',
+        description: 'Karpathy-inspired autoresearch workflow with a Colab setup for running research loops on T4 and A100 GPUs.',
+        featured: false,
+        url: 'https://github.com/jyothivenkat-hub/autoresearch',
+        image: 'https://opengraph.githubassets.com/1/jyothivenkat-hub/autoresearch',
     },
     {
         title: 'Missastroglow',
@@ -59,7 +67,7 @@ const projects = [
         description: 'A fast prototype that turns AI-assisted development into a playable 0 to 1 game experience.',
         featured: false,
         url: 'https://starcatch-game.vercel.app/',
-        image: 'https://picsum.photos/seed/starcatch/800/600',
+        image: 'https://opengraph.githubassets.com/1/jyothivenkat-hub/Starcatch_Game',
     },
 ];
 
