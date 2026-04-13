@@ -24,7 +24,7 @@ const projects = [
         description: 'A first-principles system for AI-native research teams.',
         featured: false,
         liveUrl: 'https://jv-airesearch.vercel.app/',
-        editorial: true,
+        image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Modern_architecture.jpg',
     },
     {
         title: 'AI News Agent',
