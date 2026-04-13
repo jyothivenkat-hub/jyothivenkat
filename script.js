@@ -8,7 +8,7 @@ const projects = [
     {
         title: 'The Research Maker Thesis',
         category: 'Thought Leadership',
-        description: 'A four-part sequence on going from research to shipped prototypes.',
+        description: 'A four-part framework for research leaders who want to stop handing off findings and start shipping product.',
         featured: true,
         articleUrl: 'https://substack.com/home/post/p-186362849',
         extraLinks: [
@@ -21,7 +21,7 @@ const projects = [
     {
         title: 'AI Native Research Architecture',
         category: 'Infrastructure',
-        description: 'A first-principles system for AI native research teams.',
+        description: 'A systems level blueprint for building research teams around AI, not bolting AI onto existing ones.',
         featured: false,
         liveUrl: 'https://jv-airesearch.vercel.app/',
         articleUrl: 'https://jyothiwrites.substack.com/p/the-ai-native-researcher-how-to-build',
@@ -47,7 +47,7 @@ const projects = [
     {
         title: 'LLM to Wiki',
         category: 'Infrastructure',
-        description: 'Turns research papers into a searchable wiki by extracting claims, mapping connections, and building a knowledge graph.',
+        description: 'An 8 stage LLM pipeline that turns research papers into a living wiki. Extracts claims, maps cross paper connections, and builds a searchable knowledge graph.',
         featured: false,
         liveUrl: 'https://llm-knowledge-base-nine.vercel.app/',
         repoUrl: 'https://github.com/jyothivenkat-hub/llm-knowledge-base',
@@ -57,7 +57,7 @@ const projects = [
     {
         title: 'Noveaire',
         category: 'Product',
-        description: 'Analyzes cross-platform social performance and generates posts matched to your voice, timing, and audience.',
+        description: "A multi platform content intelligence tool. Upload analytics from any social channel, surface what's working, and generate posts matched to your voice and audience.",
         featured: false,
         liveUrl: 'https://noveaire-cloud.vercel.app/',
         repoUrl: 'https://github.com/jyothivenkat-hub/noveaire-cloud',
@@ -66,7 +66,7 @@ const projects = [
     {
         title: 'Job Monitor',
         category: 'Agents',
-        description: 'Scrapes 25+ company career pages, classifies fit with AI, and sends a personalized daily job digest and dashboard that preps you for the interview at each stage.',
+        description: 'An autonomous job search agent. Scrapes 25+ career pages, classifies fit with Claude, and sends a daily digest with interview prep for each role.',
         featured: false,
         repoUrl: 'https://github.com/jyothivenkat-hub/job-monitor',
         image: 'https://picsum.photos/seed/job-monitor/800/600',
@@ -74,7 +74,7 @@ const projects = [
     {
         title: 'AI News Agent',
         category: 'Agents',
-        description: 'Fetches 10 AI and tech sources, deduplicates the signal, and emails a clean daily digest.',
+        description: 'A zero dependency news agent that pulls from 10 AI and tech sources, deduplicates, and delivers a formatted daily digest.',
         featured: false,
         repoUrl: 'https://github.com/jyothivenkat-hub/ai-news-agent',
         articleUrl: 'https://jyothiwrites.substack.com/p/build-an-ai-news-agent-in-3-steps',
@@ -83,7 +83,7 @@ const projects = [
     {
         title: 'Autoresearch',
         category: 'Agents',
-        description: "A fork of Karpathy's autoresearch with a monitoring dashboard and Colab support for T4 and A100 GPUs.",
+        description: "A Karpathy inspired system for automated research loops, extended with a monitoring dashboard and Colab support for T4 and A100 GPUs.",
         featured: false,
         repoUrl: 'https://github.com/jyothivenkat-hub/autoresearch',
         articleUrl: 'https://substack.com/home/post/p-190957890',
@@ -92,7 +92,7 @@ const projects = [
     {
         title: 'Nature Walk App',
         category: 'Apps',
-        description: 'A UX study in presence, place, and environmental awareness.',
+        description: 'A UX exploration in presence and place. Built with Google AI Studio, Claude, and Codex as a study in environmental awareness.',
         featured: false,
         liveUrl: 'https://maps-3-d-exploration.vercel.app/',
         articleUrl: 'https://substack.com/home/post/p-190644116',
@@ -101,7 +101,7 @@ const projects = [
     {
         title: 'Starcatch Game',
         category: 'Games',
-        description: 'A canvas arcade game built in a weekend with AI-assisted development, progressive difficulty, and touch and keyboard controls.',
+        description: 'A weekend prototype built with AI assisted development. Progressive difficulty, canvas rendering, touch and keyboard controls.',
         featured: false,
         liveUrl: 'https://starcatch-game.vercel.app/',
         repoUrl: 'https://github.com/jyothivenkat-hub/Starcatch_Game',
