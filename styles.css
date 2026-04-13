@@ -746,6 +746,13 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 0.5rem;
 }
 
+.writing-hero-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding-top: 2rem;
+}
+
 .writing-rail-link {
     font-family: var(--font-serif);
     font-style: italic;
