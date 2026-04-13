@@ -40,9 +40,9 @@ const projects = [
     {
         title: 'Missastroglow',
         category: 'Apps',
-        description: 'AI Astro App. Still in the works.',
+        description: 'AI Astro App exploring astrology, guidance, and conversational product experiences.',
         featured: false,
-        url: '',
+        url: 'https://misastroglowai.vercel.app/',
         image: 'https://picsum.photos/seed/astro/800/600',
     },
     {
@@ -63,66 +63,261 @@ const projects = [
     },
 ];
 
-const articles = [
+const fallbackArticles = [
     {
-        title: "The CEO's Office: 8 Ruthless Lessons on High Stakes Leadership",
-        date: "2026-03-15",
-        description: "What I learned operating from the CEO office at a global crypto exchange — and why most leaders never get this close to the fire.",
-        url: "https://jyothiwrites.substack.com/p/the-ceos-office-8-ruthless-lessons",
-        category: "Leadership & The CEO Office",
-        thumbnail: "https://picsum.photos/seed/ceo-office/800/600",
+        title: "LLMs Are Not Brains, and Here Is What Is Actually Missing for AGI",
+        date: "2026-04-08",
+        description: "A long-form essay on what large language models can do, what they cannot, and the concrete capabilities still missing for AGI.",
+        url: "https://jyothiwrites.substack.com/p/llms-are-not-brains-and-here-is-what",
+        category: "AI Systems & AGI",
+        thumbnail: "https://substackcdn.com/image/fetch/$s_!N5-H!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb95aa379-5e24-4388-bfe0-d9e74d8959ef_2816x1536.png",
     },
     {
-        title: "The Researcher-Maker: Build 0→1 Products with AI",
-        date: "2026-03-10",
-        description: "Why the next generation of researchers must learn to ship code, not just decks.",
-        url: "https://jyothiwrites.substack.com/p/the-researcher-maker-build-0-1-products",
-        category: "AI & The Researcher-Maker",
-        thumbnail: "https://picsum.photos/seed/maker/800/600",
+        title: "I Built a System That Turns Research Into a Living Wiki, Knowledge Graph, and Product Ideas",
+        date: "2026-04-05",
+        description: "A practical walkthrough for turning research into a reusable knowledge base, graph, and idea engine in five steps.",
+        url: "https://jyothiwrites.substack.com/p/i-built-a-system-that-turns-research",
+        category: "Research Systems",
+        thumbnail: "https://substackcdn.com/image/fetch/$s_!1rrB!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7edd8004-5eef-4a01-97a1-c2b858eaefed_2772x1546.png",
     },
     {
-        title: "Build an AI News Agent in 3 Steps",
-        date: "2026-02-28",
-        description: "Automating morning research for $0 with Python and Claude. A technical build log.",
-        url: "https://jyothiwrites.substack.com/p/build-an-ai-news-agent-in-3-steps",
-        category: "AI & The Researcher-Maker",
-        thumbnail: "https://picsum.photos/seed/news-agent/800/600",
+        title: "OpenClaw: I Set Up a 24/7 AI Assistant on a Mac Mini: Here is How in 5 Steps",
+        date: "2026-03-29",
+        description: "A hands-on setup guide for running a persistent AI assistant on local hardware and turning it into an always-on operator.",
+        url: "https://jyothiwrites.substack.com/p/openclaw-i-set-up-a-247-ai-assistant",
+        category: "AI Build Guides",
+        thumbnail: "https://substackcdn.com/image/fetch/$s_!dubF!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb68c035e-af4f-4d68-8b05-64feb07fc878_2778x1536.png",
     },
     {
-        title: "Why Most UX Research Fails to Influence the C-Suite",
-        date: "2026-02-15",
-        description: "What executives actually want from research teams — and what keeps most researchers from delivering it.",
-        url: "https://medium.com/@JyothiVenkat23/why-most-ux-research-fails-to-influence-the-c-suite-89294926fa34",
-        category: "Leadership & The CEO Office",
-        thumbnail: "https://picsum.photos/seed/csuite/800/600",
+        title: "Stop Arguing About AI and Give It 60 Minutes of Your Craft",
+        date: "2026-03-25",
+        description: "A blunt argument for moving past AI discourse and using focused practice time to see where the tools actually help.",
+        url: "https://jyothiwrites.substack.com/p/stop-arguing-about-ai-and-give-it",
+        category: "AI Commentary",
+        thumbnail: "https://substack-post-media.s3.amazonaws.com/public/images/548f0ca1-f376-43a4-8d0b-272f74323b23_2760x1504.png",
     },
     {
-        title: "Why 'Research Slop' is a Distraction",
-        date: "2026-02-01",
-        description: "Stop policing AI output. Start delivering functional artifacts that drive decisions.",
-        url: "https://jyothiwrites.substack.com/p/why-research-slop-is-a-distraction",
-        category: "Research & Product Strategy",
-        thumbnail: "https://picsum.photos/seed/slop/800/600",
+        title: "AI in Practice: The Review Mar 14 - 20th 2026",
+        date: "2026-03-22",
+        description: "A weekly review of AI tools and workflows tested for UX research, design, product, and engineering work.",
+        url: "https://jyothiwrites.substack.com/p/ai-in-practice-the-review-mar-14",
+        category: "AI Tool Reviews",
+        thumbnail: "https://substack-post-media.s3.amazonaws.com/public/images/fed725c2-e915-4a4e-a549-53e83506d5df_2816x1536.png",
     },
     {
-        title: "Is Claude Cowork a 10x Multiplier or Just Expensive?",
-        date: "2026-01-20",
-        description: "Stress-testing AI productivity tools for real ROI in research workflows.",
-        url: "https://jyothiwrites.substack.com/p/is-claude-cowork-a-10x-multiplier",
-        category: "AI & The Researcher-Maker",
-        thumbnail: "https://picsum.photos/seed/claude-cowork/800/600",
+        title: "The 7 Levels of AI Augmented Research",
+        date: "2026-03-17",
+        description: "A framework for understanding where research teams are today and what it takes to evolve toward AI-augmented practice.",
+        url: "https://jyothiwrites.substack.com/p/the-7-levels-of-ai-augmented-research",
+        category: "Research Systems",
+        thumbnail: "https://substackcdn.com/image/fetch/$s_!lFjO!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F516a8f9c-f008-49b2-be8c-b4a4f530e304_2816x1536.png",
     },
     {
-        title: "Framework: How to Choose a UX Research Methodology",
-        date: "2026-01-05",
-        description: "A decision framework for qual, quant, and mixed-methods research.",
-        url: "https://medium.com/@JyothiVenkat23/framework-how-to-choose-a-ux-research-methodology-b42f7194e94a",
-        category: "Research & Product Strategy",
-        thumbnail: "https://picsum.photos/seed/framework/800/600",
+        title: "Karpathy's autoresearch: Set Up in 3 Steps",
+        date: "2026-03-14",
+        description: "What autoresearch is, how it works, and how to get it running quickly with practical use cases to try.",
+        url: "https://jyothiwrites.substack.com/p/karpathys-autoresearch-set-up-in",
+        category: "AI Build Guides",
+        thumbnail: "https://substack-post-media.s3.amazonaws.com/public/images/5f6b3008-1842-4a86-8a6a-cecef286b096_2752x1536.png",
+    },
+    {
+        title: "I Built a Jaw Dropping 360° Nature App with Google AI Studio + Claude + Codex (Steal My 5-Step Blueprint)",
+        date: "2026-03-12",
+        description: "A build breakdown of the 360° nature app, including workflow, tools, and the five-step blueprint behind it.",
+        url: "https://jyothiwrites.substack.com/p/i-built-a-jaw-dropping-360-nature",
+        category: "AI Build Guides",
+        thumbnail: "https://substack-post-media.s3.amazonaws.com/public/images/b80af2d2-38af-4688-b708-5709b4bef315_2516x1537.png",
     },
 ];
 
-const editorPicks = articles.slice(0, 3);
+const SUBSTACK_FEED_URL = 'https://jyothiwrites.substack.com/feed';
+const SUBSTACK_FEED_SOURCES = [
+    SUBSTACK_FEED_URL,
+    `https://api.allorigins.win/raw?url=${encodeURIComponent(SUBSTACK_FEED_URL)}`,
+    `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(SUBSTACK_FEED_URL)}`,
+];
+
+function decodeHtmlEntities(value) {
+    const textarea = document.createElement('textarea');
+    textarea.innerHTML = value;
+    return textarea.value;
+}
+
+function stripHtml(value) {
+    return value.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+function normalizeText(value) {
+    if (!value) return '';
+    return stripHtml(decodeHtmlEntities(value)).trim();
+}
+
+function inferArticleCategory(title, description) {
+    const haystack = `${title} ${description}`.toLowerCase();
+
+    if (haystack.includes('agi') || haystack.includes('llm') || haystack.includes('brains')) {
+        return 'AI Systems & AGI';
+    }
+    if (haystack.includes('review') || haystack.includes('tools tested') || haystack.includes('weekly')) {
+        return 'AI Tool Reviews';
+    }
+    if (haystack.includes('research') || haystack.includes('wiki') || haystack.includes('knowledge graph')) {
+        return 'Research Systems';
+    }
+    if (
+        haystack.includes('build') ||
+        haystack.includes('set up') ||
+        haystack.includes('blueprint') ||
+        haystack.includes('app') ||
+        haystack.includes('assistant')
+    ) {
+        return 'AI Build Guides';
+    }
+
+    return 'AI Commentary';
+}
+
+function getCategoryNames(items) {
+    return ['All', ...new Set(items.map(article => article.category))];
+}
+
+function normalizeDate(value) {
+    const parsed = new Date(value);
+    if (Number.isNaN(parsed.getTime())) {
+        return '';
+    }
+    return parsed.toISOString().slice(0, 10);
+}
+
+function createArticleCard(article) {
+    const card = document.createElement('a');
+    card.href = article.url;
+    card.target = '_blank';
+    card.rel = 'noopener noreferrer';
+    card.className = 'pick-card';
+
+    const imageWrapper = document.createElement('div');
+    imageWrapper.className = 'image-wrapper';
+    const image = document.createElement('img');
+    image.src = article.thumbnail;
+    image.alt = article.title;
+    image.referrerPolicy = 'no-referrer';
+    image.loading = 'lazy';
+    imageWrapper.appendChild(image);
+
+    const category = document.createElement('div');
+    category.className = 'category';
+    category.textContent = article.category;
+
+    const heading = document.createElement('h3');
+    heading.textContent = article.title;
+
+    const description = document.createElement('p');
+    description.textContent = article.description;
+
+    card.append(imageWrapper, category, heading, description);
+    return card;
+}
+
+function createArticleRow(article) {
+    const row = document.createElement('a');
+    row.href = article.url;
+    row.target = '_blank';
+    row.rel = 'noopener noreferrer';
+    row.className = 'article-row';
+
+    const dateElement = document.createElement('div');
+    dateElement.className = 'date';
+    dateElement.textContent = new Date(article.date).toLocaleDateString('en-US', {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric',
+    });
+
+    const content = document.createElement('div');
+    const heading = document.createElement('h3');
+    heading.textContent = article.title;
+    const description = document.createElement('div');
+    description.className = 'description';
+    description.textContent = article.description;
+    content.append(heading, description);
+
+    const readLink = document.createElement('div');
+    readLink.className = 'read-link';
+    const readText = document.createElement('span');
+    readText.innerHTML = 'Read Article <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>';
+    readLink.appendChild(readText);
+
+    row.append(dateElement, content, readLink);
+    return row;
+}
+
+function parseSubstackFeedXml(xmlText) {
+    const xml = new DOMParser().parseFromString(xmlText, 'text/xml');
+    const items = Array.from(xml.querySelectorAll('item'));
+
+    return items.slice(0, 8).map(item => {
+        const title = normalizeText(item.querySelector('title')?.textContent || '');
+        const description = normalizeText(item.querySelector('description')?.textContent || '');
+        const url = item.querySelector('link')?.textContent?.trim() || '';
+        const date = item.querySelector('pubDate')?.textContent || '';
+        const thumbnail = item.querySelector('enclosure')?.getAttribute('url') || 'https://picsum.photos/seed/writing/800/600';
+
+        return {
+            title,
+            description,
+            url,
+            date: normalizeDate(date),
+            category: inferArticleCategory(title, description),
+            thumbnail,
+        };
+    }).filter(article => article.title && article.url && article.date);
+}
+
+function parseSubstackFeedJson(payload) {
+    if (!payload?.items?.length) return [];
+
+    return payload.items.slice(0, 8).map(item => {
+        const title = normalizeText(item.title || '');
+        const description = normalizeText(item.description || item.contentSnippet || '');
+        const thumbnail = item.thumbnail || item.enclosure?.link || 'https://picsum.photos/seed/writing/800/600';
+
+        return {
+            title,
+            description,
+            url: item.link || '',
+            date: normalizeDate(item.pubDate || item.isoDate || ''),
+            category: inferArticleCategory(title, description),
+            thumbnail,
+        };
+    }).filter(article => article.title && article.url && article.date);
+}
+
+async function fetchLatestSubstackArticles() {
+    for (const source of SUBSTACK_FEED_SOURCES) {
+        try {
+            const response = await fetch(source);
+            if (!response.ok) {
+                continue;
+            }
+
+            if (source.includes('rss2json.com')) {
+                const payload = await response.json();
+                const parsed = parseSubstackFeedJson(payload);
+                if (parsed.length) return parsed;
+                continue;
+            }
+
+            const text = await response.text();
+            const parsed = parseSubstackFeedXml(text);
+            if (parsed.length) return parsed;
+        } catch (error) {
+            // Try the next source. The page still has a local fallback list.
+        }
+    }
+
+    return [];
+}
 
 // --- Mobile Menu ---
 
@@ -240,33 +435,13 @@ function initWritingPage() {
 
     if (!filtersContainer || !listContainer) return;
 
-    const categoryNames = ['All', 'Leadership & The CEO Office', 'AI & The Researcher-Maker', 'Research & Product Strategy'];
+    let currentArticles = [...fallbackArticles];
     let activeCategory = 'All';
     let searchQuery = '';
 
-    // Editor's Picks
-    if (picksContainer) {
-        editorPicks.forEach(art => {
-            const card = document.createElement('a');
-            card.href = art.url;
-            card.target = '_blank';
-            card.rel = 'noopener';
-            card.className = 'pick-card';
-            card.innerHTML = `
-                <div class="image-wrapper">
-                    <img src="${art.thumbnail}" alt="${art.title}" referrerpolicy="no-referrer" loading="lazy">
-                </div>
-                <div class="category">${art.category}</div>
-                <h3>${art.title}</h3>
-                <p>${art.description}</p>
-            `;
-            picksContainer.appendChild(card);
-        });
-    }
-
     function renderFilters() {
         filtersContainer.innerHTML = '';
-        categoryNames.forEach(cat => {
+        getCategoryNames(currentArticles).forEach(cat => {
             const btn = document.createElement('button');
             btn.className = `pill-btn${cat === activeCategory ? ' active' : ''}`;
             btn.textContent = cat;
@@ -281,8 +456,8 @@ function initWritingPage() {
 
     function renderArticles() {
         let filtered = activeCategory === 'All'
-            ? articles
-            : articles.filter(a => a.category === activeCategory);
+            ? currentArticles
+            : currentArticles.filter(a => a.category === activeCategory);
 
         if (searchQuery) {
             const q = searchQuery.toLowerCase();
@@ -294,25 +469,15 @@ function initWritingPage() {
         listContainer.innerHTML = '';
 
         filtered.forEach(art => {
-            const date = new Date(art.date);
-            const formatted = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            listContainer.appendChild(createArticleRow(art));
+        });
+    }
 
-            const row = document.createElement('a');
-            row.href = art.url;
-            row.target = '_blank';
-            row.rel = 'noopener';
-            row.className = 'article-row';
-            row.innerHTML = `
-                <div class="date">${formatted}</div>
-                <div>
-                    <h3>${art.title}</h3>
-                    <div class="description">${art.description}</div>
-                </div>
-                <div class="read-link">
-                    <span>Read Article <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></span>
-                </div>
-            `;
-            listContainer.appendChild(row);
+    function renderPicks() {
+        if (!picksContainer) return;
+        picksContainer.innerHTML = '';
+        currentArticles.slice(0, 3).forEach(article => {
+            picksContainer.appendChild(createArticleCard(article));
         });
     }
 
@@ -324,6 +489,19 @@ function initWritingPage() {
         });
     }
 
+    renderPicks();
     renderFilters();
     renderArticles();
+
+    fetchLatestSubstackArticles().then((latestArticles) => {
+        if (!latestArticles.length) return;
+
+        currentArticles = latestArticles;
+        if (activeCategory !== 'All' && !currentArticles.some(article => article.category === activeCategory)) {
+            activeCategory = 'All';
+        }
+        renderPicks();
+        renderFilters();
+        renderArticles();
+    });
 }
