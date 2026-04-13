@@ -47,7 +47,7 @@ const projects = [
         liveUrl: 'https://llm-knowledge-base-nine.vercel.app/',
         repoUrl: 'https://github.com/jyothivenkat-hub/llm-knowledge-base',
         articleUrl: 'https://jyothiwrites.substack.com/p/i-built-a-system-that-turns-research',
-        image: 'https://images.pexels.com/photos/3747479/pexels-photo-3747479.jpeg?auto=compress&cs=tinysrgb&w=1600',
+        image: 'AdobeStock_623238309.jpeg',
     },
     {
         title: 'Noveaire',
@@ -65,7 +65,7 @@ const projects = [
         featured: false,
         repoUrl: 'https://github.com/jyothivenkat-hub/autoresearch',
         articleUrl: 'https://jyothiwrites.substack.com/p/karpathys-autoresearch-set-up-in',
-        image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Interior_of_Unit_Telescope_(LUXYIMAGES_28064-CC).jpg',
+        image: 'AdobeStock_1958090578.jpeg',
     },
     {
         title: 'Missastroglow',
