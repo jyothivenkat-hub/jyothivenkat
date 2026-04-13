@@ -68,14 +68,6 @@ const projects = [
         image: 'AdobeStock_1958090578.jpeg',
     },
     {
-        title: 'MissAstroGlow Agent',
-        category: 'Agents',
-        description: 'An OpenClaw agent that auto-responds to inquiries, sends personalized emails and SMS, and runs nurture follow-ups.',
-        featured: false,
-        articleUrl: 'https://substack.com/home/post/p-192521960',
-        image: 'https://picsum.photos/seed/astro-agent/800/600',
-    },
-    {
         title: 'Job Monitor',
         category: 'Agents',
         description: 'Scrapes 25+ company career pages, classifies fit with Claude, and sends a personalized daily job digest.',
@@ -86,18 +78,16 @@ const projects = [
     {
         title: 'MissAstroGlow',
         category: 'Apps',
-        description: 'A Vedic astrology and tarot platform with booking, payments, and session scheduling.',
-        featured: false,
-        liveUrl: 'https://missastroglow-live.vercel.app',
-        image: 'https://picsum.photos/seed/astro-site/800/600',
-    },
-    {
-        title: 'MissAstroGlow App',
-        category: 'Apps',
-        description: 'An AI astrology chat app for personalized guidance, conversation, and ongoing insight.',
+        description: 'A multi-surface astrology product spanning AI chat, booking and payments, and automated client follow-up.',
         featured: false,
         liveUrl: 'https://misastroglowai.vercel.app/',
-        image: 'https://picsum.photos/seed/astro-app/800/600',
+        articleUrl: 'https://substack.com/home/post/p-192521960',
+        extraLinks: [
+            { label: 'Website', url: 'https://missastroglow-live.vercel.app' },
+            { label: 'App', url: 'https://misastroglowai.vercel.app/' },
+            { label: 'Agent', url: 'https://substack.com/home/post/p-192521960' },
+        ],
+        image: 'https://picsum.photos/seed/astro/800/600',
     },
     {
         title: 'Nature Walk App',
