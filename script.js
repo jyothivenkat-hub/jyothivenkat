@@ -46,7 +46,7 @@ const projects = [
         image: 'https://picsum.photos/seed/forge/800/600',
     },
     {
-        title: 'Noveaire Cloud',
+        title: 'Noveaire',
         category: 'Product',
         description: 'A content intelligence platform for creators, built around analytics, AI experiments, and content generation.',
         featured: false,
