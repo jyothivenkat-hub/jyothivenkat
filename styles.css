@@ -499,6 +499,14 @@ h1, h2, h3, h4, h5, h6 {
     .project-card:not(.featured) { grid-column: span 4; }
 }
 
+.project-image-link {
+    display: block;
+}
+
+.project-card-disabled .project-image-link {
+    pointer-events: none;
+}
+
 .project-image {
     position: relative;
     overflow: hidden;
@@ -580,6 +588,31 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.7;
     max-width: 28rem;
     font-style: italic;
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.85rem;
+    margin-top: 1.5rem;
+}
+
+.project-link {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    color: rgba(249, 247, 242, 0.72);
+    transition: color 0.3s;
+}
+
+.project-link:hover {
+    color: var(--color-indigo);
+}
+
+.project-link-divider {
+    color: rgba(249, 247, 242, 0.22);
 }
 
 /* Thesis CTA */

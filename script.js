@@ -10,7 +10,7 @@ const projects = [
         category: 'Infrastructure',
         description: 'A first-principles system for AI-native research teams.',
         featured: true,
-        url: 'https://jv-airesearch.vercel.app/',
+        liveUrl: 'https://jv-airesearch.vercel.app/',
         image: 'https://picsum.photos/seed/ai-arch/1200/800',
     },
     {
@@ -18,7 +18,7 @@ const projects = [
         category: 'Thought Leadership',
         description: 'A thesis on researchers who prototype, not just report.',
         featured: false,
-        url: 'https://jyothiwrites.substack.com/p/the-researcher-maker-build-0-1-products',
+        articleUrl: 'https://jyothiwrites.substack.com/p/the-researcher-maker-build-0-1-products',
         image: 'https://picsum.photos/seed/thesis/800/600',
     },
     {
@@ -26,7 +26,8 @@ const projects = [
         category: 'Agents',
         description: 'A daily digest agent for tracking and synthesizing signal.',
         featured: false,
-        url: 'https://github.com/jyothivenkat-hub/ai-news-agent',
+        repoUrl: 'https://github.com/jyothivenkat-hub/ai-news-agent',
+        articleUrl: 'https://jyothiwrites.substack.com/p/build-an-ai-news-agent-in-3-steps',
         image: 'https://picsum.photos/seed/agent/800/600',
     },
     {
@@ -34,7 +35,9 @@ const projects = [
         category: 'Infrastructure',
         description: 'A living wiki with search, Q&A, and knowledge capture.',
         featured: false,
-        url: 'https://llm-knowledge-base-nine.vercel.app/',
+        liveUrl: 'https://llm-knowledge-base-nine.vercel.app/',
+        repoUrl: 'https://github.com/jyothivenkat-hub/llm-knowledge-base',
+        articleUrl: 'https://jyothiwrites.substack.com/p/i-built-a-system-that-turns-research',
         image: 'https://picsum.photos/seed/forge/800/600',
     },
     {
@@ -42,7 +45,8 @@ const projects = [
         category: 'Agents',
         description: 'A Karpathy-inspired workflow for automated research loops.',
         featured: false,
-        url: 'https://github.com/jyothivenkat-hub/autoresearch',
+        repoUrl: 'https://github.com/jyothivenkat-hub/autoresearch',
+        articleUrl: 'https://jyothiwrites.substack.com/p/karpathys-autoresearch-set-up-in',
         image: 'https://picsum.photos/seed/autoresearch/800/600',
     },
     {
@@ -50,7 +54,7 @@ const projects = [
         category: 'Apps',
         description: 'An AI astrology app built around guidance and conversation.',
         featured: false,
-        url: 'https://misastroglowai.vercel.app/',
+        liveUrl: 'https://misastroglowai.vercel.app/',
         image: 'https://picsum.photos/seed/astro/800/600',
     },
     {
@@ -58,7 +62,8 @@ const projects = [
         category: 'Apps',
         description: 'A UX study in presence, place, and environmental awareness.',
         featured: false,
-        url: 'https://maps-3-d-exploration.vercel.app/',
+        liveUrl: 'https://maps-3-d-exploration.vercel.app/',
+        articleUrl: 'https://jyothiwrites.substack.com/p/i-built-a-jaw-dropping-360-nature',
         image: 'https://picsum.photos/seed/nature/800/600',
     },
     {
@@ -66,7 +71,9 @@ const projects = [
         category: 'Games',
         description: 'A fast 0-to-1 game prototype built with AI-assisted development.',
         featured: false,
-        url: 'https://starcatch-game.vercel.app/',
+        liveUrl: 'https://starcatch-game.vercel.app/',
+        repoUrl: 'https://github.com/jyothivenkat-hub/Starcatch_Game',
+        articleUrl: 'https://jyothiwrites.substack.com/p/the-researcher-maker-build-0-1-products',
         image: 'https://picsum.photos/seed/starcatch/800/600',
     },
 ];
@@ -396,34 +403,39 @@ function initWorkPage() {
 
         filtered.forEach((project, i) => {
             const isFeatured = project.featured && activeCategory === 'All';
-            const isLive = Boolean(project.url);
-            const card = document.createElement(isLive ? 'a' : 'article');
-            if (isLive) {
-                card.href = project.url;
-                card.target = project.url.startsWith('http') ? '_blank' : '';
-                card.rel = 'noopener';
-            }
+            const primaryUrl = project.liveUrl || project.repoUrl || project.articleUrl || '';
+            const hasPrimaryUrl = Boolean(primaryUrl);
+            const card = document.createElement('article');
             card.className = `project-card${isFeatured ? ' featured' : ''}`;
-            if (!isLive) {
+            if (!hasPrimaryUrl) {
                 card.classList.add('project-card-disabled');
             }
             card.style.animationDelay = `${i * 0.05}s`;
 
+            const linkItems = [
+                project.liveUrl ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="project-link">Live</a>` : '',
+                project.repoUrl ? `<a href="${project.repoUrl}" target="_blank" rel="noopener noreferrer" class="project-link">GitHub</a>` : '',
+                project.articleUrl ? `<a href="${project.articleUrl}" target="_blank" rel="noopener noreferrer" class="project-link">Article</a>` : '',
+            ].filter(Boolean).join('<span class="project-link-divider" aria-hidden="true">/</span>');
+
             card.innerHTML = `
-                <div class="project-image">
-                    <img src="${project.image}" alt="${project.title}" referrerpolicy="no-referrer" loading="lazy">
-                    <div class="hover-overlay">
-                        <div class="hover-circle">
-                            ${isLive
+                <a class="project-image-link" href="${primaryUrl || '#'}" ${hasPrimaryUrl ? 'target="_blank" rel="noopener noreferrer"' : 'aria-disabled="true" tabindex="-1"'}>
+                    <div class="project-image">
+                        <img src="${project.image}" alt="${project.title}" referrerpolicy="no-referrer" loading="lazy">
+                        <div class="hover-overlay">
+                            <div class="hover-circle">
+                                ${hasPrimaryUrl
                                 ? '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>'
                                 : '<span class="project-status-label">In Progress</span>'}
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
                 <div class="project-meta">
                     <div class="category">${project.category}</div>
                     <h3>${project.title}</h3>
                     <p>${project.description}</p>
+                    ${linkItems ? `<div class="project-links">${linkItems}</div>` : ''}
                 </div>
             `;
 
