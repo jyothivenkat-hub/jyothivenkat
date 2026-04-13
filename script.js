@@ -6,7 +6,7 @@
 
 const projects = [
     {
-        title: 'The Researcher-Maker Thesis',
+        title: 'The Research Maker Thesis',
         category: 'Thought Leadership',
         description: 'A four-part sequence on going from research to shipped prototypes.',
         featured: true,
@@ -19,9 +19,9 @@ const projects = [
         image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Outdoor_Kindle_reader_(Unsplash).jpg',
     },
     {
-        title: 'AI-Native Research Architecture',
+        title: 'AI Native Research Architecture',
         category: 'Infrastructure',
-        description: 'A first-principles system for AI-native research teams.',
+        description: 'A first-principles system for AI native research teams.',
         featured: false,
         liveUrl: 'https://jv-airesearch.vercel.app/',
         articleUrl: 'https://jyothiwrites.substack.com/p/the-ai-native-researcher-how-to-build',

@@ -63,7 +63,7 @@ Three cards:
 
 ---
 
-#### Section 3: WHERE I'M GOING — "The Researcher-Maker"
+#### Section 3: WHERE I'M GOING — "The Research Maker"
 
 Intro line: I apply the same principle to AI that I apply to research: show, don't tell. I don't write about building, I ship.
 
