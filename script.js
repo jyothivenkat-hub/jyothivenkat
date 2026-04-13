@@ -47,7 +47,7 @@ const projects = [
         liveUrl: 'https://llm-knowledge-base-nine.vercel.app/',
         repoUrl: 'https://github.com/jyothivenkat-hub/llm-knowledge-base',
         articleUrl: 'https://jyothiwrites.substack.com/p/i-built-a-system-that-turns-research',
-        image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Grand_Reading_Room_interior.jpg',
+        image: 'https://images.pexels.com/photos/3747479/pexels-photo-3747479.jpeg?auto=compress&cs=tinysrgb&w=1600',
     },
     {
         title: 'Noveaire',
