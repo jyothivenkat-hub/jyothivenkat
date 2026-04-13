@@ -24,6 +24,7 @@ const projects = [
         description: 'A first-principles system for AI-native research teams.',
         featured: false,
         liveUrl: 'https://jv-airesearch.vercel.app/',
+        articleUrl: 'https://jyothiwrites.substack.com/p/the-7-levels-of-ai-augmented-research',
         image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Modern_architecture.jpg',
     },
     {
@@ -50,6 +51,7 @@ const projects = [
         category: 'Product',
         description: 'A content intelligence platform for creators, built around analytics, AI experiments, and content generation.',
         featured: false,
+        liveUrl: 'https://noveaire-cloud.vercel.app/',
         repoUrl: 'https://github.com/jyothivenkat-hub/noveaire-cloud',
         image: 'https://picsum.photos/seed/noveaire/800/600',
     },
