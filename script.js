@@ -37,7 +37,7 @@ const projects = [
         featured: false,
         repoUrl: 'https://github.com/jyothivenkat-hub/ai-news-agent',
         articleUrl: 'https://jyothiwrites.substack.com/p/build-an-ai-news-agent-in-3-steps',
-        image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Sunset_Under_the_Pier.JPG',
+        image: 'https://picsum.photos/seed/agent/800/600',
     },
     {
         title: 'LLM to Wiki',
@@ -47,7 +47,7 @@ const projects = [
         liveUrl: 'https://llm-knowledge-base-nine.vercel.app/',
         repoUrl: 'https://github.com/jyothivenkat-hub/llm-knowledge-base',
         articleUrl: 'https://jyothiwrites.substack.com/p/i-built-a-system-that-turns-research',
-        image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mansueto_Library_reading_room.JPG',
+        image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Grand_Reading_Room_interior.jpg',
     },
     {
         title: 'Noveaire',
