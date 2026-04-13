@@ -624,6 +624,63 @@ h1, h2, h3, h4, h5, h6 {
     color: rgba(249, 247, 242, 0.22);
 }
 
+.project-card-editorial {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 3rem;
+    background:
+        radial-gradient(circle at top right, rgba(88, 92, 255, 0.12), transparent 38%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    overflow: hidden;
+}
+
+.project-editorial-panel {
+    position: relative;
+    min-height: 100%;
+    padding: 3.5rem 3rem;
+}
+
+.project-editorial-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 3.5rem 3.5rem;
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 80%);
+    pointer-events: none;
+}
+
+.project-editorial-accent {
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    width: 5rem;
+    height: 1px;
+    background: var(--color-indigo);
+    box-shadow: 0 0 22px rgba(88, 92, 255, 0.35);
+}
+
+.project-card-editorial .project-meta {
+    position: relative;
+    z-index: 1;
+    margin-top: 0;
+    padding-top: 4rem;
+}
+
+.project-card-editorial .project-meta h3 {
+    max-width: 15rem;
+    line-height: 1.02;
+}
+
+.project-card-editorial .project-meta p {
+    max-width: 20rem;
+}
+
+.project-card-editorial:hover .project-meta h3 {
+    font-style: italic;
+    color: var(--color-indigo);
+}
+
 /* Thesis CTA */
 .work-thesis {
     padding-top: 6rem;

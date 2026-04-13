@@ -24,7 +24,7 @@ const projects = [
         description: 'A first-principles system for AI-native research teams.',
         featured: false,
         liveUrl: 'https://jv-airesearch.vercel.app/',
-        image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Architecture_photography.jpg',
+        editorial: true,
     },
     {
         title: 'AI News Agent',
@@ -412,7 +412,7 @@ function initWorkPage() {
         const primaryUrl = project.liveUrl || project.repoUrl || project.articleUrl || '';
         const hasPrimaryUrl = Boolean(primaryUrl);
         const card = document.createElement('article');
-        card.className = `project-card${isFeatured ? ' featured' : ''}`;
+        card.className = `project-card${isFeatured ? ' featured' : ''}${project.editorial ? ' project-card-editorial' : ''}`;
         if (!hasPrimaryUrl) {
             card.classList.add('project-card-disabled');
         }
@@ -426,6 +426,24 @@ function initWorkPage() {
                 `<a href="${link.url}" target="_blank" rel="noopener noreferrer" class="project-link">${link.label}</a>`
             ),
         ].filter(Boolean).join('<span class="project-link-divider" aria-hidden="true">/</span>');
+
+        if (project.editorial) {
+            card.innerHTML = `
+                <div class="project-editorial-panel">
+                    <div class="project-editorial-grid" aria-hidden="true"></div>
+                    <div class="project-editorial-accent" aria-hidden="true"></div>
+                    <div class="project-meta">
+                        <div class="category">${project.category}</div>
+                        <h3>${hasPrimaryUrl
+                            ? `<a href="${primaryUrl}" target="_blank" rel="noopener noreferrer" class="project-title-link">${project.title}</a>`
+                            : project.title}</h3>
+                        <p>${project.description}</p>
+                        ${linkItems ? `<div class="project-links">${linkItems}</div>` : ''}
+                    </div>
+                </div>
+            `;
+            return card;
+        }
 
         card.innerHTML = `
             <a class="project-image-link" href="${primaryUrl || '#'}" ${hasPrimaryUrl ? 'target="_blank" rel="noopener noreferrer"' : 'aria-disabled="true" tabindex="-1"'}>
