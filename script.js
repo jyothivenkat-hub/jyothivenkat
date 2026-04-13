@@ -132,7 +132,7 @@ const fallbackArticles = [
 
 const SUBSTACK_FEED_URL = 'https://jyothiwrites.substack.com/feed';
 const SUBSTACK_FEED_SOURCES = [
-    SUBSTACK_FEED_URL,
+    '/api/substack-feed',
     `https://api.allorigins.win/raw?url=${encodeURIComponent(SUBSTACK_FEED_URL)}`,
     `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(SUBSTACK_FEED_URL)}`,
 ];
@@ -282,11 +282,12 @@ function parseSubstackFeedJson(payload) {
         const title = normalizeText(item.title || '');
         const description = normalizeText(item.description || item.contentSnippet || '');
         const thumbnail = item.thumbnail || item.enclosure?.link || 'https://picsum.photos/seed/writing/800/600';
+        const url = item.url || item.link || '';
 
         return {
             title,
             description,
-            url: item.link || '',
+            url,
             date: normalizeDate(item.pubDate || item.isoDate || ''),
             category: inferArticleCategory(title, description),
             thumbnail,
@@ -302,7 +303,7 @@ async function fetchLatestSubstackArticles() {
                 continue;
             }
 
-            if (source.includes('rss2json.com')) {
+            if (source === '/api/substack-feed' || source.includes('rss2json.com')) {
                 const payload = await response.json();
                 const parsed = parseSubstackFeedJson(payload);
                 if (parsed.length) return parsed;
@@ -482,9 +483,12 @@ function initWritingPage() {
 
         if (!seeAllButton) return;
 
-        const hasMoreArticles = shouldLimitResults && filtered.length > ARTICLES_PREVIEW_LIMIT;
-        seeAllButton.hidden = !hasMoreArticles;
-        seeAllButton.textContent = `See all articles (${filtered.length})`;
+        const hasExpandableArchive = !searchQuery && activeCategory === 'All' && filtered.length > ARTICLES_PREVIEW_LIMIT;
+        seeAllButton.hidden = !hasExpandableArchive;
+        seeAllButton.setAttribute('aria-expanded', showAllArticles ? 'true' : 'false');
+        seeAllButton.textContent = showAllArticles
+            ? 'Show fewer articles'
+            : `See all articles (${filtered.length})`;
     }
 
     function renderPicks() {
@@ -505,7 +509,7 @@ function initWritingPage() {
 
     if (seeAllButton) {
         seeAllButton.addEventListener('click', () => {
-            showAllArticles = true;
+            showAllArticles = !showAllArticles;
             renderArticles();
         });
     }
@@ -518,7 +522,6 @@ function initWritingPage() {
         if (!latestArticles.length) return;
 
         currentArticles = latestArticles;
-        showAllArticles = false;
         if (activeCategory !== 'All' && !currentArticles.some(article => article.category === activeCategory)) {
             activeCategory = 'All';
         }
