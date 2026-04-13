@@ -437,13 +437,15 @@ function initWorkPage() {
         }
         card.style.animationDelay = `${i * 0.05}s`;
 
+        const extraLinks = (project.extraLinks || []).map(link =>
+            `<a href="${link.url}" target="_blank" rel="noopener noreferrer" class="project-link">${link.label}</a>`
+        );
+
         const linkItems = [
             project.liveUrl ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="project-link">Live</a>` : '',
-            project.repoUrl ? `<a href="${project.repoUrl}" target="_blank" rel="noopener noreferrer" class="project-link">GitHub</a>` : '',
+            ...extraLinks,
             project.articleUrl ? `<a href="${project.articleUrl}" target="_blank" rel="noopener noreferrer" class="project-link">Article</a>` : '',
-            ...(project.extraLinks || []).map(link =>
-                `<a href="${link.url}" target="_blank" rel="noopener noreferrer" class="project-link">${link.label}</a>`
-            ),
+            project.repoUrl ? `<a href="${project.repoUrl}" target="_blank" rel="noopener noreferrer" class="project-link">GitHub</a>` : '',
         ].filter(Boolean).join('<span class="project-link-divider" aria-hidden="true">/</span>');
 
         if (project.editorial) {
