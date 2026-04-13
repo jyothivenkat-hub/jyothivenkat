@@ -377,7 +377,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // --- Work Page ---
 
 function initWorkPage() {
-    const featuredContainer = document.getElementById('featured-project');
     const filtersContainer = document.getElementById('work-filters');
     const gridContainer = document.getElementById('work-grid');
     if (!filtersContainer || !gridContainer) return;
@@ -448,27 +447,11 @@ function initWorkPage() {
             ? projects
             : projects.filter(p => p.category === activeCategory);
 
-        const featuredProject = activeCategory === 'All'
-            ? filtered.find(project => project.featured)
-            : null;
-        const gridProjects = featuredProject
-            ? filtered.filter(project => project !== featuredProject)
-            : filtered;
-
-        if (featuredContainer) {
-            featuredContainer.innerHTML = '';
-            if (featuredProject) {
-                featuredContainer.appendChild(createProjectCard(featuredProject, 0, true));
-                featuredContainer.parentElement.hidden = false;
-            } else {
-                featuredContainer.parentElement.hidden = true;
-            }
-        }
-
         gridContainer.innerHTML = '';
 
-        gridProjects.forEach((project, i) => {
-            gridContainer.appendChild(createProjectCard(project, i, false));
+        filtered.forEach((project, i) => {
+            const isFeatured = project.featured && activeCategory === 'All';
+            gridContainer.appendChild(createProjectCard(project, i, isFeatured));
         });
     }
 
