@@ -35,7 +35,7 @@ const projects = [
     {
         title: 'AI-Native Research Architecture',
         category: 'Infrastructure',
-        description: 'A first-principles architecture for AI-native research teams that turns human meaning into scalable systems.',
+        description: 'A first-principles system for AI-native research teams.',
         featured: true,
         url: 'https://jv-airesearch.vercel.app/',
         image: createProjectArtwork({
@@ -49,7 +49,7 @@ const projects = [
     {
         title: 'The Researcher-Maker Thesis',
         category: 'Thought Leadership',
-        description: 'A new paradigm where researchers don\'t just report — they build the solutions they discover.',
+        description: 'A thesis on researchers who prototype, not just report.',
         featured: false,
         url: 'https://jyothiwrites.substack.com/p/the-researcher-maker-build-0-1-products',
         image: 'https://picsum.photos/seed/thesis/800/600',
@@ -57,7 +57,7 @@ const projects = [
     {
         title: 'AI News Agent',
         category: 'Agents',
-        description: 'AI News Daily Digest Agent that pulls from free sources and compiles a formatted daily brief.',
+        description: 'A daily digest agent for tracking and synthesizing signal.',
         featured: false,
         url: 'https://github.com/jyothivenkat-hub/ai-news-agent',
         image: createProjectArtwork({
@@ -71,7 +71,7 @@ const projects = [
     {
         title: 'LLM to Wiki',
         category: 'Infrastructure',
-        description: 'An LLM-compiled knowledge base wiki with Q&A, search, and Obsidian integration.',
+        description: 'A living wiki with search, Q&A, and knowledge capture.',
         featured: false,
         url: 'https://llm-knowledge-base-nine.vercel.app/',
         image: createProjectArtwork({
@@ -85,7 +85,7 @@ const projects = [
     {
         title: 'Autoresearch',
         category: 'Agents',
-        description: 'Karpathy-inspired autoresearch workflow with a Colab setup for running research loops on T4 and A100 GPUs.',
+        description: 'A Karpathy-inspired workflow for automated research loops.',
         featured: false,
         url: 'https://github.com/jyothivenkat-hub/autoresearch',
         image: createProjectArtwork({
@@ -99,7 +99,7 @@ const projects = [
     {
         title: 'Missastroglow',
         category: 'Apps',
-        description: 'AI Astro App exploring astrology, guidance, and conversational product experiences.',
+        description: 'An AI astrology app built around guidance and conversation.',
         featured: false,
         url: 'https://misastroglowai.vercel.app/',
         image: createProjectArtwork({
@@ -113,7 +113,7 @@ const projects = [
     {
         title: 'Nature Walk App',
         category: 'Apps',
-        description: 'A UX study in presence and environmental awareness.',
+        description: 'A UX study in presence, place, and environmental awareness.',
         featured: false,
         url: 'https://maps-3-d-exploration.vercel.app/',
         image: createProjectArtwork({
@@ -127,7 +127,7 @@ const projects = [
     {
         title: 'Starcatch Game',
         category: 'Games',
-        description: 'A fast prototype that turns AI-assisted development into a playable 0 to 1 game experience.',
+        description: 'A fast 0-to-1 game prototype built with AI-assisted development.',
         featured: false,
         url: 'https://starcatch-game.vercel.app/',
         image: createProjectArtwork({
