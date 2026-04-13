@@ -77,7 +77,7 @@ const projects = [
         featured: false,
         liveUrl: 'https://maps-3-d-exploration.vercel.app/',
         articleUrl: 'https://jyothiwrites.substack.com/p/i-built-a-jaw-dropping-360-nature',
-        image: 'https://picsum.photos/seed/nature/800/600',
+        image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Light_in_a_Redwood_Grove_(16088169345).jpg',
     },
     {
         title: 'Starcatch Game',
@@ -385,9 +385,10 @@ document.addEventListener('DOMContentLoaded', () => {
 // --- Work Page ---
 
 function initWorkPage() {
+    const topGridContainer = document.getElementById('work-top-grid');
     const filtersContainer = document.getElementById('work-filters');
     const gridContainer = document.getElementById('work-grid');
-    if (!filtersContainer || !gridContainer) return;
+    if (!filtersContainer || !gridContainer || !topGridContainer) return;
 
     const categories = ['All', ...new Set(projects.map(p => p.category))];
     let activeCategory = 'All';
@@ -455,10 +456,28 @@ function initWorkPage() {
             ? projects
             : projects.filter(p => p.category === activeCategory);
 
+        const topProjects = activeCategory === 'All'
+            ? filtered.slice(0, 2)
+            : [];
+        const remainingProjects = activeCategory === 'All'
+            ? filtered.slice(2)
+            : filtered;
+
+        topGridContainer.innerHTML = '';
+        if (activeCategory === 'All') {
+            topProjects.forEach((project, i) => {
+                const isFeatured = i === 0;
+                topGridContainer.appendChild(createProjectCard(project, i, isFeatured));
+            });
+            topGridContainer.parentElement.hidden = false;
+        } else {
+            topGridContainer.parentElement.hidden = true;
+        }
+
         gridContainer.innerHTML = '';
 
-        filtered.forEach((project, i) => {
-            const isFeatured = project.featured && activeCategory === 'All';
+        remainingProjects.forEach((project, i) => {
+            const isFeatured = activeCategory !== 'All' && project.featured;
             gridContainer.appendChild(createProjectCard(project, i, isFeatured));
         });
     }
