@@ -237,12 +237,21 @@ function normalizeDate(value) {
     return parsed.toISOString().slice(0, 10);
 }
 
-function createArticleCard(article, variant = 'supporting') {
+function createArticleCard(article) {
     const card = document.createElement('a');
     card.href = article.url;
     card.target = '_blank';
     card.rel = 'noopener noreferrer';
-    card.className = variant === 'lead' ? 'pick-card pick-card-lead' : 'pick-card pick-card-supporting';
+    card.className = 'pick-card';
+
+    const imageWrapper = document.createElement('div');
+    imageWrapper.className = 'image-wrapper';
+    const image = document.createElement('img');
+    image.src = article.thumbnail;
+    image.alt = article.title;
+    image.referrerPolicy = 'no-referrer';
+    image.loading = 'lazy';
+    imageWrapper.appendChild(image);
 
     const category = document.createElement('div');
     category.className = 'category';
@@ -254,24 +263,7 @@ function createArticleCard(article, variant = 'supporting') {
     const description = document.createElement('p');
     description.textContent = article.description;
 
-    if (variant === 'lead') {
-        const imageWrapper = document.createElement('div');
-        imageWrapper.className = 'image-wrapper';
-        const image = document.createElement('img');
-        image.src = article.thumbnail;
-        image.alt = article.title;
-        image.referrerPolicy = 'no-referrer';
-        image.loading = 'lazy';
-        imageWrapper.appendChild(image);
-
-        const content = document.createElement('div');
-        content.className = 'pick-card-copy';
-        content.append(category, heading, description);
-        card.append(imageWrapper, content);
-        return card;
-    }
-
-    card.append(category, heading, description);
+    card.append(imageWrapper, category, heading, description);
     return card;
 }
 
@@ -602,8 +594,8 @@ function initWritingPage() {
     function renderPicks() {
         if (!picksContainer) return;
         picksContainer.innerHTML = '';
-        currentArticles.slice(0, 3).forEach((article, index) => {
-            picksContainer.appendChild(createArticleCard(article, index === 0 ? 'lead' : 'supporting'));
+        currentArticles.slice(0, 3).forEach(article => {
+            picksContainer.appendChild(createArticleCard(article));
         });
     }
 
