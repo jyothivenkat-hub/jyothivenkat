@@ -4,33 +4,6 @@
 
 // --- Data ---
 
-function createProjectArtwork({ background, accent, accentSoft, title, motif }) {
-    const svg = `
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="${title}">
-            <defs>
-                <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="${background}" />
-                    <stop offset="100%" stop-color="#050505" />
-                </linearGradient>
-                <radialGradient id="glow" cx="78%" cy="22%" r="58%">
-                    <stop offset="0%" stop-color="${accentSoft}" stop-opacity="0.95" />
-                    <stop offset="100%" stop-color="${accentSoft}" stop-opacity="0" />
-                </radialGradient>
-            </defs>
-            <rect width="1200" height="800" fill="url(#bg)" />
-            <rect width="1200" height="800" fill="url(#glow)" />
-            <circle cx="930" cy="170" r="170" fill="${accentSoft}" opacity="0.25" />
-            <circle cx="260" cy="620" r="210" fill="${accent}" opacity="0.12" />
-            <path d="${motif}" fill="none" stroke="${accent}" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
-            <path d="M92 110 H1108" stroke="rgba(255,255,255,0.16)" stroke-width="2" />
-            <text x="94" y="150" fill="rgba(255,255,255,0.55)" font-family="JetBrains Mono, monospace" font-size="24" letter-spacing="7">SELECTED PROJECT</text>
-            <text x="94" y="660" fill="white" font-family="Playfair Display, Georgia, serif" font-style="italic" font-size="86">${title}</text>
-        </svg>
-    `;
-
-    return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
-}
-
 const projects = [
     {
         title: 'AI-Native Research Architecture',
@@ -38,13 +11,7 @@ const projects = [
         description: 'A first-principles system for AI-native research teams.',
         featured: true,
         url: 'https://jv-airesearch.vercel.app/',
-        image: createProjectArtwork({
-            title: 'Research Architecture',
-            background: '#102033',
-            accent: '#86A8FF',
-            accentSoft: '#3457D5',
-            motif: 'M170 520 C290 350 390 350 500 520 S710 690 860 510 S1010 280 1090 370',
-        }),
+        image: 'https://picsum.photos/seed/ai-arch/1200/800',
     },
     {
         title: 'The Researcher-Maker Thesis',
@@ -60,13 +27,7 @@ const projects = [
         description: 'A daily digest agent for tracking and synthesizing signal.',
         featured: false,
         url: 'https://github.com/jyothivenkat-hub/ai-news-agent',
-        image: createProjectArtwork({
-            title: 'AI News Agent',
-            background: '#191919',
-            accent: '#F3C969',
-            accentSoft: '#C9831E',
-            motif: 'M150 470 H430 L515 280 L640 540 L755 220 L920 470 H1050',
-        }),
+        image: 'https://picsum.photos/seed/agent/800/600',
     },
     {
         title: 'LLM to Wiki',
@@ -74,13 +35,7 @@ const projects = [
         description: 'A living wiki with search, Q&A, and knowledge capture.',
         featured: false,
         url: 'https://llm-knowledge-base-nine.vercel.app/',
-        image: createProjectArtwork({
-            title: 'LLM to Wiki',
-            background: '#13261C',
-            accent: '#8AD7B5',
-            accentSoft: '#2D7A61',
-            motif: 'M180 240 H560 V380 H350 V560 H720 V420 H980',
-        }),
+        image: 'https://picsum.photos/seed/forge/800/600',
     },
     {
         title: 'Autoresearch',
@@ -88,13 +43,7 @@ const projects = [
         description: 'A Karpathy-inspired workflow for automated research loops.',
         featured: false,
         url: 'https://github.com/jyothivenkat-hub/autoresearch',
-        image: createProjectArtwork({
-            title: 'Autoresearch',
-            background: '#241821',
-            accent: '#F2A3D4',
-            accentSoft: '#8A3D73',
-            motif: 'M150 560 C260 380 390 380 470 510 S690 690 785 500 S950 250 1060 330',
-        }),
+        image: 'https://picsum.photos/seed/autoresearch/800/600',
     },
     {
         title: 'Missastroglow',
@@ -102,13 +51,7 @@ const projects = [
         description: 'An AI astrology app built around guidance and conversation.',
         featured: false,
         url: 'https://misastroglowai.vercel.app/',
-        image: createProjectArtwork({
-            title: 'Missastroglow',
-            background: '#221733',
-            accent: '#D8A7FF',
-            accentSoft: '#6E49A8',
-            motif: 'M250 480 C330 290 530 260 650 420 S880 640 990 400 M720 210 L720 250 M700 230 L740 230',
-        }),
+        image: 'https://picsum.photos/seed/astro/800/600',
     },
     {
         title: 'Nature Walk App',
@@ -116,13 +59,7 @@ const projects = [
         description: 'A UX study in presence, place, and environmental awareness.',
         featured: false,
         url: 'https://maps-3-d-exploration.vercel.app/',
-        image: createProjectArtwork({
-            title: 'Nature Walk',
-            background: '#15241C',
-            accent: '#A6D39A',
-            accentSoft: '#3D6B43',
-            motif: 'M120 560 C260 430 390 430 520 560 S760 690 920 500 S1020 350 1090 380',
-        }),
+        image: 'https://picsum.photos/seed/nature/800/600',
     },
     {
         title: 'Starcatch Game',
@@ -130,13 +67,7 @@ const projects = [
         description: 'A fast 0-to-1 game prototype built with AI-assisted development.',
         featured: false,
         url: 'https://starcatch-game.vercel.app/',
-        image: createProjectArtwork({
-            title: 'Starcatch',
-            background: '#121A33',
-            accent: '#FFE082',
-            accentSoft: '#6D7CFF',
-            motif: 'M210 230 L240 300 L315 308 L258 354 L275 426 L210 386 L145 426 L162 354 L105 308 L180 300 Z M720 270 L750 340 L825 348 L768 394 L785 466 L720 426 L655 466 L672 394 L615 348 L690 340 Z',
-        }),
+        image: 'https://picsum.photos/seed/starcatch/800/600',
     },
 ];
 
