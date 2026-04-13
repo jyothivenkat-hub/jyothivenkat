@@ -78,12 +78,14 @@ const projects = [
     {
         title: 'MissAstroGlow',
         category: 'Apps',
-        description: 'A multi-surface astrology product spanning AI chat, booking and payments, and automated client follow-up.',
+        description: 'A full stack astrology product with 21K Instagram and 42K Snapchat followers, spanning a booking website with payments, an AI chat app, and OpenClaw agents for lead outreach, personalized follow up, and content.',
         featured: false,
         liveUrl: 'https://misastroglowai.vercel.app/',
         extraLinks: [
             { label: 'Website', url: 'https://missastroglow-live.vercel.app' },
             { label: 'Agent', url: 'https://substack.com/home/post/p-192521960' },
+            { label: 'Instagram', url: 'https://instagram.com/missastroglow23' },
+            { label: 'Snapchat', url: 'https://www.snapchat.com/add/missastoglowy' },
         ],
         image: 'https://picsum.photos/seed/astro/800/600',
     },
