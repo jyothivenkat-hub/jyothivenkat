@@ -6,20 +6,25 @@
 
 const projects = [
     {
+        title: 'The Researcher-Maker Thesis',
+        category: 'Thought Leadership',
+        description: 'A four-part sequence on going from research to shipped prototypes.',
+        featured: true,
+        articleUrl: 'https://substack.com/home/post/p-186362849',
+        extraLinks: [
+            { label: 'Step 1', url: 'https://substack.com/home/post/p-186893274' },
+            { label: 'Step 2', url: 'https://substack.com/home/post/p-187695339' },
+            { label: 'Step 3', url: 'https://substack.com/home/post/p-188414492' },
+        ],
+        image: 'https://picsum.photos/seed/thesis/800/600',
+    },
+    {
         title: 'AI-Native Research Architecture',
         category: 'Infrastructure',
         description: 'A first-principles system for AI-native research teams.',
-        featured: true,
+        featured: false,
         liveUrl: 'https://jv-airesearch.vercel.app/',
         image: 'https://picsum.photos/seed/ai-arch/1200/800',
-    },
-    {
-        title: 'The Researcher-Maker Thesis',
-        category: 'Thought Leadership',
-        description: 'A thesis on researchers who prototype, not just report.',
-        featured: false,
-        articleUrl: 'https://medium.com/design-bootcamp/the-researcher-maker-from-user-pain-to-shipped-prototype-in-5-steps-one-afternoon-aec9b75f589f',
-        image: 'https://picsum.photos/seed/thesis/800/600',
     },
     {
         title: 'AI News Agent',
@@ -416,6 +421,9 @@ function initWorkPage() {
                 project.liveUrl ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="project-link">Live</a>` : '',
                 project.repoUrl ? `<a href="${project.repoUrl}" target="_blank" rel="noopener noreferrer" class="project-link">GitHub</a>` : '',
                 project.articleUrl ? `<a href="${project.articleUrl}" target="_blank" rel="noopener noreferrer" class="project-link">Article</a>` : '',
+                ...(project.extraLinks || []).map(link =>
+                    `<a href="${link.url}" target="_blank" rel="noopener noreferrer" class="project-link">${link.label}</a>`
+                ),
             ].filter(Boolean).join('<span class="project-link-divider" aria-hidden="true">/</span>');
 
             card.innerHTML = `
