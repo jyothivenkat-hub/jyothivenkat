@@ -16,7 +16,7 @@ const projects = [
             { label: 'Step 2', url: 'https://substack.com/home/post/p-187695339' },
             { label: 'Step 3', url: 'https://substack.com/home/post/p-188414492' },
         ],
-        image: 'https://picsum.photos/seed/thesis/800/600',
+        image: 'https://commons.wikimedia.org/wiki/Special:FilePath/LibraryReadingRoom.jpg',
     },
     {
         title: 'AI-Native Research Architecture',
@@ -37,7 +37,7 @@ const projects = [
         featured: false,
         repoUrl: 'https://github.com/jyothivenkat-hub/ai-news-agent',
         articleUrl: 'https://jyothiwrites.substack.com/p/build-an-ai-news-agent-in-3-steps',
-        image: 'https://picsum.photos/seed/agent/800/600',
+        image: 'https://commons.wikimedia.org/wiki/Special:FilePath/City_Lights_and_the_sun.jpg',
     },
     {
         title: 'LLM to Wiki',
@@ -47,7 +47,7 @@ const projects = [
         liveUrl: 'https://llm-knowledge-base-nine.vercel.app/',
         repoUrl: 'https://github.com/jyothivenkat-hub/llm-knowledge-base',
         articleUrl: 'https://jyothiwrites.substack.com/p/i-built-a-system-that-turns-research',
-        image: 'https://picsum.photos/seed/forge/800/600',
+        image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bookshelves.jpg',
     },
     {
         title: 'Noveaire',
@@ -65,7 +65,7 @@ const projects = [
         featured: false,
         repoUrl: 'https://github.com/jyothivenkat-hub/autoresearch',
         articleUrl: 'https://jyothiwrites.substack.com/p/karpathys-autoresearch-set-up-in',
-        image: 'https://picsum.photos/seed/autoresearch/800/600',
+        image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Interior_Dome.jpg',
     },
     {
         title: 'Missastroglow',
@@ -92,7 +92,7 @@ const projects = [
         liveUrl: 'https://starcatch-game.vercel.app/',
         repoUrl: 'https://github.com/jyothivenkat-hub/Starcatch_Game',
         articleUrl: 'https://jyothiwrites.substack.com/p/the-researcher-maker-build-0-1-products',
-        image: 'https://picsum.photos/seed/starcatch/800/600',
+        image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Starry_night_sky.jpg',
     },
 ];
 
