@@ -547,10 +547,12 @@ function initWorkPage() {
 
 function initWritingPage() {
     const picksContainer = document.getElementById('picks-container');
+    const picksSection = document.getElementById('picks');
     const filtersContainer = document.getElementById('writing-filters');
     const listContainer = document.getElementById('articles-list');
     const seeAllButton = document.getElementById('see-all-articles');
     const searchInput = document.getElementById('article-search');
+    const archiveSection = listContainer?.closest('section');
 
     if (!filtersContainer || !listContainer) return;
 
@@ -608,7 +610,9 @@ function initWritingPage() {
     }
 
     function renderPicks() {
-        if (!picksContainer) return;
+        if (!picksContainer || !picksSection) return;
+        picksSection.hidden = Boolean(searchQuery);
+        if (searchQuery) return;
         picksContainer.innerHTML = '';
         currentArticles.slice(0, 3).forEach(article => {
             picksContainer.appendChild(createArticleCard(article));
@@ -619,7 +623,11 @@ function initWritingPage() {
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
             searchQuery = e.target.value;
+            renderPicks();
             renderArticles();
+            if (searchQuery && archiveSection) {
+                archiveSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         });
     }
 
@@ -630,8 +638,8 @@ function initWritingPage() {
         });
     }
 
-    renderPicks();
     renderFilters();
+    renderPicks();
     renderArticles();
 
     fetchLatestSubstackArticles().then((latestArticles) => {
@@ -641,8 +649,8 @@ function initWritingPage() {
         if (activeCategory !== 'All' && !currentArticles.some(article => article.category === activeCategory)) {
             activeCategory = 'All';
         }
-        renderPicks();
         renderFilters();
+        renderPicks();
         renderArticles();
     });
 }
