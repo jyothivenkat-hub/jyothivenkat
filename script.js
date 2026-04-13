@@ -16,7 +16,7 @@ const projects = [
             { label: 'Step 2', url: 'https://substack.com/home/post/p-187695339' },
             { label: 'Step 3', url: 'https://substack.com/home/post/p-188414492' },
         ],
-        image: 'https://commons.wikimedia.org/wiki/Special:FilePath/LibraryReadingRoom.jpg',
+        image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Outdoor_Kindle_reader_(Unsplash).jpg',
     },
     {
         title: 'AI-Native Research Architecture',
@@ -37,7 +37,7 @@ const projects = [
         featured: false,
         repoUrl: 'https://github.com/jyothivenkat-hub/ai-news-agent',
         articleUrl: 'https://jyothiwrites.substack.com/p/build-an-ai-news-agent-in-3-steps',
-        image: 'https://commons.wikimedia.org/wiki/Special:FilePath/City_Lights_and_the_sun.jpg',
+        image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Sunset_Under_the_Pier.JPG',
     },
     {
         title: 'LLM to Wiki',
@@ -47,7 +47,7 @@ const projects = [
         liveUrl: 'https://llm-knowledge-base-nine.vercel.app/',
         repoUrl: 'https://github.com/jyothivenkat-hub/llm-knowledge-base',
         articleUrl: 'https://jyothiwrites.substack.com/p/i-built-a-system-that-turns-research',
-        image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bookshelves.jpg',
+        image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mansueto_Library_reading_room.JPG',
     },
     {
         title: 'Noveaire',
@@ -65,7 +65,7 @@ const projects = [
         featured: false,
         repoUrl: 'https://github.com/jyothivenkat-hub/autoresearch',
         articleUrl: 'https://jyothiwrites.substack.com/p/karpathys-autoresearch-set-up-in',
-        image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Interior_Dome.jpg',
+        image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Hobby-Eberly_Telescope_Interior.JPG',
     },
     {
         title: 'Missastroglow',
@@ -92,7 +92,7 @@ const projects = [
         liveUrl: 'https://starcatch-game.vercel.app/',
         repoUrl: 'https://github.com/jyothivenkat-hub/Starcatch_Game',
         articleUrl: 'https://jyothiwrites.substack.com/p/the-researcher-maker-build-0-1-products',
-        image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Starry_night_sky.jpg',
+        image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Stars_in_the_night_sky_(Unsplash).jpg',
     },
 ];
 
