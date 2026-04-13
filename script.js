@@ -46,6 +46,14 @@ const projects = [
         image: 'https://picsum.photos/seed/forge/800/600',
     },
     {
+        title: 'Noveaire Cloud',
+        category: 'Product',
+        description: 'A content intelligence platform for creators, built around analytics, AI experiments, and content generation.',
+        featured: false,
+        repoUrl: 'https://github.com/jyothivenkat-hub/noveaire-cloud',
+        image: 'https://picsum.photos/seed/noveaire/800/600',
+    },
+    {
         title: 'Autoresearch',
         category: 'Agents',
         description: 'A Karpathy-inspired workflow for automated research loops.',
