@@ -65,7 +65,7 @@ const projects = [
         featured: false,
         repoUrl: 'https://github.com/jyothivenkat-hub/autoresearch',
         articleUrl: 'https://jyothiwrites.substack.com/p/karpathys-autoresearch-set-up-in',
-        image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Hobby-Eberly_Telescope_Interior.JPG',
+        image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Interior_of_Unit_Telescope_(LUXYIMAGES_28064-CC).jpg',
     },
     {
         title: 'Missastroglow',
