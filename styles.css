@@ -753,24 +753,66 @@ h1, h2, h3, h4, h5, h6 {
 .picks-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2rem;
 }
-@media (min-width: 768px) { .picks-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 768px) {
+    .picks-grid {
+        grid-template-columns: minmax(0, 1.35fr) minmax(20rem, 0.9fr);
+        grid-template-areas:
+            "lead support-1"
+            "lead support-2";
+        align-items: stretch;
+    }
+}
 
-.pick-card { cursor: pointer; }
+.pick-card {
+    cursor: pointer;
+    text-decoration: none;
+}
+.pick-card-lead {
+    display: grid;
+    gap: 2rem;
+}
+@media (min-width: 768px) {
+    .pick-card-lead {
+        grid-area: lead;
+        grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.9fr);
+        gap: 2.5rem;
+        align-items: stretch;
+    }
+}
+.pick-card-supporting {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    min-height: 0;
+}
+@media (min-width: 768px) {
+    .pick-card-supporting:nth-child(2) { grid-area: support-1; }
+    .pick-card-supporting:nth-child(3) { grid-area: support-2; }
+}
+.pick-card-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .pick-card .image-wrapper {
     aspect-ratio: 4 / 3;
     overflow: hidden;
     border-radius: 3rem;
-    margin-bottom: 2.5rem;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.pick-card-supporting .image-wrapper {
+    display: none;
 }
 .pick-card .image-wrapper img {
     width: 100%; height: 100%;
     object-fit: cover;
     transition: transform 1s;
-    opacity: 0.6;
+    opacity: 0.78;
 }
 .pick-card:hover .image-wrapper img { transform: scale(1.1); opacity: 1; }
 .pick-card .category {
@@ -784,21 +826,33 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 2rem;
     margin-top: 1rem;
     transition: all 0.3s;
-    line-height: 1.2;
+    line-height: 1.15;
     font-style: normal;
+}
+.pick-card-lead h3 {
+    font-size: clamp(2rem, 3.5vw, 3.4rem);
+    margin-top: 1.25rem;
+}
+.pick-card-supporting h3 {
+    font-size: clamp(1.75rem, 2.4vw, 2.3rem);
 }
 .pick-card:hover h3 { font-style: italic; color: var(--color-indigo); }
 .pick-card p {
     margin-top: 1rem;
     color: rgba(249, 247, 242, 0.4);
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: 300;
     line-height: 1.6;
-    font-style: italic;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+.pick-card-supporting p {
+    color: rgba(249, 247, 242, 0.34);
+    font-size: 1rem;
+    line-height: 1.7;
+    -webkit-line-clamp: 2;
 }
 
 /* Article List */
