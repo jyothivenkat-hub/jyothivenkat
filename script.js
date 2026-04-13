@@ -377,6 +377,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // --- Work Page ---
 
 function initWorkPage() {
+    const featuredContainer = document.getElementById('featured-project');
     const filtersContainer = document.getElementById('work-filters');
     const gridContainer = document.getElementById('work-grid');
     if (!filtersContainer || !gridContainer) return;
@@ -399,55 +400,75 @@ function initWorkPage() {
         });
     }
 
+    function createProjectCard(project, i, isFeatured) {
+        const primaryUrl = project.liveUrl || project.repoUrl || project.articleUrl || '';
+        const hasPrimaryUrl = Boolean(primaryUrl);
+        const card = document.createElement('article');
+        card.className = `project-card${isFeatured ? ' featured' : ''}`;
+        if (!hasPrimaryUrl) {
+            card.classList.add('project-card-disabled');
+        }
+        card.style.animationDelay = `${i * 0.05}s`;
+
+        const linkItems = [
+            project.liveUrl ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="project-link">Live</a>` : '',
+            project.repoUrl ? `<a href="${project.repoUrl}" target="_blank" rel="noopener noreferrer" class="project-link">GitHub</a>` : '',
+            project.articleUrl ? `<a href="${project.articleUrl}" target="_blank" rel="noopener noreferrer" class="project-link">Article</a>` : '',
+            ...(project.extraLinks || []).map(link =>
+                `<a href="${link.url}" target="_blank" rel="noopener noreferrer" class="project-link">${link.label}</a>`
+            ),
+        ].filter(Boolean).join('<span class="project-link-divider" aria-hidden="true">/</span>');
+
+        card.innerHTML = `
+            <a class="project-image-link" href="${primaryUrl || '#'}" ${hasPrimaryUrl ? 'target="_blank" rel="noopener noreferrer"' : 'aria-disabled="true" tabindex="-1"'}>
+                <div class="project-image">
+                    <img src="${project.image}" alt="${project.title}" referrerpolicy="no-referrer" loading="lazy">
+                    <div class="hover-overlay">
+                        <div class="hover-circle">
+                            ${hasPrimaryUrl
+                            ? '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>'
+                            : '<span class="project-status-label">In Progress</span>'}
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div class="project-meta">
+                <div class="category">${project.category}</div>
+                <h3>${project.title}</h3>
+                <p>${project.description}</p>
+                ${linkItems ? `<div class="project-links">${linkItems}</div>` : ''}
+            </div>
+        `;
+
+        return card;
+    }
+
     function renderProjects() {
         const filtered = activeCategory === 'All'
             ? projects
             : projects.filter(p => p.category === activeCategory);
 
+        const featuredProject = activeCategory === 'All'
+            ? filtered.find(project => project.featured)
+            : null;
+        const gridProjects = featuredProject
+            ? filtered.filter(project => project !== featuredProject)
+            : filtered;
+
+        if (featuredContainer) {
+            featuredContainer.innerHTML = '';
+            if (featuredProject) {
+                featuredContainer.appendChild(createProjectCard(featuredProject, 0, true));
+                featuredContainer.parentElement.hidden = false;
+            } else {
+                featuredContainer.parentElement.hidden = true;
+            }
+        }
+
         gridContainer.innerHTML = '';
 
-        filtered.forEach((project, i) => {
-            const isFeatured = project.featured && activeCategory === 'All';
-            const primaryUrl = project.liveUrl || project.repoUrl || project.articleUrl || '';
-            const hasPrimaryUrl = Boolean(primaryUrl);
-            const card = document.createElement('article');
-            card.className = `project-card${isFeatured ? ' featured' : ''}`;
-            if (!hasPrimaryUrl) {
-                card.classList.add('project-card-disabled');
-            }
-            card.style.animationDelay = `${i * 0.05}s`;
-
-            const linkItems = [
-                project.liveUrl ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="project-link">Live</a>` : '',
-                project.repoUrl ? `<a href="${project.repoUrl}" target="_blank" rel="noopener noreferrer" class="project-link">GitHub</a>` : '',
-                project.articleUrl ? `<a href="${project.articleUrl}" target="_blank" rel="noopener noreferrer" class="project-link">Article</a>` : '',
-                ...(project.extraLinks || []).map(link =>
-                    `<a href="${link.url}" target="_blank" rel="noopener noreferrer" class="project-link">${link.label}</a>`
-                ),
-            ].filter(Boolean).join('<span class="project-link-divider" aria-hidden="true">/</span>');
-
-            card.innerHTML = `
-                <a class="project-image-link" href="${primaryUrl || '#'}" ${hasPrimaryUrl ? 'target="_blank" rel="noopener noreferrer"' : 'aria-disabled="true" tabindex="-1"'}>
-                    <div class="project-image">
-                        <img src="${project.image}" alt="${project.title}" referrerpolicy="no-referrer" loading="lazy">
-                        <div class="hover-overlay">
-                            <div class="hover-circle">
-                                ${hasPrimaryUrl
-                                ? '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>'
-                                : '<span class="project-status-label">In Progress</span>'}
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <div class="project-meta">
-                    <div class="category">${project.category}</div>
-                    <h3>${project.title}</h3>
-                    <p>${project.description}</p>
-                    ${linkItems ? `<div class="project-links">${linkItems}</div>` : ''}
-                </div>
-            `;
-
-            gridContainer.appendChild(card);
+        gridProjects.forEach((project, i) => {
+            gridContainer.appendChild(createProjectCard(project, i, false));
         });
     }
 
