@@ -81,10 +81,8 @@ const projects = [
         description: 'A multi-surface astrology product spanning AI chat, booking and payments, and automated client follow-up.',
         featured: false,
         liveUrl: 'https://misastroglowai.vercel.app/',
-        articleUrl: 'https://substack.com/home/post/p-192521960',
         extraLinks: [
             { label: 'Website', url: 'https://missastroglow-live.vercel.app' },
-            { label: 'App', url: 'https://misastroglowai.vercel.app/' },
             { label: 'Agent', url: 'https://substack.com/home/post/p-192521960' },
         ],
         image: 'https://picsum.photos/seed/astro/800/600',
