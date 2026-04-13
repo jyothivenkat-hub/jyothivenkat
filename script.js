@@ -18,7 +18,7 @@ const projects = [
         category: 'Thought Leadership',
         description: 'A thesis on researchers who prototype, not just report.',
         featured: false,
-        articleUrl: 'https://jyothiwrites.substack.com/p/the-researcher-maker-build-0-1-products',
+        articleUrl: 'https://medium.com/design-bootcamp/the-researcher-maker-from-user-pain-to-shipped-prototype-in-5-steps-one-afternoon-aec9b75f589f',
         image: 'https://picsum.photos/seed/thesis/800/600',
     },
     {
