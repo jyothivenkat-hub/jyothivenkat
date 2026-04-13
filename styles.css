@@ -728,6 +728,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 .article-row:hover .read-link span { opacity: 1; transform: translateX(0); }
 
+.articles-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+.articles-actions .btn-subscribe {
+    min-width: 14rem;
+}
+
 /* Newsletter */
 .newsletter-actions {
     display: flex;

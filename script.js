@@ -136,6 +136,7 @@ const SUBSTACK_FEED_SOURCES = [
     `https://api.allorigins.win/raw?url=${encodeURIComponent(SUBSTACK_FEED_URL)}`,
     `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(SUBSTACK_FEED_URL)}`,
 ];
+const ARTICLES_PREVIEW_LIMIT = 8;
 
 function decodeHtmlEntities(value) {
     const textarea = document.createElement('textarea');
@@ -256,7 +257,7 @@ function parseSubstackFeedXml(xmlText) {
     const xml = new DOMParser().parseFromString(xmlText, 'text/xml');
     const items = Array.from(xml.querySelectorAll('item'));
 
-    return items.slice(0, 8).map(item => {
+    return items.map(item => {
         const title = normalizeText(item.querySelector('title')?.textContent || '');
         const description = normalizeText(item.querySelector('description')?.textContent || '');
         const url = item.querySelector('link')?.textContent?.trim() || '';
@@ -277,7 +278,7 @@ function parseSubstackFeedXml(xmlText) {
 function parseSubstackFeedJson(payload) {
     if (!payload?.items?.length) return [];
 
-    return payload.items.slice(0, 8).map(item => {
+    return payload.items.map(item => {
         const title = normalizeText(item.title || '');
         const description = normalizeText(item.description || item.contentSnippet || '');
         const thumbnail = item.thumbnail || item.enclosure?.link || 'https://picsum.photos/seed/writing/800/600';
@@ -431,6 +432,7 @@ function initWritingPage() {
     const picksContainer = document.getElementById('picks-container');
     const filtersContainer = document.getElementById('writing-filters');
     const listContainer = document.getElementById('articles-list');
+    const seeAllButton = document.getElementById('see-all-articles');
     const searchInput = document.getElementById('article-search');
 
     if (!filtersContainer || !listContainer) return;
@@ -438,6 +440,7 @@ function initWritingPage() {
     let currentArticles = [...fallbackArticles];
     let activeCategory = 'All';
     let searchQuery = '';
+    let showAllArticles = false;
 
     function renderFilters() {
         filtersContainer.innerHTML = '';
@@ -468,9 +471,20 @@ function initWritingPage() {
 
         listContainer.innerHTML = '';
 
-        filtered.forEach(art => {
+        const shouldLimitResults = !showAllArticles && !searchQuery && activeCategory === 'All';
+        const visibleArticles = shouldLimitResults
+            ? filtered.slice(0, ARTICLES_PREVIEW_LIMIT)
+            : filtered;
+
+        visibleArticles.forEach(art => {
             listContainer.appendChild(createArticleRow(art));
         });
+
+        if (!seeAllButton) return;
+
+        const hasMoreArticles = shouldLimitResults && filtered.length > ARTICLES_PREVIEW_LIMIT;
+        seeAllButton.hidden = !hasMoreArticles;
+        seeAllButton.textContent = `See all articles (${filtered.length})`;
     }
 
     function renderPicks() {
@@ -489,6 +503,13 @@ function initWritingPage() {
         });
     }
 
+    if (seeAllButton) {
+        seeAllButton.addEventListener('click', () => {
+            showAllArticles = true;
+            renderArticles();
+        });
+    }
+
     renderPicks();
     renderFilters();
     renderArticles();
@@ -497,6 +518,7 @@ function initWritingPage() {
         if (!latestArticles.length) return;
 
         currentArticles = latestArticles;
+        showAllArticles = false;
         if (activeCategory !== 'All' && !currentArticles.some(article => article.category === activeCategory)) {
             activeCategory = 'All';
         }
