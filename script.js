@@ -10,11 +10,11 @@ const projects = [
         category: 'Thought Leadership',
         description: 'A four-part framework for research leaders who want to stop handing off findings and start shipping product.',
         featured: true,
-        articleUrl: 'https://substack.com/home/post/p-186362849',
+        articleUrl: 'https://jyothiwrites.substack.com/p/the-researcher-maker-phase-1-build',
         extraLinks: [
-            { label: 'Step 1', url: 'https://substack.com/home/post/p-186893274' },
-            { label: 'Step 2', url: 'https://substack.com/home/post/p-187695339' },
-            { label: 'Step 3', url: 'https://substack.com/home/post/p-188414492' },
+            { label: 'Phase 2', url: 'https://jyothiwrites.substack.com/p/build-an-ai-news-agent-in-3-steps' },
+            { label: 'Phase 3', url: 'https://jyothiwrites.substack.com/p/the-velocity-stack-from-user-pain' },
+            { label: 'Architecture', url: 'https://jyothiwrites.substack.com/p/the-ai-native-researcher-how-to-build' },
         ],
         image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Outdoor_Kindle_reader_(Unsplash).jpg',
     },
@@ -38,7 +38,6 @@ const projects = [
         liveUrl: 'https://misastroglowai.vercel.app/',
         extraLinks: [
             { label: 'Website', url: 'https://missastroglow-live.vercel.app' },
-            { label: 'Agent', url: 'https://substack.com/home/post/p-192521960' },
             { label: 'Instagram', url: 'https://instagram.com/missastroglow23' },
             { label: 'Snapchat', url: 'https://www.snapchat.com/add/missastoglowy' },
         ],
@@ -51,7 +50,7 @@ const projects = [
         featured: false,
         liveUrl: 'https://llm-knowledge-base-nine.vercel.app/',
         repoUrl: 'https://github.com/jyothivenkat-hub/llm-knowledge-base',
-        articleUrl: 'https://substack.com/home/post/p-193262063',
+        articleUrl: 'https://jyothiwrites.substack.com/p/i-built-a-system-that-turns-research',
         image: 'AdobeStock_623238309.jpeg',
     },
     {
@@ -86,7 +85,7 @@ const projects = [
         description: "A Karpathy inspired system for automated research loops, extended with a monitoring dashboard and Colab support for T4 and A100 GPUs.",
         featured: false,
         repoUrl: 'https://github.com/jyothivenkat-hub/autoresearch',
-        articleUrl: 'https://substack.com/home/post/p-190957890',
+        articleUrl: 'https://jyothiwrites.substack.com/p/karpathys-autoresearch-set-up-in',
         image: 'AdobeStock_1958090578.jpeg',
     },
     {
@@ -95,7 +94,7 @@ const projects = [
         description: 'A UX exploration in presence and place. Built with Google AI Studio, Claude, and Codex as a study in environmental awareness.',
         featured: false,
         liveUrl: 'https://maps-3-d-exploration.vercel.app/',
-        articleUrl: 'https://substack.com/home/post/p-190644116',
+        articleUrl: 'https://jyothiwrites.substack.com/p/i-built-a-jaw-dropping-360-nature',
         image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Light_in_a_Redwood_Grove_(16088169345).jpg',
     },
     {
@@ -200,6 +199,7 @@ const SUBSTACK_FEED_SOURCES = [
     `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(SUBSTACK_FEED_URL)}`,
 ];
 const ARTICLES_PREVIEW_LIMIT = 8;
+const CONTACT_EMAIL = 'jyothi.venkat23@gmail.com';
 
 function decodeHtmlEntities(value) {
     const textarea = document.createElement('textarea');
@@ -391,13 +391,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const menu = document.getElementById('mobile-menu');
 
     if (toggle && menu) {
+        toggle.setAttribute('aria-expanded', 'false');
         toggle.addEventListener('click', () => {
             menu.classList.toggle('active');
             toggle.setAttribute('aria-expanded', menu.classList.contains('active'));
         });
 
         menu.querySelectorAll('.mobile-link').forEach(link => {
-            link.addEventListener('click', () => menu.classList.remove('active'));
+            link.addEventListener('click', () => {
+                menu.classList.remove('active');
+                toggle.setAttribute('aria-expanded', 'false');
+            });
         });
     }
 
@@ -415,6 +419,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Page-specific init ---
     initWorkPage();
     initWritingPage();
+    initConnectPage();
 });
 
 // --- Work Page ---
@@ -526,9 +531,9 @@ function initWorkPage() {
                 const isFeatured = i === 0;
                 topGridContainer.appendChild(createProjectCard(project, i, isFeatured));
             });
-            topGridContainer.parentElement.hidden = false;
+            topGridContainer.hidden = false;
         } else {
-            topGridContainer.parentElement.hidden = true;
+            topGridContainer.hidden = true;
         }
 
         gridContainer.innerHTML = '';
@@ -652,5 +657,48 @@ function initWritingPage() {
         renderFilters();
         renderPicks();
         renderArticles();
+    });
+}
+
+// --- Connect Page ---
+
+function initConnectPage() {
+    const form = document.getElementById('connect-form');
+    const successMessage = document.getElementById('form-success');
+    const errorMessage = document.getElementById('form-error');
+    if (!form) return;
+
+    const action = form.getAttribute('action') || '';
+    const hasConfiguredEndpoint = Boolean(action && action !== '#');
+    if (hasConfiguredEndpoint) return;
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+        const name = `${formData.get('name') || ''}`.trim();
+        const email = `${formData.get('email') || ''}`.trim();
+        const topic = `${formData.get('topic') || ''}`.trim();
+        const message = `${formData.get('message') || ''}`.trim();
+        const subject = encodeURIComponent(
+            `[jyothivenkat.com] ${topic || 'Website inquiry'}${name ? ` from ${name}` : ''}`
+        );
+        const body = encodeURIComponent([
+            `Name: ${name || 'Not provided'}`,
+            `Email: ${email || 'Not provided'}`,
+            `Topic: ${topic || 'Not provided'}`,
+            '',
+            message || 'No message provided.',
+        ].join('\n'));
+
+        if (errorMessage) {
+            errorMessage.hidden = true;
+        }
+        if (successMessage) {
+            successMessage.hidden = false;
+        }
+
+        form.hidden = true;
+        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
     });
 }

@@ -36,7 +36,7 @@
                 <a href="about.html" class="nav-link">My Story</a>
                 <a href="connect.html" class="nav-link active">Connect</a>
             </div>
-            <button class="nav-mobile-toggle" aria-label="Toggle menu" aria-controls="mobile-menu">
+            <button class="nav-mobile-toggle" aria-label="Toggle menu" aria-controls="mobile-menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -66,7 +66,7 @@
         <div class="container">
             <div class="connect-layout">
                 <div class="connect-form-wrapper">
-                    <form id="connect-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <form id="connect-form" action="#" method="POST">
                         <div class="form-group">
                             <label for="name" class="form-label">Name</label>
                             <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
@@ -94,14 +94,14 @@
                     </form>
 
                     <!-- Success Message -->
-                    <div id="form-success" class="form-success" style="display: none;">
+                    <div id="form-success" class="form-success" hidden>
                         <div class="success-icon">&#10003;</div>
-                        <h3 class="success-title">Message Sent</h3>
-                        <p class="success-text">Thanks for reaching out. I typically respond within 48 hours.</p>
+                        <h3 class="success-title">Email Draft Ready</h3>
+                        <p class="success-text">Your email app should open with a prefilled draft. If it does not, email me directly at jyothi.venkat23@gmail.com.</p>
                     </div>
 
                     <!-- Error Message -->
-                    <div id="form-error" class="form-error" style="display: none;">
+                    <div id="form-error" class="form-error" hidden>
                         <p>Something went wrong. Please email me directly at <a href="mailto:jyothi.venkat23@gmail.com">jyothi.venkat23@gmail.com</a></p>
                     </div>
                 </div>
